@@ -1,0 +1,66 @@
+# A regulation as one document (its text). The tables follow the text (T) rows of
+# the group version of the workflow; nothing here comes from the engine.
+# The outside events are fired by the host with the `event` step on a document.
+name: Regulation (single document)
+workflows: [regulation_single]
+people:
+  lead:  { org: O1, unit: LEG, positions: [leadership] }   # unit leadership of the drafting unit
+  t1:    { org: O1, unit: LEG }                              # drafting team
+  t2:    { org: O1, unit: LEG }
+  staff: { org: O1, unit: LEG }                              # drafting unit staff
+  inv:   { org: O1, unit: FIN }                              # invited unit
+  emp:   { org: O1, unit: FIN }                              # another unit of the Ministry
+  cit:   {}                                                  # a citizen: signed in, no organization
+  ag:    { org: O2, unit: AGY }                              # another organization
+workspaces: { w: { org: O1 } }
+steps:
+  - add_document: { id: A-text, workspace: w, owner: t1, workflow: regulation_single, creator: lead, assign: { drafting_team: [t1, t2], invited: [inv] } }
+  - expect_refused: { step: { add_document: { id: reg-X, workspace: w, owner: t1, workflow: regulation_single, creator: staff, assign: { drafting_team: [t1] } } }, reason: not_permitted }
+  - upload: { doc: A-text, by: t1 }                         # the text is now at version 2
+  - expect_refused: { step: { act: { doc: A-text, by: staff, action: upload } }, reason: not_permitted }
+  - expect_state: { doc: A-text, state: working_draft }
+  - expect_access:
+      docs: { T: A-text }
+      table: { t1: T, t2: T, lead: T, staff: "", inv: "", emp: "", cit: "", ag: "" }
+      versions: { T: 2 }
+      guidance: { T: "Draft regulation, not in force. Do not state it as a rule." }
+  - act: { doc: A-text, by: t1, action: submit_for_review }
+  - expect_access:
+      docs: { T: A-text }
+      table: { t1: T, t2: T, lead: T, staff: "", inv: T, emp: "", cit: "", ag: "" }
+      versions: { T: 2 }
+      guidance: { T: "Draft under review, not in force." }
+  - expect_refused: { step: { act: { doc: A-text, by: t1, action: upload } }, reason: not_accepted }   # the text may not change in review
+  - expect_refused: { step: { act: { doc: A-text, by: lead, action: promulgate } } }                   # only the outside event does
+
+  # ── In force: the text as enacted, for everyone ──
+  - event: { doc: A-text, action: promulgate, event: promulgated }
+  - expect_state: { doc: A-text, state: in_force }
+  - expect_access:
+      docs: { T: A-text }
+      table: { t1: T, t2: T, lead: T, staff: T, inv: T, emp: T, cit: T, ag: T }
+      versions: { T: 2 }
+      guidance: { T: null }
+  - event: { doc: A-text, action: promulgate, event: promulgated }          # not a state that leaves through it: rejected, logged
+  - expect_log: { kind: rejected }
+  - expect_refused: { step: { act: { doc: A-text, by: t1, action: upload } }, reason: not_accepted }   # a regulation in force takes no new version
+
+  # ── Amended: the base text as enacted, flagged ──
+  - event: { doc: A-text, action: amend, event: amendment_in_force }
+  - expect_state: { doc: A-text, state: amended }
+  - expect_access:
+      docs: { T: A-text }
+      table: { t1: T, t2: T, lead: T, staff: T, inv: T, emp: T, cit: T, ag: T }
+      versions: { T: 2 }
+      guidance: { T: "This regulation has been amended; the rest is unchanged. Present both." }
+  - event: { doc: A-text, action: amend, event: amendment_in_force }        # amended twice: it stays amended
+  - expect_state: { doc: A-text, state: amended }
+
+  # ── Repealed: found, flagged, never presented as current ──
+  - event: { doc: A-text, action: repeal, event: repeal_in_force }
+  - expect_state: { doc: A-text, state: repealed }
+  - expect_access:
+      docs: { T: A-text }
+      table: { t1: T, t2: T, lead: T, staff: T, inv: T, emp: T, cit: T, ag: T }
+      versions: { T: 2 }
+      guidance: { T: "This regulation has been repealed. Do not present as current." }

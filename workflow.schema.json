@@ -1,0 +1,294 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "docflow workflow",
+  "type": "object",
+  "required": [
+    "name",
+    "initial",
+    "states"
+  ],
+  "properties": {
+    "name": {
+      "description": "what people see and pick"
+    },
+    "initial": {
+      "description": "the state a document starts in"
+    },
+    "default_access": {
+      "enum": [
+        "own",
+        "deny"
+      ]
+    },
+    "states": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "guidance": {
+            "type": "string"
+          },
+          "on": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/transition"
+            }
+          },
+          "access": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/accessRule"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "minProperties": 1
+    },
+    "create": {
+      "type": "object",
+      "properties": {
+        "by": {
+          "$ref": "#/$defs/who"
+        },
+        "assign": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/assign"
+          }
+        },
+        "set": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "attributes": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "null"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "values": {
+                "type": "array",
+                "items": {
+                  "type": [
+                    "string",
+                    "integer"
+                  ]
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "who": {
+      "anyOf": [
+        {
+          "enum": [
+            "anyone",
+            "author",
+            "everyone",
+            "public",
+            "invited",
+            "organization",
+            "unit",
+            "org_admin"
+          ]
+        },
+        {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 1,
+          "properties": {
+            "role": {},
+            "user": {},
+            "group": {},
+            "position": {},
+            "assigned": {},
+            "all": {},
+            "attr": {},
+            "same": {}
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/who"
+          }
+        }
+      ]
+    },
+    "assign": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/who"
+        },
+        "min": {
+          "description": "at least this many (default 1)"
+        },
+        "max": {
+          "description": "at most this many"
+        },
+        "except": {
+          "$ref": "#/$defs/who"
+        },
+        "odd": {
+          "description": "an odd number of people"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "from"
+      ]
+    },
+    "transition": {
+      "type": "object",
+      "properties": {
+        "to": {
+          "description": "the state it leads to (the same state means stay)"
+        },
+        "by": {
+          "$ref": "#/$defs/who"
+        },
+        "requires": {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "approval",
+                "signature"
+              ]
+            }
+          }
+        },
+        "assign": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/assign"
+          }
+        },
+        "choose": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": [
+                "string",
+                "integer"
+              ]
+            },
+            "minItems": 1
+          }
+        },
+        "event": {
+          "description": "fired only by this outside event, never by a person"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "to"
+      ]
+    },
+    "accessRule": {
+      "type": "object",
+      "properties": {
+        "who": {
+          "$ref": "#/$defs/who"
+        },
+        "role": {
+          "enum": [
+            "editor",
+            "contributor",
+            "viewer",
+            "none"
+          ]
+        },
+        "serve": {
+          "anyOf": [
+            {
+              "enum": [
+                "latest",
+                "nothing"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "from": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "from"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "find": {
+          "anyOf": [
+            {
+              "enum": [
+                "latest",
+                "nothing"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "from": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "from"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "when": {
+          "type": "object",
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": [
+                  "string",
+                  "integer"
+                ]
+              },
+              {
+                "type": "array"
+              }
+            ]
+          }
+        },
+        "guidance": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "who"
+      ]
+    }
+  }
+}

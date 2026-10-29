@@ -1,0 +1,115 @@
+{
+ "situations": 39,
+ "search_cut_at_limit": false,
+ "people": 17,
+ "mutants": {
+  "6d1a2624d99c0555": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: amended.access[0]: serve {\"from\": \"in_force\"} -> \"latest\""
+  },
+  "9b38e73aeef51e59": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: repealed.access[0]: find {\"from\": \"in_force\"} -> \"latest\""
+  },
+  "95726d851e73ecbb": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: repealed.access[0]: serve {\"from\": \"in_force\"} -> {\"from\": \"review\"}"
+  },
+  "1d260f1f5752f72c": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: repealed.access[0]: serve {\"from\": \"in_force\"} -> \"latest\""
+  },
+  "6f7716e9ddba96d5": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: in_force.access[0]: find {\"from\": \"in_force\"} -> \"latest\""
+  },
+  "6b5f7fadf78f92ef": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: in_force.access[0]: serve {\"from\": \"in_force\"} -> \"latest\""
+  },
+  "2109f9ed12083ff4": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: amended.access[0]: find {\"from\": \"in_force\"} -> {\"from\": \"amended\"}"
+  },
+  "132c12370f451a54": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: in_force.access[0]: serve {\"from\": \"in_force\"} -> {\"from\": \"review\"}"
+  },
+  "eb2ac4aa9acde4c3": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: review.access[0]: serve \"latest\" -> {\"from\": \"review\"}"
+  },
+  "9644991793fdf877": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: review.access[0]: find \"latest\" -> {\"from\": \"review\"}"
+  },
+  "19204f485e3c58c6": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: amended.access[0]: find {\"from\": \"in_force\"} -> \"latest\""
+  },
+  "26dbeb2a9ef6728f": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: amended.access[0]: serve {\"from\": \"in_force\"} -> {\"from\": \"review\"}"
+  },
+  "01250efc7f1b7ca9": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: in_force.access[0]: find {\"from\": \"in_force\"} -> {\"from\": \"review\"}"
+  },
+  "b66a2ac42dd5e7f5": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "widen_who: repealed.access[0]: add everyone"
+  },
+  "3d041283a3117cc5": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "widen_who: in_force.access[0]: add everyone"
+  },
+  "2eec096f3a4ab490": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "widen_who: repealed.access[0]: add unit"
+  },
+  "6b40770a7a237ecb": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "widen_who: in_force.access[0]: add organization"
+  },
+  "c938d34aa34b0bad": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "widen_who: repealed.access[0]: add organization"
+  },
+  "9533722ee74df1bc": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "widen_who: amended.access[0]: add unit"
+  },
+  "385955138d880d5d": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "widen_who: amended.access[0]: add public"
+  },
+  "75d1223fc3206cba": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "widen_who: in_force.access[0]: add public"
+  }
+ },
+ "workflow": "regulation_single",
+ "claimed_equivalent": 21,
+ "confirmed": 21
+}

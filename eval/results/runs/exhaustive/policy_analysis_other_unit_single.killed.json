@@ -1,0 +1,735 @@
+{
+ "situations": 159,
+ "people": 22,
+ "mutants": {
+  "f1b3d05298fdd249": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "submit_for_review"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "gh"
+    ]
+   },
+   "desc": "change_version: group_head_review.access[1]: find {\"from\": \"group_head_review\"} -> {\"from\": \"handed_over\"}"
+  },
+  "92b3229ae339a352": {
+   "confirmed": false,
+   "difference": {
+    "situation": 22,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over",
+     "share"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "lead",
+     "z_pos_leadership"
+    ]
+   },
+   "desc": "change_version: shared_with_requesting_unit.access[2]: serve {\"from\": \"handed_over\"} -> \"nothing\""
+  },
+  "439fff9c746ef75a": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "submit_for_review"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "an"
+    ]
+   },
+   "desc": "change_version: group_head_review.access[0]: serve {\"from\": \"group_head_review\"} -> {\"from\": \"handed_over\"}"
+  },
+  "e073f5005f3de497": {
+   "confirmed": false,
+   "difference": {
+    "situation": 6,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "lead",
+     "z_pos_leadership"
+    ]
+   },
+   "desc": "change_version: submitted.access[2]: serve {\"from\": \"submitted\"} -> {\"from\": \"shared_with_requesting_unit\"}"
+  },
+  "4e617cdbffec6780": {
+   "confirmed": false,
+   "difference": {
+    "situation": 12,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "fil",
+     "z_pos_filing",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "change_version: handed_over.access[3]: find {\"from\": \"handed_over\"} -> \"nothing\""
+  },
+  "c751816498322bf8": {
+   "confirmed": false,
+   "difference": {
+    "situation": 12,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "lead",
+     "z_pos_leadership"
+    ]
+   },
+   "desc": "change_version: handed_over.access[2]: serve {\"from\": \"handed_over\"} -> \"nothing\""
+  },
+  "3c3edac801f11a7b": {
+   "confirmed": false,
+   "difference": {
+    "situation": 6,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "gh"
+    ]
+   },
+   "desc": "change_version: submitted.access[1]: serve {\"from\": \"submitted\"} -> {\"from\": \"shared_with_requesting_unit\"}"
+  },
+  "0a1bf6fa3994cbb9": {
+   "confirmed": false,
+   "difference": {
+    "situation": 1,
+    "steps": [
+     "upload"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "an"
+    ]
+   },
+   "desc": "change_version: working_document.access[0]: find \"latest\" -> {\"from\": \"working_document\"}"
+  },
+  "32965931ad66bcb3": {
+   "confirmed": false,
+   "difference": {
+    "situation": 18,
+    "steps": [
+     "upload",
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "fil",
+     "z_pos_filing",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "change_version: handed_over.access[3]: serve {\"from\": \"handed_over\"} -> {\"from\": \"working_document\"}"
+  },
+  "999c1d4eca63f736": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "an"
+    ]
+   },
+   "desc": "change_version: working_document.access[0]: serve \"latest\" -> \"nothing\""
+  },
+  "a20b13e89fc69d73": {
+   "confirmed": false,
+   "difference": {
+    "situation": 9,
+    "steps": [
+     "upload",
+     "submit_for_review",
+     "pass_to_leadership"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "lead",
+     "z_pos_leadership"
+    ]
+   },
+   "desc": "change_version: submitted.access[2]: find {\"from\": \"submitted\"} -> {\"from\": \"working_document\"}"
+  },
+  "4e5bf203ab9c8ae2": {
+   "confirmed": false,
+   "difference": {
+    "situation": 6,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "gh"
+    ]
+   },
+   "desc": "change_version: submitted.access[1]: find {\"from\": \"submitted\"} -> {\"from\": \"handed_over\"}"
+  },
+  "a2a8f6f5f9295822": {
+   "confirmed": false,
+   "difference": {
+    "situation": 22,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over",
+     "share"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "lead",
+     "z_pos_leadership"
+    ]
+   },
+   "desc": "change_version: shared_with_requesting_unit.access[2]: find {\"from\": \"handed_over\"} -> \"nothing\""
+  },
+  "9108dae55e582fbc": {
+   "confirmed": false,
+   "difference": {
+    "situation": 4,
+    "steps": [
+     "upload",
+     "submit_for_review"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "gh"
+    ]
+   },
+   "desc": "change_version: group_head_review.access[1]: serve {\"from\": \"group_head_review\"} -> {\"from\": \"working_document\"}"
+  },
+  "f5041c020d2e93e6": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "an"
+    ]
+   },
+   "desc": "change_version: working_document.access[0]: serve \"latest\" -> {\"from\": \"shared_with_requesting_unit\"}"
+  },
+  "7a15a1f46c966ab5": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "an"
+    ]
+   },
+   "desc": "change_version: working_document.access[0]: find \"latest\" -> \"nothing\""
+  },
+  "3fe5d5c492ab95ef": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "an"
+    ]
+   },
+   "desc": "change_version: working_document.access[0]: serve \"latest\" -> {\"from\": \"group_head_review\"}"
+  },
+  "5c7e8dd32a7a0c9a": {
+   "confirmed": false,
+   "difference": {
+    "situation": 30,
+    "steps": [
+     "upload",
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over",
+     "share"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "req"
+    ]
+   },
+   "desc": "change_version: shared_with_requesting_unit.access[4]: serve {\"from\": \"handed_over\"} -> {\"from\": \"working_document\"}"
+  },
+  "289eca2bfb1bd87e": {
+   "confirmed": false,
+   "difference": {
+    "situation": 6,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "gh"
+    ]
+   },
+   "desc": "change_version: submitted.access[1]: find {\"from\": \"submitted\"} -> \"nothing\""
+  },
+  "e3535230e708b5cc": {
+   "confirmed": false,
+   "difference": {
+    "situation": 22,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over",
+     "share"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "fil",
+     "z_pos_filing",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "change_version: shared_with_requesting_unit.access[3]: find {\"from\": \"handed_over\"} -> \"nothing\""
+  },
+  "57f9356c0ac64d9a": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "z_org_with_role_other_unit",
+     "z_position_and_role",
+     "z_unit_with_role"
+    ]
+   },
+   "desc": "default_flip: default_access"
+  },
+  "cb6351443146e088": {
+   "confirmed": false,
+   "difference": {
+    "situation": 22,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over",
+     "share"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "lead",
+     "z_pos_leadership"
+    ]
+   },
+   "desc": "drop_rule: shared_with_requesting_unit.access[2]: delete"
+  },
+  "9cd674c5a1bc78c5": {
+   "confirmed": false,
+   "difference": {
+    "situation": 12,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "gh"
+    ]
+   },
+   "desc": "drop_rule: handed_over.access[1]: delete"
+  },
+  "2898b058ea713a13": {
+   "confirmed": false,
+   "difference": {
+    "situation": 22,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over",
+     "share"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "fil",
+     "z_pos_filing",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "drop_rule: shared_with_requesting_unit.access[3]: delete"
+  },
+  "66394ea0bf21bddc": {
+   "confirmed": false,
+   "difference": {
+    "situation": 12,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "gh2",
+     "staff",
+     "z_group_group",
+     "z_pos_filing_other_unit",
+     "z_pos_group_head"
+    ]
+   },
+   "desc": "swap: handed_over.access[2]: unit -> organization"
+  },
+  "edc1103b4becc07f": {
+   "confirmed": false,
+   "difference": {
+    "situation": 12,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "gh"
+    ]
+   },
+   "desc": "swap: handed_over.access[1]: position group_head -> filing"
+  },
+  "54b331c59d6f9e3d": {
+   "confirmed": false,
+   "difference": {
+    "situation": 22,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over",
+     "share"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "fil",
+     "z_pos_filing",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "swap: shared_with_requesting_unit.access[3]: position filing -> leadership"
+  },
+  "e781691ef86cf655": {
+   "confirmed": false,
+   "difference": {
+    "situation": 12,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "gh2",
+     "staff",
+     "z_group_group",
+     "z_pos_filing_other_unit",
+     "z_pos_group_head"
+    ]
+   },
+   "desc": "swap: handed_over.access[3]: unit -> organization"
+  },
+  "a713c01a0a670c4f": {
+   "confirmed": false,
+   "difference": {
+    "situation": 6,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership"
+    ],
+    "mutant_accepts_steps": false,
+    "people_differing": []
+   },
+   "desc": "transition_guard: group_head_review.on.pass_to_leadership: remove by"
+  },
+  "229e4f6159909129": {
+   "confirmed": false,
+   "difference": {
+    "situation": 1,
+    "steps": [
+     "upload"
+    ],
+    "mutant_accepts_steps": false,
+    "people_differing": []
+   },
+   "desc": "transition_guard: working_document.on.upload: remove by"
+  },
+  "068ae0c33a0ace36": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "transition_guard: submitted.on.return: widen by to anyone"
+  },
+  "70323aad7dfba911": {
+   "confirmed": false,
+   "difference": {
+    "situation": 1,
+    "steps": [
+     "upload"
+    ],
+    "mutant_accepts_steps": false,
+    "people_differing": []
+   },
+   "desc": "upload: working_document: remove upload"
+  },
+  "591173ff26fba037": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "submit_for_review"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "fil",
+     "gh2",
+     "lead",
+     "staff",
+     "z_group_group"
+    ]
+   },
+   "desc": "widen_who: group_head_review.access[1]: add organization"
+  },
+  "8b50ab74c53590ab": {
+   "confirmed": false,
+   "difference": {
+    "situation": 22,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over",
+     "share"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "gh2",
+     "req2",
+     "staff",
+     "z_group_group",
+     "z_other_org"
+    ]
+   },
+   "desc": "widen_who: shared_with_requesting_unit.access[0]: add public"
+  },
+  "722bc77d681baeed": {
+   "confirmed": false,
+   "difference": {
+    "situation": 22,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over",
+     "share"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "gh2",
+     "staff",
+     "z_pos_group_head",
+     "z_unit_no_role",
+     "z_unit_with_role"
+    ]
+   },
+   "desc": "widen_who: shared_with_requesting_unit.access[1]: add unit"
+  },
+  "76c019ffcaddbdda": {
+   "confirmed": false,
+   "difference": {
+    "situation": 22,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over",
+     "share"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "gh2",
+     "staff",
+     "z_group_group",
+     "z_pos_filing_other_unit",
+     "z_pos_group_head"
+    ]
+   },
+   "desc": "widen_who: shared_with_requesting_unit.access[3]: add organization"
+  },
+  "6ada5f752f8bf874": {
+   "confirmed": false,
+   "difference": {
+    "situation": 6,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "fil",
+     "gh2",
+     "staff",
+     "z_pos_filing",
+     "z_pos_group_head"
+    ]
+   },
+   "desc": "widen_who: submitted.access[1]: add unit"
+  },
+  "6930df171f072ea8": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "submit_for_review"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "fil",
+     "gh2",
+     "lead",
+     "staff",
+     "z_group_group"
+    ]
+   },
+   "desc": "widen_who: group_head_review.access[0]: add organization"
+  },
+  "b4426b7a77ad0670": {
+   "confirmed": false,
+   "difference": {
+    "situation": 22,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over",
+     "share"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "gh2",
+     "staff",
+     "z_group_group",
+     "z_pos_filing_other_unit",
+     "z_pos_group_head"
+    ]
+   },
+   "desc": "widen_who: shared_with_requesting_unit.access[1]: add organization"
+  },
+  "bed1b28cbfb27a0f": {
+   "confirmed": false,
+   "difference": {
+    "situation": 6,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "z_org_with_role_other_unit",
+     "z_position_and_role",
+     "z_unit_with_role"
+    ]
+   },
+   "desc": "widen_who: submitted.access[2]: add everyone"
+  },
+  "c87b0ca0d71e554e": {
+   "confirmed": false,
+   "difference": {
+    "situation": 22,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over",
+     "share"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "z_org_with_role_other_unit",
+     "z_unit_with_role"
+    ]
+   },
+   "desc": "widen_who: shared_with_requesting_unit.access[4]: add everyone"
+  },
+  "6428b96c30626cf4": {
+   "confirmed": false,
+   "difference": {
+    "situation": 22,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over",
+     "share"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "z_org_with_role_other_unit",
+     "z_unit_with_role"
+    ]
+   },
+   "desc": "widen_who: shared_with_requesting_unit.access[1]: add everyone"
+  },
+  "f948c740209cd2b4": {
+   "confirmed": false,
+   "difference": {
+    "situation": 12,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "hand_over"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "gh2",
+     "req",
+     "req2",
+     "staff",
+     "z_group_group"
+    ]
+   },
+   "desc": "widen_who: handed_over.access[2]: add public"
+  },
+  "f1e5bd101b2a478c": {
+   "confirmed": false,
+   "difference": {
+    "situation": 11,
+    "steps": [
+     "submit_for_review",
+     "pass_to_leadership",
+     "return"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "fil",
+     "gh",
+     "lead",
+     "z_pos_filing",
+     "z_pos_leadership"
+    ]
+   },
+   "desc": "wrong_target: submitted.on.return: to working_document -> handed_over"
+  }
+ },
+ "workflow": "policy_analysis_other_unit_single",
+ "claimed_equivalent": 44,
+ "confirmed": 1
+}

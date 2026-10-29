@@ -1,0 +1,4 @@
+# Policy analysis, simple variant: one analyst, unit staff, another unit, an outsider.
+workflow: card1_policy_analysis_simple
+scenario: scenarios/card1_policy_analysis_simple.yml
+document: { id: d, owner: analyst }

@@ -1,0 +1,13 @@
+{
+  "title": "StateGate: Workflow-State-Based Access Control for Agentic Retrieval-Augmented Generation in Public Organizations (code, synthetic data and results)",
+  "upload_type": "software",
+  "description": "The StateGate engine, its eight workflow files, the evaluation code, the synthetic documents, questions and injection prompts, and the stored results of the experiments in the article. The code is under the Apache License 2.0; the data and results are under Creative Commons Attribution 4.0 International. Every document is synthetic.",
+  "creators": [
+    {"name": "Oktavianus, Evan", "affiliation": "Universitas Indonesia"},
+    {"name": "Sensuse, Dana Indra", "affiliation": "Universitas Indonesia"},
+    {"name": "Eitiveni, Imairi", "affiliation": "Universitas Indonesia"}
+  ],
+  "license": "Apache-2.0",
+  "keywords": ["access control", "retrieval-augmented generation", "workflow", "state machine", "agentic AI", "synthetic data"],
+  "language": "eng"
+}

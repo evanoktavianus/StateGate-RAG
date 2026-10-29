@@ -1,0 +1,892 @@
+# Card 6 (JSON is YAML).
+{
+ "name": "Card 6, knowledge asset",
+ "workflows": [
+  "knowledge_asset"
+ ],
+ "people": {
+  "ann": {
+   "org": "O1",
+   "unit": "U1"
+  },
+  "km": {
+   "org": "O1",
+   "unit": "U1",
+   "groups": [
+    "Knowledge management"
+   ]
+  },
+  "c1": {
+   "org": "O1",
+   "unit": "U2",
+   "groups": [
+    "Committee"
+   ]
+  },
+  "c2": {
+   "org": "O1",
+   "unit": "U2",
+   "groups": [
+    "Committee"
+   ]
+  },
+  "c3": {
+   "org": "O1",
+   "unit": "U2",
+   "groups": [
+    "Committee"
+   ]
+  },
+  "u1x": {
+   "org": "O1",
+   "unit": "U1"
+  },
+  "m2": {
+   "org": "O1",
+   "unit": "U2"
+  },
+  "ext": {}
+ },
+ "workspaces": {
+  "w": {
+   "org": "O1"
+  }
+ },
+ "steps": [
+  {
+   "add_document": {
+    "id": "d-named",
+    "workspace": "w",
+    "owner": "ann",
+    "workflow": "knowledge_asset"
+   }
+  },
+  {
+   "add_document": {
+    "id": "d-unit",
+    "workspace": "w",
+    "owner": "ann",
+    "workflow": "knowledge_asset"
+   }
+  },
+  {
+   "add_document": {
+    "id": "d-organization",
+    "workspace": "w",
+    "owner": "ann",
+    "workflow": "knowledge_asset"
+   }
+  },
+  {
+   "add_document": {
+    "id": "d-public",
+    "workspace": "w",
+    "owner": "ann",
+    "workflow": "knowledge_asset"
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "act": {
+      "doc": "d-named",
+      "by": "ext",
+      "action": "approve"
+     }
+    },
+    "reason": "not_accepted"
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "act": {
+      "doc": "d-named",
+      "by": "ext",
+      "action": "submit"
+     }
+    },
+    "reason": "not_permitted"
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "N": "d-named",
+     "U": "d-unit",
+     "O": "d-organization",
+     "P": "d-public"
+    },
+    "table": {
+     "ann": [
+      "N",
+      "U",
+      "O",
+      "P"
+     ],
+     "km": [
+      "N",
+      "U",
+      "O",
+      "P"
+     ],
+     "c1": [],
+     "u1x": [],
+     "m2": [],
+     "ext": []
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-named",
+    "by": "ann",
+    "action": "submit",
+    "input": {
+     "committee": [
+      "c1",
+      "c2",
+      "c3"
+     ]
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-unit",
+    "by": "ann",
+    "action": "submit",
+    "input": {
+     "committee": [
+      "c1",
+      "c2",
+      "c3"
+     ]
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-organization",
+    "by": "ann",
+    "action": "submit",
+    "input": {
+     "committee": [
+      "c1",
+      "c2",
+      "c3"
+     ]
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-public",
+    "by": "ann",
+    "action": "submit",
+    "input": {
+     "committee": [
+      "c1",
+      "c2",
+      "c3"
+     ]
+    }
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "N": "d-named",
+     "U": "d-unit",
+     "O": "d-organization",
+     "P": "d-public"
+    },
+    "table": {
+     "ann": [
+      "N",
+      "U",
+      "O",
+      "P"
+     ],
+     "km": [],
+     "c1": [
+      "N",
+      "U",
+      "O",
+      "P"
+     ],
+     "c2": [
+      "N",
+      "U",
+      "O",
+      "P"
+     ],
+     "c3": [
+      "N",
+      "U",
+      "O",
+      "P"
+     ],
+     "u1x": [],
+     "m2": [],
+     "ext": []
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-named",
+    "by": "c1",
+    "action": "set_level",
+    "input": {
+     "level": "named",
+     "readers": [
+      "m2"
+     ]
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-named",
+    "by": "c1",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-named",
+    "by": "c2",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-named",
+    "by": "c3",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-unit",
+    "by": "c1",
+    "action": "set_level",
+    "input": {
+     "level": "unit",
+     "readers": []
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-unit",
+    "by": "c1",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-unit",
+    "by": "c2",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-unit",
+    "by": "c3",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-organization",
+    "by": "c1",
+    "action": "set_level",
+    "input": {
+     "level": "organization",
+     "readers": []
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-organization",
+    "by": "c1",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-organization",
+    "by": "c2",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-organization",
+    "by": "c3",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-public",
+    "by": "c1",
+    "action": "set_level",
+    "input": {
+     "level": "public",
+     "readers": []
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-public",
+    "by": "c1",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-public",
+    "by": "c2",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-public",
+    "by": "c3",
+    "action": "approve"
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "N": "d-named",
+     "U": "d-unit",
+     "O": "d-organization",
+     "P": "d-public"
+    },
+    "table": {
+     "ann": [
+      "N",
+      "U",
+      "O",
+      "P"
+     ],
+     "km": [
+      "U",
+      "O",
+      "P"
+     ],
+     "c1": [
+      "O",
+      "P"
+     ],
+     "u1x": [
+      "U",
+      "O",
+      "P"
+     ],
+     "m2": [
+      "N",
+      "O",
+      "P"
+     ],
+     "ext": [
+      "P"
+     ]
+    }
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "act": {
+      "doc": "d-named",
+      "by": "ann",
+      "action": "upload"
+     }
+    },
+    "reason": "not_accepted"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-named",
+    "by": "ann",
+    "action": "start_update"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-unit",
+    "by": "ann",
+    "action": "start_update"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-organization",
+    "by": "ann",
+    "action": "start_update"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-public",
+    "by": "ann",
+    "action": "start_update"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-named",
+    "state": "working"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-unit",
+    "state": "working"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-organization",
+    "state": "working"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-public",
+    "state": "working"
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "N": "d-named",
+     "U": "d-unit",
+     "O": "d-organization",
+     "P": "d-public"
+    },
+    "table": {
+     "ann": [
+      "N",
+      "U",
+      "O",
+      "P"
+     ]
+    },
+    "versions": {
+     "N": 1,
+     "U": 1,
+     "O": 1,
+     "P": 1
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-named",
+    "by": "ann",
+    "action": "upload"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-unit",
+    "by": "ann",
+    "action": "upload"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-organization",
+    "by": "ann",
+    "action": "upload"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-public",
+    "by": "ann",
+    "action": "upload"
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "N": "d-named",
+     "U": "d-unit",
+     "O": "d-organization",
+     "P": "d-public"
+    },
+    "table": {
+     "ann": [
+      "N",
+      "U",
+      "O",
+      "P"
+     ],
+     "km": [
+      "N",
+      "U",
+      "O",
+      "P"
+     ]
+    },
+    "versions": {
+     "N": 2,
+     "U": 2,
+     "O": 2,
+     "P": 2
+    },
+    "guidance": {
+     "O": "Unapproved working document; do not present it as a knowledge asset.",
+     "U": "Unapproved working document; do not present it as a knowledge asset.",
+     "P": "Unapproved working document; do not present it as a knowledge asset.",
+     "N": "Unapproved working document; do not present it as a knowledge asset."
+    }
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "N": "d-named",
+     "U": "d-unit",
+     "O": "d-organization",
+     "P": "d-public"
+    },
+    "table": {
+     "c1": [
+      "O",
+      "P"
+     ],
+     "u1x": [
+      "U",
+      "O",
+      "P"
+     ],
+     "m2": [
+      "N",
+      "O",
+      "P"
+     ],
+     "ext": [
+      "P"
+     ]
+    },
+    "versions": {
+     "N": 1,
+     "U": 1,
+     "O": 1,
+     "P": 1
+    },
+    "guidance": {
+     "O": "Approved asset; mention its level (organization).",
+     "U": "Approved asset; mention its level (unit).",
+     "P": "Approved asset; mention its level (public).",
+     "N": "Approved asset; mention its level (named)."
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-unit",
+    "by": "ann",
+    "action": "submit",
+    "input": {
+     "committee": [
+      "c1",
+      "c2",
+      "c3"
+     ]
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-public",
+    "by": "ann",
+    "action": "submit",
+    "input": {
+     "committee": [
+      "c1",
+      "c2",
+      "c3"
+     ]
+    }
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-unit",
+    "state": "quality_assurance"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-public",
+    "state": "quality_assurance"
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "act": {
+      "doc": "d-unit",
+      "by": "ann",
+      "action": "upload"
+     }
+    },
+    "reason": "not_accepted"
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "U": "d-unit",
+     "P": "d-public"
+    },
+    "table": {
+     "ann": [
+      "U",
+      "P"
+     ],
+     "c1": [
+      "U",
+      "P"
+     ],
+     "c2": [
+      "U",
+      "P"
+     ],
+     "c3": [
+      "U",
+      "P"
+     ]
+    },
+    "versions": {
+     "U": 2,
+     "P": 2
+    },
+    "guidance": {
+     "U": "Unapproved working document; do not present it as a knowledge asset.",
+     "P": "Unapproved working document; do not present it as a knowledge asset."
+    }
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "U": "d-unit",
+     "P": "d-public"
+    },
+    "table": {
+     "km": [
+      "U",
+      "P"
+     ],
+     "u1x": [
+      "U",
+      "P"
+     ],
+     "m2": [
+      "P"
+     ],
+     "ext": [
+      "P"
+     ]
+    },
+    "versions": {
+     "U": 1,
+     "P": 1
+    },
+    "guidance": {
+     "U": "Approved asset; mention its level (unit).",
+     "P": "Approved asset; mention its level (public)."
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-unit",
+    "by": "c1",
+    "action": "request_changes"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-unit",
+    "state": "working"
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "U": "d-unit"
+    },
+    "table": {
+     "ann": [
+      "U"
+     ],
+     "km": [
+      "U"
+     ]
+    },
+    "versions": {
+     "U": 2
+    },
+    "guidance": {
+     "U": "Unapproved working document; do not present it as a knowledge asset."
+    }
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "U": "d-unit"
+    },
+    "table": {
+     "c1": [],
+     "c2": [],
+     "u1x": [
+      "U"
+     ],
+     "m2": [],
+     "ext": []
+    },
+    "versions": {
+     "U": 1
+    },
+    "guidance": {
+     "U": "Approved asset; mention its level (unit)."
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-public",
+    "by": "c1",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-public",
+    "by": "c2",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-public",
+    "by": "c3",
+    "action": "approve"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-public",
+    "state": "disseminated"
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "P": "d-public"
+    },
+    "table": {
+     "ann": [
+      "P"
+     ],
+     "km": [
+      "P"
+     ],
+     "c1": [
+      "P"
+     ],
+     "c2": [
+      "P"
+     ],
+     "u1x": [
+      "P"
+     ],
+     "m2": [
+      "P"
+     ],
+     "ext": [
+      "P"
+     ]
+    },
+    "versions": {
+     "P": 2
+    },
+    "guidance": {
+     "P": "Approved asset; mention its level (public)."
+    }
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "N": "d-named",
+     "O": "d-organization"
+    },
+    "table": {
+     "ann": [
+      "N",
+      "O"
+     ],
+     "km": [
+      "N",
+      "O"
+     ]
+    },
+    "versions": {
+     "N": 2,
+     "O": 2
+    },
+    "guidance": {
+     "O": "Unapproved working document; do not present it as a knowledge asset.",
+     "N": "Unapproved working document; do not present it as a knowledge asset."
+    }
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "N": "d-named",
+     "O": "d-organization"
+    },
+    "table": {
+     "c1": [
+      "O"
+     ],
+     "u1x": [
+      "O"
+     ],
+     "m2": [
+      "N",
+      "O"
+     ],
+     "ext": []
+    },
+    "versions": {
+     "N": 1,
+     "O": 1
+    },
+    "guidance": {
+     "O": "Approved asset; mention its level (organization).",
+     "N": "Approved asset; mention its level (named)."
+    }
+   }
+  }
+ ]
+}

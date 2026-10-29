@@ -1,0 +1,17 @@
+# Card 1. Policy analysis, simple: unit staff see the analysis only after it is finalized. A single document.
+name: Policy analysis, simple
+initial: working_document
+default_access: deny
+
+states:
+  working_document:
+    access:
+      - { who: author, serve: latest, find: latest }
+    on:
+      upload: { to: working_document, by: author }
+      mark_finalized: { to: finalized, by: author }              # 1 the analyst marks the analysis finalized
+
+  finalized:
+    access:
+      - { who: [author, unit], serve: { from: finalized }, find: { from: finalized } }
+    on: {}

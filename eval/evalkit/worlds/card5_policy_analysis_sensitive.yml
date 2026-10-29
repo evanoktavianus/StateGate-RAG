@@ -1,0 +1,3 @@
+workflow: card5_policy_analysis_sensitive
+scenario: scenarios/card5_policy_analysis_sensitive.yml
+document: { id: d, owner: t1, creator: lead, assign: { team: [t1] }, attrs: { group: [g1, g2] } }

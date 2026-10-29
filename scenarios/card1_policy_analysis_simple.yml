@@ -1,0 +1,21 @@
+name: Card 1, policy analysis simple
+workflows: [card1_policy_analysis_simple]
+people:
+  analyst: { org: O1, unit: U1 }
+  staff:   { org: O1, unit: U1 }
+  other:   { org: O1, unit: U2 }
+  ext:     {}
+workspaces: { w: { org: O1 } }
+steps:
+  - add_document: { id: d, workspace: w, owner: analyst, workflow: card1_policy_analysis_simple }
+  - act: { doc: d, by: analyst, action: upload }
+  - expect_access:
+      docs: { D: d }
+      table: { analyst: D, staff: "", other: "", ext: "" }
+      versions: { D: 2 }
+  - act: { doc: d, by: analyst, action: mark_finalized }
+  - expect_access:
+      docs: { D: d }
+      table: { analyst: D, staff: D, other: "", ext: "" }
+      versions: { D: 2 }
+  - expect_refused: { step: { act: { doc: d, by: analyst, action: upload } }, reason: not_accepted }   # a finalized analysis takes no new version

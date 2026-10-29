@@ -1,0 +1,36 @@
+{
+ "rows": [
+  {
+   "workflow": "card1_policy_analysis_simple",
+   "situations": 8,
+   "requests": 770,
+   "wrongful_allow": 0,
+   "wrongful_denial": 0,
+   "mutants": 31,
+   "killed": 28,
+   "mutation_score": 0.903,
+   "mutation_sampled": false
+  },
+  {
+   "workflow": "card2_policy_analysis_individual"
+  },
+  {
+   "workflow": "policy_analysis_team_single"
+  },
+  {
+   "workflow": "policy_analysis_other_unit_single"
+  },
+  {
+   "workflow": "card5_policy_analysis_sensitive"
+  },
+  {
+   "workflow": "knowledge_asset"
+  },
+  {
+   "workflow": "card7_official_document"
+  },
+  {
+   "workflow": "regulation_single"
+  }
+ ]
+}

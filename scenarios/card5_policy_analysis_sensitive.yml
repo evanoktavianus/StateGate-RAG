@@ -1,0 +1,41 @@
+name: Card 5, policy analysis D (sensitive)
+workflows: [card5_policy_analysis_sensitive]
+people:
+  lead:  { org: O1, unit: U1, positions: [leadership] }
+  t1:    { org: O1, unit: U1, groups: [g1] }
+  gh:    { org: O1, unit: U1, groups: [g1], positions: [group_head] }
+  fil:   { org: O1, unit: U1, positions: [filing] }
+  staff: { org: O1, unit: U1 }
+  other: { org: O1, unit: U2 }
+workspaces: { w: { org: O1 } }
+steps:
+  # as one document
+  - add_document: { id: d, workspace: w, owner: t1, workflow: card5_policy_analysis_sensitive, creator: lead, assign: { team: [t1] }, attrs: { group: g1 } }
+  - expect_refused: { step: { add_document: { id: x, workspace: w, owner: t1, workflow: card5_policy_analysis_sensitive, creator: staff, assign: { team: [t1] }, attrs: { group: g1 } } }, reason: not_permitted }
+  - act: { doc: d, by: t1, action: submit_for_review }
+  - act: { doc: d, by: gh, action: pass_to_leadership }
+  - expect_access:
+      docs: { D: d }
+      table: { t1: D, gh: D, lead: D, fil: "", staff: "", other: "" }
+  - expect_refused: { step: { act: { doc: d, by: gh, action: return } }, reason: not_permitted }
+  - expect_refused: { step: { act: { doc: d, by: t1, action: return } }, reason: not_permitted }
+  - act: { doc: d, by: lead, action: return }
+  - expect_state: { doc: d, state: working_document }
+  - expect_access:
+      docs: { D: d }
+      table: { t1: D, gh: "", lead: "", fil: "", staff: "", other: "" }
+  - act: { doc: d, by: t1, action: upload }
+  - act: { doc: d, by: t1, action: submit_for_review }
+  - act: { doc: d, by: gh, action: pass_to_leadership }
+  - expect_access:
+      docs: { D: d }
+      table: { t1: D, gh: D, lead: D, fil: "", staff: "", other: "" }
+      versions: { D: 2 }
+  - act: { doc: d, by: lead, action: decide }
+  - expect_access:
+      docs: { D: d }
+      table: { t1: D, gh: "", lead: D, fil: D, staff: "", other: "" }          # the group head reads only up to review
+  - act: { doc: d, by: lead, action: release }
+  - expect_access:
+      docs: { D: d }
+      table: { t1: D, gh: D, lead: D, fil: D, staff: D, other: "" }           # the unit staff, the group head among them

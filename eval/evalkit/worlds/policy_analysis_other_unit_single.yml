@@ -1,0 +1,3 @@
+workflow: policy_analysis_other_unit_single
+scenario: scenarios/policy_analysis_other_unit_single.yml
+document: { id: d, owner: an, creator: lead, assign: { team: [an] }, attrs: { group: [g1, g2], requesting_unit: [REQ, OTHERREQ] } }

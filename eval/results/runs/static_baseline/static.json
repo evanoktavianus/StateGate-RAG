@@ -1,0 +1,359 @@
+{
+ "workflows": {
+  "card1_policy_analysis_simple": {
+   "read_requests": 630,
+   "classes": 7,
+   "stategate": {
+    "requests": 630,
+    "wrongful_allow": 0,
+    "wrongful_denial": 0,
+    "wrong_version": 0,
+    "failed_requests": 0
+   },
+   "permissive": {
+    "requests": 630,
+    "wrongful_allow": 120,
+    "wrongful_denial": 0,
+    "wrong_version": 0,
+    "failed_requests": 120,
+    "classes_allowed": 3
+   },
+   "restrictive": {
+    "requests": 630,
+    "wrongful_allow": 0,
+    "wrongful_denial": 40,
+    "wrong_version": 0,
+    "failed_requests": 40,
+    "classes_allowed": 1
+   },
+   "best static": {
+    "requests": 630,
+    "wrongful_allow": 0,
+    "wrongful_denial": 40,
+    "wrong_version": 0,
+    "failed_requests": 40,
+    "classes_allowed": 1
+   },
+   "classes_whose_access_changes": 2,
+   "classes_whose_access_or_version_changes": 3,
+   "share_changes": 0.286,
+   "share_changes_access_or_version": 0.429
+  },
+  "card2_policy_analysis_individual": {
+   "read_requests": 6880,
+   "classes": 17,
+   "stategate": {
+    "requests": 6880,
+    "wrongful_allow": 0,
+    "wrongful_denial": 0,
+    "wrong_version": 0,
+    "failed_requests": 0
+   },
+   "permissive": {
+    "requests": 6880,
+    "wrongful_allow": 1150,
+    "wrongful_denial": 0,
+    "wrong_version": 0,
+    "failed_requests": 1150,
+    "classes_allowed": 6
+   },
+   "restrictive": {
+    "requests": 6880,
+    "wrongful_allow": 0,
+    "wrongful_denial": 450,
+    "wrong_version": 0,
+    "failed_requests": 450,
+    "classes_allowed": 2
+   },
+   "best static": {
+    "requests": 6880,
+    "wrongful_allow": 170,
+    "wrongful_denial": 220,
+    "wrong_version": 0,
+    "failed_requests": 390,
+    "classes_allowed": 3
+   },
+   "classes_whose_access_changes": 4,
+   "classes_whose_access_or_version_changes": 5,
+   "share_changes": 0.235,
+   "share_changes_access_or_version": 0.294
+  },
+  "policy_analysis_team_single": {
+   "read_requests": 7310,
+   "classes": 19,
+   "stategate": {
+    "requests": 7310,
+    "wrongful_allow": 0,
+    "wrongful_denial": 0,
+    "wrong_version": 0,
+    "failed_requests": 0
+   },
+   "permissive": {
+    "requests": 7310,
+    "wrongful_allow": 1150,
+    "wrongful_denial": 0,
+    "wrong_version": 0,
+    "failed_requests": 1150,
+    "classes_allowed": 8
+   },
+   "restrictive": {
+    "requests": 7310,
+    "wrongful_allow": 0,
+    "wrongful_denial": 450,
+    "wrong_version": 0,
+    "failed_requests": 450,
+    "classes_allowed": 4
+   },
+   "best static": {
+    "requests": 7310,
+    "wrongful_allow": 170,
+    "wrongful_denial": 220,
+    "wrong_version": 0,
+    "failed_requests": 390,
+    "classes_allowed": 5
+   },
+   "classes_whose_access_changes": 4,
+   "classes_whose_access_or_version_changes": 6,
+   "share_changes": 0.211,
+   "share_changes_access_or_version": 0.316
+  },
+  "policy_analysis_other_unit_single": {
+   "read_requests": 9112,
+   "classes": 18,
+   "stategate": {
+    "requests": 9112,
+    "wrongful_allow": 0,
+    "wrongful_denial": 0,
+    "wrong_version": 0,
+    "failed_requests": 0
+   },
+   "permissive": {
+    "requests": 9112,
+    "wrongful_allow": 1680,
+    "wrongful_denial": 0,
+    "wrong_version": 0,
+    "failed_requests": 1680,
+    "classes_allowed": 7
+   },
+   "restrictive": {
+    "requests": 9112,
+    "wrongful_allow": 0,
+    "wrongful_denial": 820,
+    "wrong_version": 0,
+    "failed_requests": 820,
+    "classes_allowed": 2
+   },
+   "best static": {
+    "requests": 9112,
+    "wrongful_allow": 180,
+    "wrongful_denial": 500,
+    "wrong_version": 0,
+    "failed_requests": 680,
+    "classes_allowed": 3
+   },
+   "classes_whose_access_changes": 5,
+   "classes_whose_access_or_version_changes": 6,
+   "share_changes": 0.278,
+   "share_changes_access_or_version": 0.333
+  },
+  "card5_policy_analysis_sensitive": {
+   "read_requests": 7776,
+   "classes": 17,
+   "stategate": {
+    "requests": 7776,
+    "wrongful_allow": 0,
+    "wrongful_denial": 0,
+    "wrong_version": 0,
+    "failed_requests": 0
+   },
+   "permissive": {
+    "requests": 7776,
+    "wrongful_allow": 2400,
+    "wrongful_denial": 0,
+    "wrong_version": 0,
+    "failed_requests": 2400,
+    "classes_allowed": 9
+   },
+   "restrictive": {
+    "requests": 7776,
+    "wrongful_allow": 0,
+    "wrongful_denial": 750,
+    "wrong_version": 0,
+    "failed_requests": 750,
+    "classes_allowed": 2
+   },
+   "best static": {
+    "requests": 7776,
+    "wrongful_allow": 220,
+    "wrongful_denial": 520,
+    "wrong_version": 0,
+    "failed_requests": 740,
+    "classes_allowed": 3
+   },
+   "classes_whose_access_changes": 7,
+   "classes_whose_access_or_version_changes": 8,
+   "share_changes": 0.412,
+   "share_changes_access_or_version": 0.471
+  },
+  "knowledge_asset": {
+   "read_requests": 13748,
+   "classes": 13,
+   "stategate": {
+    "requests": 13748,
+    "wrongful_allow": 0,
+    "wrongful_denial": 0,
+    "wrong_version": 0,
+    "failed_requests": 0
+   },
+   "permissive": {
+    "requests": 13748,
+    "wrongful_allow": 10420,
+    "wrongful_denial": 40,
+    "wrong_version": 32,
+    "failed_requests": 10428,
+    "classes_allowed": 13
+   },
+   "restrictive": {
+    "requests": 13748,
+    "wrongful_allow": 0,
+    "wrongful_denial": 1810,
+    "wrong_version": 0,
+    "failed_requests": 1810,
+    "classes_allowed": 1
+   },
+   "best static": {
+    "requests": 13748,
+    "wrongful_allow": 260,
+    "wrongful_denial": 1190,
+    "wrong_version": 0,
+    "failed_requests": 1450,
+    "classes_allowed": 2
+   },
+   "classes_whose_access_changes": 12,
+   "classes_whose_access_or_version_changes": 13,
+   "share_changes": 0.923,
+   "share_changes_access_or_version": 1.0
+  },
+  "card7_official_document": {
+   "read_requests": 8866,
+   "classes": 13,
+   "stategate": {
+    "requests": 8866,
+    "wrongful_allow": 0,
+    "wrongful_denial": 0,
+    "wrong_version": 0,
+    "failed_requests": 0
+   },
+   "permissive": {
+    "requests": 8866,
+    "wrongful_allow": 3210,
+    "wrongful_denial": 0,
+    "wrong_version": 0,
+    "failed_requests": 3210,
+    "classes_allowed": 8
+   },
+   "restrictive": {
+    "requests": 8866,
+    "wrongful_allow": 0,
+    "wrongful_denial": 1270,
+    "wrong_version": 0,
+    "failed_requests": 1270,
+    "classes_allowed": 1
+   },
+   "best static": {
+    "requests": 8866,
+    "wrongful_allow": 60,
+    "wrongful_denial": 690,
+    "wrong_version": 0,
+    "failed_requests": 750,
+    "classes_allowed": 2
+   },
+   "classes_whose_access_changes": 7,
+   "classes_whose_access_or_version_changes": 8,
+   "share_changes": 0.538,
+   "share_changes_access_or_version": 0.615
+  },
+  "regulation_single": {
+   "read_requests": 5064,
+   "classes": 12,
+   "stategate": {
+    "requests": 5064,
+    "wrongful_allow": 0,
+    "wrongful_denial": 0,
+    "wrong_version": 0,
+    "failed_requests": 0
+   },
+   "permissive": {
+    "requests": 5064,
+    "wrongful_allow": 1750,
+    "wrongful_denial": 0,
+    "wrong_version": 0,
+    "failed_requests": 1750,
+    "classes_allowed": 12
+   },
+   "restrictive": {
+    "requests": 5064,
+    "wrongful_allow": 0,
+    "wrongful_denial": 1450,
+    "wrong_version": 0,
+    "failed_requests": 1450,
+    "classes_allowed": 4
+   },
+   "best static": {
+    "requests": 5064,
+    "wrongful_allow": 140,
+    "wrongful_denial": 1190,
+    "wrong_version": 0,
+    "failed_requests": 1330,
+    "classes_allowed": 5
+   },
+   "classes_whose_access_changes": 8,
+   "classes_whose_access_or_version_changes": 12,
+   "share_changes": 0.667,
+   "share_changes_access_or_version": 1.0
+  }
+ },
+ "all": {
+  "read_requests": 59386,
+  "classes": 116,
+  "stategate": {
+   "requests": 59386,
+   "wrongful_allow": 0,
+   "wrongful_denial": 0,
+   "wrong_version": 0,
+   "failed_requests": 0
+  },
+  "permissive": {
+   "requests": 59386,
+   "wrongful_allow": 21880,
+   "wrongful_denial": 40,
+   "wrong_version": 32,
+   "failed_requests": 21888,
+   "classes_allowed": 66
+  },
+  "restrictive": {
+   "requests": 59386,
+   "wrongful_allow": 0,
+   "wrongful_denial": 7040,
+   "wrong_version": 0,
+   "failed_requests": 7040,
+   "classes_allowed": 17
+  },
+  "best static": {
+   "requests": 59386,
+   "wrongful_allow": 1200,
+   "wrongful_denial": 4570,
+   "wrong_version": 0,
+   "failed_requests": 5770,
+   "classes_allowed": 24
+  },
+  "classes_whose_access_changes": 49,
+  "classes_whose_access_or_version_changes": 61,
+  "share_changes": 0.422,
+  "share_changes_access_or_version": 0.526
+ },
+ "sanity_checks": {
+  "passed": true,
+  "problems": []
+ }
+}

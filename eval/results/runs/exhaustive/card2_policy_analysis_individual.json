@@ -1,0 +1,80 @@
+{
+ "situations": 94,
+ "search_cut_at_limit": false,
+ "people": 20,
+ "mutants": {
+  "eede39001bc58b41": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: group_head_review.access[0]: find \"latest\" -> {\"from\": \"group_head_review\"}"
+  },
+  "c3c4ff112fea2aa8": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: handed_over.access[0]: serve {\"from\": \"handed_over\"} -> {\"from\": \"group_head_review\"}"
+  },
+  "995e452deb8cfbb1": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: handed_over.access[0]: serve {\"from\": \"handed_over\"} -> \"latest\""
+  },
+  "b243c19932b0608d": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: handed_over.access[2]: serve {\"from\": \"handed_over\"} -> {\"from\": \"group_head_review\"}"
+  },
+  "d4dc0144fcf291c2": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: submitted.access[1]: find {\"from\": \"submitted\"} -> {\"from\": \"group_head_review\"}"
+  },
+  "ac71ff58ff8e3e7e": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: group_head_review.access[0]: serve \"latest\" -> {\"from\": \"group_head_review\"}"
+  },
+  "c63c6ba84b81dca5": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: submitted.access[2]: find {\"from\": \"submitted\"} -> \"latest\""
+  },
+  "585e116afd9f6899": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: handed_over.access[1]: find {\"from\": \"handed_over\"} -> \"latest\""
+  },
+  "b6ebe377b95daa1f": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: submitted.access[1]: serve {\"from\": \"submitted\"} -> \"latest\""
+  },
+  "87a5204f7500e356": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: handed_over.access[2]: find {\"from\": \"handed_over\"} -> \"latest\""
+  },
+  "31cb5e08c36a3014": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: handed_over.access[1]: serve {\"from\": \"handed_over\"} -> {\"from\": \"submitted\"}"
+  },
+  "5419b2d908ac9109": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: handed_over.access[0]: find {\"from\": \"handed_over\"} -> {\"from\": \"submitted\"}"
+  },
+  "6210ada11b6c817b": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "reorder_rules: handed_over.access: swap 1 and 2"
+  },
+  "a62b98ded7ca1e1a": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "reorder_rules: submitted.access: swap 0 and 1"
+  }
+ },
+ "workflow": "card2_policy_analysis_individual",
+ "claimed_equivalent": 14,
+ "confirmed": 14
+}

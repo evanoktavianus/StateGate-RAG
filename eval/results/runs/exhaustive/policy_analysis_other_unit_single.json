@@ -1,0 +1,85 @@
+{
+ "situations": 159,
+ "search_cut_at_limit": false,
+ "people": 22,
+ "mutants": {
+  "2d5e0ffbdd27d98b": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: group_head_review.access[1]: find {\"from\": \"group_head_review\"} -> \"latest\""
+  },
+  "df5ac7a8dad16e55": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: shared_with_requesting_unit.access[0]: find {\"from\": \"handed_over\"} -> \"latest\""
+  },
+  "ac5e25e1b2c68bf7": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: shared_with_requesting_unit.access[0]: serve {\"from\": \"handed_over\"} -> \"latest\""
+  },
+  "23db8220158541cb": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: shared_with_requesting_unit.access[3]: find {\"from\": \"handed_over\"} -> {\"from\": \"submitted\"}"
+  },
+  "a2ec7fa99b17b874": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: group_head_review.access[1]: serve {\"from\": \"group_head_review\"} -> \"latest\""
+  },
+  "281d66248cdc9650": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: shared_with_requesting_unit.access[0]: serve {\"from\": \"handed_over\"} -> {\"from\": \"submitted\"}"
+  },
+  "c9fb8e617ae32557": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: handed_over.access[2]: serve {\"from\": \"handed_over\"} -> {\"from\": \"group_head_review\"}"
+  },
+  "8d1ea2ba9136816e": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: shared_with_requesting_unit.access[2]: find {\"from\": \"handed_over\"} -> {\"from\": \"shared_with_requesting_unit\"}"
+  },
+  "3516e088b7d6d934": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: handed_over.access[3]: find {\"from\": \"handed_over\"} -> \"latest\""
+  },
+  "ea4488e1924c67e1": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: handed_over.access[0]: find {\"from\": \"handed_over\"} -> {\"from\": \"group_head_review\"}"
+  },
+  "3809d453b2355ca4": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: shared_with_requesting_unit.access[4]: serve {\"from\": \"handed_over\"} -> {\"from\": \"group_head_review\"}"
+  },
+  "d10fdfa34f7a7f79": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: shared_with_requesting_unit.access[1]: find {\"from\": \"handed_over\"} -> \"latest\""
+  },
+  "285d4671406e8c19": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: handed_over.access[3]: serve {\"from\": \"handed_over\"} -> \"latest\""
+  },
+  "6f35afbde69e4e83": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "reorder_rules: shared_with_requesting_unit.access: swap 2 and 3"
+  },
+  "fbf615bfe70dca44": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "reorder_rules: handed_over.access: swap 0 and 1"
+  }
+ },
+ "workflow": "policy_analysis_other_unit_single",
+ "claimed_equivalent": 15,
+ "confirmed": 15
+}

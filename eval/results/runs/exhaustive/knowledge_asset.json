@@ -1,0 +1,95 @@
+{
+ "situations": 3001,
+ "search_cut_at_limit": true,
+ "people": 17,
+ "mutants": {
+  "7f8d4883f0a2553d": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: disseminated.access[2]: serve {\"from\": \"disseminated\"} -> {\"from\": \"quality_assurance\"}"
+  },
+  "39aa483a91da0f3f": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: disseminated.access[3]: serve {\"from\": \"disseminated\"} -> \"latest\""
+  },
+  "fdf06c7905121edf": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: disseminated.access[3]: find (absent, = serve) -> \"latest\""
+  },
+  "365f00d78cd9d8de": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: disseminated.access[0]: serve {\"from\": \"disseminated\"} -> {\"from\": \"quality_assurance\"}"
+  },
+  "45930aa16173637c": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "flip_role: disseminated.access[1]: role viewer -> editor"
+  },
+  "6289338966560c76": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "flip_role: disseminated.access[2]: role viewer -> contributor"
+  },
+  "ecf94643a2fbb8ee": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "flip_role: working.access[5]: role none -> contributor"
+  },
+  "0ca6c51204946366": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "flip_role: quality_assurance.access[3]: role viewer -> editor"
+  },
+  "c49387d18f376635": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "flip_role: disseminated.access[5]: role none -> viewer"
+  },
+  "36be8ed071b6dd41": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "flip_role: disseminated.access[4]: role viewer -> editor"
+  },
+  "b64cf23eaca406fd": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "flip_role: quality_assurance.access[5]: role none -> contributor"
+  },
+  "46b2f26779cb1cc5": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "narrow_who: quality_assurance.access[5]: remove term 1 (\"public\")"
+  },
+  "007839944970b637": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "reorder_rules: disseminated.access: swap 0 and 1"
+  },
+  "a07b8653f63b7c51": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "widen_who: disseminated.access[4]: add unit"
+  },
+  "1975830a644231dc": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "widen_who: disseminated.access[3]: add unit"
+  },
+  "32d9ef1aa107677d": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "widen_who: quality_assurance.access[5]: add unit"
+  },
+  "a888e65330b7487b": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "widen_who: disseminated.access[4]: add organization"
+  }
+ },
+ "workflow": "knowledge_asset",
+ "claimed_equivalent": 17,
+ "confirmed": 17
+}

@@ -1,0 +1,302 @@
+{
+ "hardware": {
+  "python": "3.14.7",
+  "platform": "macOS-26.6.2-x86_64-i386-64bit-Mach-O",
+  "cores": 12,
+  "cpu": "Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+  "cores_physical": 6,
+  "ram_gb": 16.0
+ },
+ "model_calls": 0,
+ "database_url_set": false,
+ "store": "memory (in-process); PostgreSQL was not used: DATABASE_URL is not set on this machine",
+ "conditions": "one process on a laptop with other applications open, nothing else heavy running; the maxima are outliers of the machine (garbage collection, the system), the median and the 95th percentile are the figures",
+ "decision": {
+  "repetitions": 5,
+  "requests_per_pass": 76348,
+  "groups": {
+   "direct: list, open, open version": {
+    "n": 92635,
+    "median": 255.0,
+    "p95": 309.0,
+    "max": 44680.0
+   },
+   "direct: keyword, meaning, hybrid search": {
+    "n": 83745,
+    "median": 353.0,
+    "p95": 542.0,
+    "max": 70750.0
+   },
+   "agent tools: list, open, open version": {
+    "n": 92635,
+    "median": 255.0,
+    "p95": 311.0,
+    "max": 73610.0
+   },
+   "agent tools: search": {
+    "n": 27915,
+    "median": 150.0,
+    "p95": 322.0,
+    "max": 27091.0
+   },
+   "actions": {
+    "n": 80955,
+    "median": 158.0,
+    "p95": 186.0,
+    "max": 2012.0
+   }
+  },
+  "all reads": {
+   "n": 296930,
+   "median": 260.0,
+   "p95": 462.0,
+   "max": 73610.0,
+   "requests_per_second": 3823
+  },
+  "all requests": {
+   "n": 377885,
+   "median": 238.0,
+   "p95": 392.0,
+   "max": 73610.0,
+   "requests_per_second": 4171
+  },
+  "engine_decision": {
+   "visible": {
+    "n": 33498,
+    "median": 138.2,
+    "p95": 160.3,
+    "max": 22046.1
+   },
+   "readable_version": {
+    "n": 124480,
+    "median": 130.2,
+    "p95": 151.9,
+    "max": 43344.6
+   }
+  },
+  "engine_decision_note": "one pass of the grid with the two engine calls wrapped in a timer; the timer itself adds about 0.2 microseconds to each call",
+  "seconds": 195.1
+ },
+ "change": {
+  "accepted_steps": 324,
+  "of_which_the_step_added_a_version": 37,
+  "checks_after_a_step": 9252,
+  "disagreements_with_the_oracle": 0,
+  "action_us": {
+   "n": 324,
+   "median": 172.1,
+   "p95": 210.8,
+   "max": 237.9
+  },
+  "next_request_open_us": {
+   "n": 4626,
+   "median": 264.4,
+   "p95": 308.7,
+   "max": 485.1
+  },
+  "next_request_search_us": {
+   "n": 4626,
+   "median": 145.7,
+   "p95": 307.8,
+   "max": 542.9
+  },
+  "slowest_of_the_next_requests_per_step_us": {
+   "n": 324,
+   "median": 288.5,
+   "p95": 345.5,
+   "max": 542.9
+  },
+  "index_writes_by_an_action": 0,
+  "note": "the action call receives no index: it appends to the document's history. The first request after it is already answered from the new history for every person class.",
+  "seconds": 3.2
+ },
+ "search": {
+  "questions_as_written": true,
+  "pairs": 147,
+  "of_about": 1680,
+  "corpus": {
+   "synthetic passages": 76156,
+   "regulation passages": 9824
+  },
+  "store": "memory (in-process corpus); PostgreSQL was not used here",
+  "visible_passages_median": 937,
+  "timings_ms": {
+   "regulation": {
+    "hybrid": {
+     "filter, search only": {
+      "n": 54,
+      "median": 28.3,
+      "p95": 33.9,
+      "max": 35.8
+     },
+     "filter, with the visible set": {
+      "n": 54,
+      "median": 80.0,
+      "p95": 89.2,
+      "max": 94.6
+     },
+     "no filter": {
+      "n": 54,
+      "median": 149.4,
+      "p95": 169.4,
+      "max": 181.8
+     }
+    },
+    "keyword": {
+     "filter, search only": {
+      "n": 54,
+      "median": 23.7,
+      "p95": 28.5,
+      "max": 31.9
+     },
+     "filter, with the visible set": {
+      "n": 54,
+      "median": 75.5,
+      "p95": 85.6,
+      "max": 89.6
+     },
+     "no filter": {
+      "n": 54,
+      "median": 127.1,
+      "p95": 143.9,
+      "max": 149.3
+     }
+    },
+    "semantic": {
+     "filter, search only": {
+      "n": 54,
+      "median": 3.7,
+      "p95": 11.7,
+      "max": 13.1
+     },
+     "filter, with the visible set": {
+      "n": 54,
+      "median": 56.5,
+      "p95": 65.0,
+      "max": 67.0
+     },
+     "no filter": {
+      "n": 54,
+      "median": 23.4,
+      "p95": 50.0,
+      "max": 50.9
+     }
+    },
+    "visible set": {
+     "filter": {
+      "n": 54,
+      "median": 51.8,
+      "p95": 59.4,
+      "max": 60.7
+     }
+    }
+   },
+   "synthetic": {
+    "hybrid": {
+     "filter, search only": {
+      "n": 93,
+      "median": 8.0,
+      "p95": 12.6,
+      "max": 16.1
+     },
+     "filter, with the visible set": {
+      "n": 93,
+      "median": 57.2,
+      "p95": 76.6,
+      "max": 134.7
+     },
+     "no filter": {
+      "n": 93,
+      "median": 1214.4,
+      "p95": 1690.5,
+      "max": 2274.6
+     }
+    },
+    "keyword": {
+     "filter, search only": {
+      "n": 93,
+      "median": 5.6,
+      "p95": 11.2,
+      "max": 15.4
+     },
+     "filter, with the visible set": {
+      "n": 93,
+      "median": 56.2,
+      "p95": 73.8,
+      "max": 136.5
+     },
+     "no filter": {
+      "n": 93,
+      "median": 816.1,
+      "p95": 1180.9,
+      "max": 1450.9
+     }
+    },
+    "semantic": {
+     "filter, search only": {
+      "n": 93,
+      "median": 2.1,
+      "p95": 6.3,
+      "max": 9.9
+     },
+     "filter, with the visible set": {
+      "n": 93,
+      "median": 54.0,
+      "p95": 69.7,
+      "max": 129.4
+     },
+     "no filter": {
+      "n": 93,
+      "median": 381.8,
+      "p95": 418.6,
+      "max": 676.0
+     }
+    },
+    "visible set": {
+     "filter": {
+      "n": 93,
+      "median": 52.3,
+      "p95": 67.8,
+      "max": 123.1
+     }
+    }
+   }
+  },
+  "seconds": 556.9
+ },
+ "seconds": {
+  "decision": 195.1,
+  "change": 3.2,
+  "search": 556.9,
+  "overhead": 322.6
+ },
+ "overhead": {
+  "repetitions": 5,
+  "read_requests": 59386,
+  "with_check_us": {
+   "n": 59386,
+   "median": 277.2,
+   "p95": 519.4,
+   "max": 22878.8
+  },
+  "check_off_us": {
+   "n": 59386,
+   "median": 181.2,
+   "p95": 501.8,
+   "max": 39461.6
+  },
+  "extra_per_request_us": {
+   "n": 59386,
+   "median": 74.6,
+   "p95": 273.2,
+   "max": 18216.8
+  },
+  "ratio_of_medians": 1.53,
+  "requests_per_second": {
+   "with_check": 3394,
+   "check_off": 4169
+  },
+  "note": "each request's time is the mean over the repetitions; the extra time is paired by request; negative values are noise of the machine",
+  "seconds": 322.6
+ }
+}

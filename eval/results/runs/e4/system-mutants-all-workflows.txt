@@ -1,0 +1,48 @@
+card1_policy_analysis_simple: clean copy -> 0 disagreements
+card1_policy_analysis_simple: stale_decision_cache -> KILLED (88 disagreements); probe P7 pass {'people_compared': 3, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+card1_policy_analysis_simple: skip_who_and_requirement_check -> KILLED (72 disagreements); probe P7 pass {'people_compared': 3, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+card1_policy_analysis_simple: accept_action_from_any_state -> CRASHED (the run itself fails: AttributeError: 'NoneType' object has no attribute 'assign'); probe P7 pass {'people_compared': 3, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+card1_policy_analysis_simple: serve_latest_not_version_as_of_state -> survived (0 disagreements); probe P7 pass {'people_compared': 3, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+card1_policy_analysis_simple: pooled_keyword_statistics -> survived (0 disagreements); probe P7 fail {'people_compared': 3, 'different': 3} | P7b fail {'comparisons': 4, 'different': 1}
+card2_policy_analysis_individual: clean copy -> 0 disagreements
+card2_policy_analysis_individual: stale_decision_cache -> KILLED (618 disagreements); probe P7 pass {'people_compared': 7, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+card2_policy_analysis_individual: skip_who_and_requirement_check -> KILLED (240 disagreements); probe P7 not_applicable {'people_compared': 0, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+card2_policy_analysis_individual: accept_action_from_any_state -> CRASHED (the run itself fails: AttributeError: 'NoneType' object has no attribute 'assign'); probe P7 pass {'people_compared': 7, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+card2_policy_analysis_individual: serve_latest_not_version_as_of_state -> survived (0 disagreements); probe P7 pass {'people_compared': 7, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+card2_policy_analysis_individual: pooled_keyword_statistics -> survived (0 disagreements); probe P7 fail {'people_compared': 7, 'different': 7} | P7b fail {'comparisons': 4, 'different': 1}
+card5_policy_analysis_sensitive: clean copy -> 0 disagreements
+card5_policy_analysis_sensitive: stale_decision_cache -> KILLED (954 disagreements); probe P7 pass {'people_compared': 11, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+card5_policy_analysis_sensitive: skip_who_and_requirement_check -> KILLED (240 disagreements); probe P7 not_applicable {'people_compared': 0, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+card5_policy_analysis_sensitive: accept_action_from_any_state -> CRASHED (the run itself fails: AttributeError: 'NoneType' object has no attribute 'assign'); probe P7 pass {'people_compared': 11, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+card5_policy_analysis_sensitive: serve_latest_not_version_as_of_state -> survived (0 disagreements); probe P7 pass {'people_compared': 11, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+card5_policy_analysis_sensitive: pooled_keyword_statistics -> survived (0 disagreements); probe P7 fail {'people_compared': 11, 'different': 11} | P7b fail {'comparisons': 4, 'different': 1}
+card7_official_document: clean copy -> 0 disagreements
+card7_official_document: stale_decision_cache -> KILLED (1230 disagreements); probe P7 pass {'people_compared': 10, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+card7_official_document: skip_who_and_requirement_check -> KILLED (528 disagreements); probe P7 not_applicable {'people_compared': 0, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+card7_official_document: accept_action_from_any_state -> CRASHED (the run itself fails: AttributeError: 'NoneType' object has no attribute 'assign'); probe P7 pass {'people_compared': 10, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+card7_official_document: serve_latest_not_version_as_of_state -> survived (0 disagreements); probe P7 pass {'people_compared': 10, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+card7_official_document: pooled_keyword_statistics -> survived (0 disagreements); probe P7 fail {'people_compared': 10, 'different': 10} | P7b fail {'comparisons': 4, 'different': 1}
+knowledge_asset: clean copy -> 0 disagreements
+knowledge_asset: stale_decision_cache -> KILLED (2418 disagreements); probe P7 pass {'people_compared': 5, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+knowledge_asset: skip_who_and_requirement_check -> KILLED (904 disagreements); probe P7 fail {'people_compared': 4, 'different': 1} | P7b pass {'comparisons': 4, 'different': 0}
+knowledge_asset: accept_action_from_any_state -> CRASHED (the run itself fails: AttributeError: 'NoneType' object has no attribute 'assign'); probe P7 pass {'people_compared': 5, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+knowledge_asset: serve_latest_not_version_as_of_state -> KILLED (838 disagreements); probe P7 fail {'people_compared': 5, 'different': 1} | P7b pass {'comparisons': 4, 'different': 0}
+knowledge_asset: pooled_keyword_statistics -> survived (0 disagreements); probe P7 fail {'people_compared': 5, 'different': 5} | P7b fail {'comparisons': 4, 'different': 1}
+policy_analysis_other_unit_single: clean copy -> 0 disagreements
+policy_analysis_other_unit_single: stale_decision_cache -> KILLED (1024 disagreements); probe P7 pass {'people_compared': 8, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+policy_analysis_other_unit_single: skip_who_and_requirement_check -> KILLED (288 disagreements); probe P7 not_applicable {'people_compared': 0, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+policy_analysis_other_unit_single: accept_action_from_any_state -> CRASHED (the run itself fails: AttributeError: 'NoneType' object has no attribute 'assign'); probe P7 pass {'people_compared': 8, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+policy_analysis_other_unit_single: serve_latest_not_version_as_of_state -> survived (0 disagreements); probe P7 pass {'people_compared': 8, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+policy_analysis_other_unit_single: pooled_keyword_statistics -> survived (0 disagreements); probe P7 fail {'people_compared': 8, 'different': 8} | P7b fail {'comparisons': 4, 'different': 1}
+policy_analysis_team_single: clean copy -> 0 disagreements
+policy_analysis_team_single: stale_decision_cache -> KILLED (786 disagreements); probe P7 pass {'people_compared': 7, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+policy_analysis_team_single: skip_who_and_requirement_check -> KILLED (248 disagreements); probe P7 not_applicable {'people_compared': 0, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+policy_analysis_team_single: accept_action_from_any_state -> CRASHED (the run itself fails: AttributeError: 'NoneType' object has no attribute 'assign'); probe P7 pass {'people_compared': 7, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+policy_analysis_team_single: serve_latest_not_version_as_of_state -> survived (0 disagreements); probe P7 pass {'people_compared': 7, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+policy_analysis_team_single: pooled_keyword_statistics -> survived (0 disagreements); probe P7 fail {'people_compared': 7, 'different': 7} | P7b fail {'comparisons': 4, 'different': 1}
+regulation_single: clean copy -> 0 disagreements
+regulation_single: stale_decision_cache -> KILLED (1930 disagreements); probe P7 pass {'people_compared': 12, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+regulation_single: skip_who_and_requirement_check -> KILLED (160 disagreements); probe P7 not_applicable {'people_compared': 0, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+regulation_single: accept_action_from_any_state -> CRASHED (the run itself fails: AttributeError: 'NoneType' object has no attribute 'assign'); probe P7 pass {'people_compared': 12, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+regulation_single: serve_latest_not_version_as_of_state -> survived (0 disagreements); probe P7 pass {'people_compared': 12, 'different': 0} | P7b pass {'comparisons': 4, 'different': 0}
+regulation_single: pooled_keyword_statistics -> survived (0 disagreements); probe P7 fail {'people_compared': 12, 'different': 12} | P7b fail {'comparisons': 4, 'different': 1}

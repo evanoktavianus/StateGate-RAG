@@ -1,0 +1,51 @@
+name: Card 2, policy analysis A (individual task)
+workflows: [card2_policy_analysis_individual]
+people:
+  lead:  { org: O1, unit: U1, positions: [leadership] }
+  an:    { org: O1, unit: U1, groups: [g1] }
+  gh:    { org: O1, unit: U1, groups: [g1], positions: [group_head] }     # the group head of the analyst's group
+  gh2:   { org: O1, unit: U1, groups: [g2], positions: [group_head] }     # the head of another group: not this analysis's
+  fil:   { org: O1, unit: U1, positions: [filing] }
+  staff: { org: O1, unit: U1 }
+workspaces: { w: { org: O1 } }
+steps:
+  - expect_refused: { step: { add_document: { id: d, workspace: w, owner: an, workflow: card2_policy_analysis_individual, creator: staff, assign: { analyst: [an] }, attrs: { group: g1 } } }, reason: not_permitted }
+  - expect_refused: { step: { add_document: { id: d, workspace: w, owner: an, workflow: card2_policy_analysis_individual, creator: lead, assign: { analyst: [an] } } }, reason: attribute_needed }
+  - add_document: { id: d, workspace: w, owner: an, workflow: card2_policy_analysis_individual, creator: lead, assign: { analyst: [an] }, attrs: { group: g1 } }
+  - expect_access:
+      docs: { D: d }
+      table: { an: D, gh: "", gh2: "", lead: "", fil: "", staff: "" }
+  - act: { doc: d, by: an, action: submit_for_review }
+  - expect_access:
+      docs: { D: d }
+      table: { an: D, gh: D, gh2: "", lead: "", fil: "", staff: "" }
+  - expect_refused: { step: { act: { doc: d, by: gh2, action: pass_to_leadership } }, reason: not_permitted }
+  - act: { doc: d, by: gh, action: request_revision }
+  - expect_state: { doc: d, state: working_document }
+  - act: { doc: d, by: an, action: upload }
+  - act: { doc: d, by: an, action: submit_for_review }
+  - act: { doc: d, by: gh, action: pass_to_leadership }
+  - expect_access:
+      docs: { D: d }
+      table: { an: D, gh: D, gh2: "", lead: D, fil: "", staff: "" }
+      versions: { D: 2 }
+  - expect_refused: { step: { act: { doc: d, by: gh, action: return } }, reason: not_permitted }
+  - expect_refused: { step: { act: { doc: d, by: an, action: return } }, reason: not_permitted }
+  - act: { doc: d, by: lead, action: return }
+  - expect_state: { doc: d, state: working_document }
+  - expect_access:
+      docs: { D: d }
+      table: { an: D, gh: "", gh2: "", lead: "", fil: "", staff: "" }
+      versions: { D: 2 }
+  - act: { doc: d, by: an, action: upload }
+  - act: { doc: d, by: an, action: submit_for_review }
+  - act: { doc: d, by: gh, action: pass_to_leadership }
+  - expect_access:
+      docs: { D: d }
+      table: { an: D, gh: D, gh2: "", lead: D, fil: "", staff: "" }
+      versions: { D: 3 }
+  - act: { doc: d, by: an, action: hand_over }
+  - expect_access:
+      docs: { D: d }
+      table: { an: D, gh: D, gh2: "", lead: D, fil: D, staff: "" }
+      versions: { D: 3 }

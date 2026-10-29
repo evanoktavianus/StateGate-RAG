@@ -1,0 +1,53 @@
+# Card 5. Policy analysis D, sensitive analysis: unit staff see the analysis only after the decision is released.
+# The team is named by the assignment letter.
+name: Policy analysis D, sensitive
+initial: working_document
+default_access: deny
+
+attributes:
+  group: {}
+
+create:
+  by: { position: leadership }
+  assign:
+    team: { from: unit, min: 1 }
+  set: [group]
+
+states:
+  working_document:
+    access:
+      - { who: { assigned: team }, serve: latest, find: latest }
+    on:
+      upload: { to: working_document, by: { assigned: team } }
+      submit_for_review: { to: group_head_review, by: { assigned: team } }                                        # 1
+
+  group_head_review:
+    access:
+      - { who: { assigned: team }, serve: { from: group_head_review }, find: { from: group_head_review } }
+      - { who: { all: [{ position: group_head }, { same: { group: group } }] }, serve: { from: group_head_review }, find: { from: group_head_review } }
+    on:
+      request_revision: { to: working_document, by: { all: [{ position: group_head }, { same: { group: group } }] } }   # 2
+      pass_to_leadership: { to: submitted, by: { all: [{ position: group_head }, { same: { group: group } }] } }        # 3
+
+  submitted:
+    access:
+      - { who: { assigned: team }, serve: { from: submitted }, find: { from: submitted } }
+      - { who: { all: [{ position: group_head }, { same: { group: group } }] }, serve: { from: submitted }, find: { from: submitted } }
+      - { who: { all: [{ position: leadership }, unit] }, serve: { from: submitted }, find: { from: submitted } }
+    on:
+      return: { to: working_document, by: { all: [{ position: leadership }, unit] } }                          # return for rework
+      decide: { to: decision_taken, by: { all: [{ position: leadership }, unit] } }                                # 4
+
+  decision_taken:
+    access:                                  # the group head reads only up to review
+      - { who: { assigned: team }, serve: { from: decision_taken }, find: { from: decision_taken } }
+      - { who: { all: [{ position: leadership }, unit] }, serve: { from: decision_taken }, find: { from: decision_taken } }
+      - { who: { all: [{ position: filing }, unit] }, serve: { from: decision_taken }, find: { from: decision_taken } }
+    on:
+      release: { to: released_to_unit, by: { all: [{ position: leadership }, unit] } }                             # 5
+
+  released_to_unit:
+    access:                                  # unit staff, the group head among them, read it again
+      - { who: { assigned: team }, serve: { from: released_to_unit }, find: { from: released_to_unit } }
+      - { who: unit, serve: { from: released_to_unit }, find: { from: released_to_unit } }
+    on: {}

@@ -1,0 +1,110 @@
+[
+ {
+  "probe": "P1",
+  "name": "A document is shown to the wrong person in some state",
+  "status": "pass",
+  "detail": "covered by the request grid (every state, person class and channel)",
+  "counts": {
+   "requests": 9824,
+   "disagreements": 0
+  }
+ },
+ {
+  "probe": "P2",
+  "name": "Old access survives a change of state",
+  "status": "pass",
+  "detail": "persons who lost access at a transition, and named older versions asked after it",
+  "counts": {
+   "lost_access_cases": 55,
+   "still_served": 0,
+   "superseded_version_served": 0
+  }
+ },
+ {
+  "probe": "P3",
+  "name": "A refusal reveals that the document exists",
+  "status": "pass",
+  "detail": "HTTP layer: same status and body True, same tool result True",
+  "counts": {
+   "refused_requests_checked": 2976,
+   "existence_leaks": 0
+  }
+ },
+ {
+  "probe": "P4",
+  "name": "Access crosses the unit boundary",
+  "status": "pass",
+  "detail": "scripted tool calls by a person of another unit of the same organization, of another organization, and a signed-in outsider",
+  "counts": {
+   "calls": 96,
+   "wrong": 0
+  }
+ },
+ {
+  "probe": "P5",
+  "name": "An action is accepted from someone who may not take it",
+  "status": "pass",
+  "detail": "the action grid, with `create` by someone not allowed",
+  "counts": {
+   "actions_and_creates": 2048,
+   "should_be_refused": 1957,
+   "wrongly_accepted": 0
+  }
+ },
+ {
+  "probe": "P6",
+  "name": "Legitimate users are refused",
+  "status": "pass",
+  "detail": "wrongful denial over the grid, and the fill of the restricted search",
+  "counts": {
+   "requests": 9824,
+   "wrongful_denials": 0,
+   "authorized_yield_mean": 0.295,
+   "fill_mean": 1.0
+  }
+ },
+ {
+  "probe": "P7",
+  "name": "A hidden document changes what a person sees",
+  "status": "pass",
+  "detail": "ranking and scores for each person, with every unreadable document in the corpus and with none",
+  "counts": {
+   "people_compared": 11,
+   "different": 0
+  }
+ },
+ {
+  "probe": "P7b",
+  "name": "A hidden document in the same unit or another unit changes a ranking",
+  "status": "pass",
+  "detail": "search layer of a two-unit repository (PostgreSQL); hidden documents stuffed with the query words and the query vector in U1 and U2",
+  "counts": {
+   "comparisons": 4,
+   "different": 0
+  }
+ },
+ {
+  "probe": "P8",
+  "name": "A restart changes an answer",
+  "status": "pass",
+  "detail": "the world is dropped and loaded again from the repository alone; the read answers are compared",
+  "counts": {
+   "answers_compared": 63,
+   "different": 0
+  }
+ },
+ {
+  "probe": "G1",
+  "name": "A person changes position or unit after documents were handled",
+  "status": "not_applicable",
+  "detail": "out of scope: each fixture person has one unit and fixed positions; the engine reads them at request time, which the grid does not vary over time",
+  "counts": {}
+ },
+ {
+  "probe": "G2",
+  "name": "Concurrent actions",
+  "status": "not_applicable",
+  "detail": "out of scope: the PostgreSQL repository uses one connection with a lock; ordering is not tested here",
+  "counts": {}
+ }
+]

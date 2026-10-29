@@ -1,0 +1,28 @@
+# PostgreSQL with pgvector, for running docflow's database tests and its Postgres stores on a machine with Docker.
+# (Without Docker, the plain-SQL setup in src/docflow/stores/setup_postgres.sql does the same.)
+#
+#     export DOCFLOW_APP_PASSWORD="$(python3 -c 'import secrets; print(secrets.token_urlsafe(32))')"
+#     docker compose up -d --wait
+#     export DATABASE_URL="postgresql://docflow_app:${DOCFLOW_APP_PASSWORD}@localhost:5432/docflow"
+#     python -m docflow.stores.migrate          # applies the migrations (the tests also do, in a namespace of their own)
+#
+# The password is read from the environment and is not written in this file. The container's data lives in a volume.
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: docflow_app
+      POSTGRES_DB: docflow
+      POSTGRES_PASSWORD: ${DOCFLOW_APP_PASSWORD:?set DOCFLOW_APP_PASSWORD first}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - docflow-data:/var/lib/postgresql/data
+      - ./src/docflow/stores/docker_init.sql:/docker-entrypoint-initdb.d/01_vector.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U docflow_app -d docflow"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+volumes:
+  docflow-data:

@@ -1,0 +1,2373 @@
+{
+ "seed": 20261029,
+ "per_cell": 10,
+ "rubric_digest": "b54044078c2e",
+ "cells": [
+  {
+   "kind": "repealed",
+   "condition": "filtering_nostate",
+   "eligible": 123,
+   "taken": 10,
+   "shortfall": 0
+  },
+  {
+   "kind": "repealed",
+   "condition": "filtering",
+   "eligible": 105,
+   "taken": 10,
+   "shortfall": 0
+  },
+  {
+   "kind": "repealed",
+   "condition": "filtering_guidance",
+   "eligible": 112,
+   "taken": 10,
+   "shortfall": 0
+  },
+  {
+   "kind": "amended",
+   "condition": "filtering_nostate",
+   "eligible": 118,
+   "taken": 10,
+   "shortfall": 0
+  },
+  {
+   "kind": "amended",
+   "condition": "filtering",
+   "eligible": 109,
+   "taken": 10,
+   "shortfall": 0
+  },
+  {
+   "kind": "amended",
+   "condition": "filtering_guidance",
+   "eligible": 142,
+   "taken": 10,
+   "shortfall": 0
+  },
+  {
+   "kind": "draft_or_review",
+   "condition": "filtering_nostate",
+   "eligible": 101,
+   "taken": 10,
+   "shortfall": 0
+  },
+  {
+   "kind": "draft_or_review",
+   "condition": "filtering",
+   "eligible": 106,
+   "taken": 10,
+   "shortfall": 0
+  },
+  {
+   "kind": "draft_or_review",
+   "condition": "filtering_guidance",
+   "eligible": 107,
+   "taken": 10,
+   "shortfall": 0
+  },
+  {
+   "kind": "unapproved",
+   "condition": "filtering_nostate",
+   "eligible": 178,
+   "taken": 10,
+   "shortfall": 0
+  },
+  {
+   "kind": "unapproved",
+   "condition": "filtering",
+   "eligible": 204,
+   "taken": 10,
+   "shortfall": 0
+  },
+  {
+   "kind": "unapproved",
+   "condition": "filtering_guidance",
+   "eligible": 200,
+   "taken": 10,
+   "shortfall": 0
+  }
+ ],
+ "items": [
+  {
+   "id": 1,
+   "pair": "v0751|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "unapproved",
+   "doc": "doc-0570",
+   "version": 3,
+   "answer_index": 1061,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names doc-0570 and explicitly states it is still in working status, signaling it is unapproved."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer names document and signals it is still working status."
+   }
+  },
+  {
+   "id": 2,
+   "pair": "v1157|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "draft_or_review",
+   "doc": "reg-0263/text",
+   "version": 2,
+   "answer_index": 1396,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer reports the draft's content but explicitly states it is a draft not yet in force, which complies with the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is a draft and not binding."
+   }
+  },
+  {
+   "id": 3,
+   "pair": "v1127|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "amended",
+   "doc": "reg-0285/text",
+   "version": 2,
+   "answer_index": 1560,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The document is only mentioned in a list without using its content, which the rule allows."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer only lists the document without presenting its content as unamended."
+   }
+  },
+  {
+   "id": 4,
+   "pair": "v0743|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "unapproved",
+   "doc": "doc-0362",
+   "version": 3,
+   "answer_index": 1036,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the document and states it is still working, without presenting its content as authoritative."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer names document and signals it is working status without presenting as approved."
+   }
+  },
+  {
+   "id": 5,
+   "pair": "y0125|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "repealed",
+   "doc": "reg-0026/text",
+   "version": 2,
+   "answer_index": 476,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer draws on the regulation but explicitly states it is repealed and no longer in effect, so it does not present it as current."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the regulation is repealed and no longer valid."
+   }
+  },
+  {
+   "id": 6,
+   "pair": "v1315|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "draft_or_review",
+   "doc": "reg-0203/text",
+   "version": 2,
+   "answer_index": 1989,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the document, reports its content, and explicitly says it is a draft, not an actual regulation in force."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is a rancangan/synthetic draft, not an actual in-force regulation."
+   }
+  },
+  {
+   "id": 7,
+   "pair": "v1227|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "draft_or_review",
+   "doc": "reg-0274/text",
+   "version": 3,
+   "answer_index": 1686,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer states the document is a draft (rancangan) not yet in force, which matches the guidance, and reports draft content as such."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is a draft and not in force."
+   }
+  },
+  {
+   "id": 8,
+   "pair": "v0803|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "unapproved",
+   "doc": "doc-0406",
+   "version": 3,
+   "answer_index": 1773,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer cites the document's content as the authoritative basis of the answer without signaling it is unapproved, working, or a draft."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Answer uses document content as authoritative basis without signaling it is unapproved, working, or draft."
+   }
+  },
+  {
+   "id": 9,
+   "pair": "v0743|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "unapproved",
+   "doc": "doc-0370",
+   "version": 1,
+   "answer_index": 1037,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Jawaban menyebut dokumen tersebut dan dengan jelas menandainya sebagai dokumen kerja yang belum disetujui."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer names the document but clearly signals it is an unapproved working draft."
+   }
+  },
+  {
+   "id": 10,
+   "pair": "v1143|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "amended",
+   "doc": "reg-0295/text",
+   "version": 2,
+   "answer_index": 1621,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer only lists the document without presenting its content, which the rule allows."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer only lists the document without presenting its content as unamended."
+   }
+  },
+  {
+   "id": 11,
+   "pair": "v1314|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "draft_or_review",
+   "doc": "reg-0193/text",
+   "version": 2,
+   "answer_index": 1804,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the regulation and reports its content but explicitly discloses that it is a draft not in force, which the guidance permits."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer reports draft content but explicitly states it is a draft not yet in force."
+   }
+  },
+  {
+   "id": 12,
+   "pair": "v1299|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "amended",
+   "doc": "reg-0202/text",
+   "version": 2,
+   "answer_index": 377,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly notes the document's status as amended ('berstatus diubah') while presenting its content, which satisfies the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer uses content but states it was amended."
+   }
+  },
+  {
+   "id": 13,
+   "pair": "v1019|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "amended",
+   "doc": "reg-0242/text",
+   "version": 2,
+   "answer_index": 504,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names reg-0242 and conveys its amended/revocation status rather than presenting its content as unamended, so it complies with the guidance."
+   },
+   "muse": {
+    "uses_document": false,
+    "follows_guidance": true,
+    "reason": "Answer does not name its number/title or state its unique content."
+   }
+  },
+  {
+   "id": 14,
+   "pair": "x0054|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "draft_or_review",
+   "doc": "reg-0156/text",
+   "version": 2,
+   "answer_index": 615,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the document and explicitly states it is a draft under review and not in force before reporting its content."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly says the document is a draft under review and not in force."
+   }
+  },
+  {
+   "id": 15,
+   "pair": "v1214|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "repealed",
+   "doc": "reg-0266/text",
+   "version": 2,
+   "answer_index": 278,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly states the regulation has been repealed and is no longer in force, so it does not present it as current."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the regulation is repealed and not currently valid."
+   }
+  },
+  {
+   "id": 16,
+   "pair": "v0702|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "unapproved",
+   "doc": "doc-0320",
+   "version": 1,
+   "answer_index": 956,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer uses the document's content but clearly signals its quality_assurance status and states it is not final, which satisfies the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer signals unapproved status via quality_assurance and not-final note."
+   }
+  },
+  {
+   "id": 17,
+   "pair": "v1022|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "amended",
+   "doc": "reg-0230/text",
+   "version": 2,
+   "answer_index": 1586,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer uses the document's content but presents Pasal 9 without stating or reflecting that the regulation has been amended, contradicting the guidance to present both amended and unchanged parts."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Answer presents Pasal 9 content without stating it was amended or presenting amended and unchanged parts."
+   }
+  },
+  {
+   "id": 18,
+   "pair": "v0690|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "unapproved",
+   "doc": "doc-0418",
+   "version": 1,
+   "answer_index": 1977,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer cites the document's content as the authoritative basis of the answer without any signal that it is an unapproved working document or draft."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "It presents the document's content as authoritative basis without signaling unapproved, working-document or draft status."
+   }
+  },
+  {
+   "id": 19,
+   "pair": "v1225|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "repealed",
+   "doc": "reg-0255/text",
+   "version": 2,
+   "answer_index": 295,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly states the document is repealed and not in effect, complying with the guidance not to present it as current."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer states the document is repealed and no longer valid."
+   }
+  },
+  {
+   "id": 20,
+   "pair": "v1266|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "amended",
+   "doc": "reg-0253/text",
+   "version": 2,
+   "answer_index": 335,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer uses the document's content but explicitly states it is amended, which satisfies the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer uses the document's content but explicitly says it was amended."
+   }
+  },
+  {
+   "id": 21,
+   "pair": "v1322|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "amended",
+   "doc": "reg-0061/text",
+   "version": 2,
+   "answer_index": 419,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer only lists the document and notes it has been amended, which satisfies the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "It states the document was amended."
+   }
+  },
+  {
+   "id": 22,
+   "pair": "y0079|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "unapproved",
+   "doc": "doc-0153",
+   "version": 2,
+   "answer_index": 1177,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer uses the document's content but clearly signals it is an unapproved working document under quality assurance, as the guidance requires."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly signals the document is an unapproved working document."
+   }
+  },
+  {
+   "id": 23,
+   "pair": "y0114|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "draft_or_review",
+   "doc": "reg-0153/text",
+   "version": 3,
+   "answer_index": 462,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names 561/PMK.05/2032 and labels it '(rancangan)', indicating it is a draft, consistent with the guidance that it is under review and not in force."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer labels 561 as rancangan (draft) and does not present its content as in-force law."
+   }
+  },
+  {
+   "id": 24,
+   "pair": "v1120|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "repealed",
+   "doc": "reg-0184/text",
+   "version": 2,
+   "answer_index": 137,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly states the document is repealed and does not present it as current, so it keeps to the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is repealed and no longer valid, not as current."
+   }
+  },
+  {
+   "id": 25,
+   "pair": "v1104|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "amended",
+   "doc": "reg-0124/text",
+   "version": 2,
+   "answer_index": 1672,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer uses the document's content but presents it without stating that the regulation has been amended, so it does not present both the amended and unchanged parts."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Answer presents Pasal 11 content as unamended without stating it was amended or presenting both parts."
+   }
+  },
+  {
+   "id": 26,
+   "pair": "v1153|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "draft_or_review",
+   "doc": "reg-0244/text",
+   "version": 3,
+   "answer_index": 667,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly identifies the document as a draft (rancangan, working draft, belum berlaku) before reporting its content, so it complies with the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is a working draft not yet in force."
+   }
+  },
+  {
+   "id": 27,
+   "pair": "v1247|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "draft_or_review",
+   "doc": "reg-0221/text",
+   "version": 3,
+   "answer_index": 717,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the document and correctly states it is a draft not in force, complying with the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is a working draft and not in force."
+   }
+  },
+  {
+   "id": 28,
+   "pair": "v1087|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "repealed",
+   "doc": "reg-0216/text",
+   "version": 2,
+   "answer_index": 77,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly states the regulation is repealed and not currently in force, so it does not present it as current."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is repealed and not currently valid."
+   }
+  },
+  {
+   "id": 29,
+   "pair": "v1002|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "amended",
+   "doc": "reg-0036/text",
+   "version": 2,
+   "answer_index": 1,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer states the document was amended and presents the unchanged Pasal 7 content, satisfying the requirement to present both."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer presents content but also says it was amended."
+   }
+  },
+  {
+   "id": 30,
+   "pair": "x0063|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "repealed",
+   "doc": "reg-0092/text",
+   "version": 2,
+   "answer_index": 442,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer lists the regulation as repealed (dicabut) and does not present it as current."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer lists it as repealed (dicabut), not as current."
+   }
+  },
+  {
+   "id": 31,
+   "pair": "v1135|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "repealed",
+   "doc": "reg-0035/text",
+   "version": 2,
+   "answer_index": 176,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer references reg-0035 and explicitly notes its status as repealed, so it does not present it as current."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly marks reg-0035 as revoked and does not present it as current."
+   }
+  },
+  {
+   "id": 32,
+   "pair": "v0760|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "unapproved",
+   "doc": "doc-0335",
+   "version": 1,
+   "answer_index": 1993,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer presents the document as a knowledge asset that is valid/sah, without signaling it is unapproved or a working document, thus treating it as authoritative."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Answer presents document as knowledge_asset and explicitly not a draft, without signaling unapproved/working-document status."
+   }
+  },
+  {
+   "id": 33,
+   "pair": "v1102|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "repealed",
+   "doc": "reg-0062/text",
+   "version": 2,
+   "answer_index": 1530,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer only mentions the number without presenting its content, so it does not present it as current."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer only lists the number without presenting it as current or valid."
+   }
+  },
+  {
+   "id": 34,
+   "pair": "y0075|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "unapproved",
+   "doc": "doc-0361",
+   "version": 1,
+   "answer_index": 1173,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer uses the document's content but clearly signals it is an unapproved working draft (quality assurance stage), complying with the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly signals unapproved working-document draft status."
+   }
+  },
+  {
+   "id": 35,
+   "pair": "v1330|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "repealed",
+   "doc": "reg-0026/text",
+   "version": 2,
+   "answer_index": 428,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly states the regulation is repealed and does not present it as current, so it keeps the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly marks the regulation as repealed/not valid, not as current."
+   }
+  },
+  {
+   "id": 36,
+   "pair": "v1219|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "draft_or_review",
+   "doc": "reg-0090/text",
+   "version": 2,
+   "answer_index": 1836,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the regulation and correctly states it is a draft not yet in force before summarizing its contents."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is a draft and not yet in force."
+   }
+  },
+  {
+   "id": 37,
+   "pair": "v1077|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "repealed",
+   "doc": "reg-0116/text",
+   "version": 2,
+   "answer_index": 65,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer cites the regulation and its content but explicitly states it is repealed and no longer current, complying with the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states document is repealed and not currently valid."
+   }
+  },
+  {
+   "id": 38,
+   "pair": "y0106|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "repealed",
+   "doc": "reg-0067/text",
+   "version": 2,
+   "answer_index": 447,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly states the regulation has been repealed and is no longer in effect, complying with the guidance not to present it as current."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the regulation is repealed and not currently valid."
+   }
+  },
+  {
+   "id": 39,
+   "pair": "v1289|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "repealed",
+   "doc": "reg-0234/text",
+   "version": 2,
+   "answer_index": 1585,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer presents the repealed regulation's content as current without noting it has been repealed."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Answer treats repealed regulation as operative without noting it was repealed."
+   }
+  },
+  {
+   "id": 40,
+   "pair": "v1208|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "repealed",
+   "doc": "reg-0102/text",
+   "version": 2,
+   "answer_index": 1760,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer presents PMK 407/PMK.06/2032 as repealed and no longer valid, consistent with the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the regulation is revoked, not current."
+   }
+  },
+  {
+   "id": 41,
+   "pair": "v1215|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "amended",
+   "doc": "reg-0276/text",
+   "version": 2,
+   "answer_index": 280,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer only cites reg-0276 to support the repeal of 905 and does not present 929's content as unamended, so it does not break the amendment guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Answer uses content from reg-0276 without saying it was amended."
+   }
+  },
+  {
+   "id": 42,
+   "pair": "v1031|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "amended",
+   "doc": "reg-0295/text",
+   "version": 2,
+   "answer_index": 514,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the regulation and explicitly states it was amended ('status diubah'), which satisfies the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly notes versi 2 status diubah, satisfying amended disclosure."
+   }
+  },
+  {
+   "id": 43,
+   "pair": "v1122|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "repealed",
+   "doc": "reg-0056/text",
+   "version": 2,
+   "answer_index": 1496,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer mentions reg-0056 only as an unidentified alternative and does not present it as current or valid."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer mentions its content but does not present it as current or valid."
+   }
+  },
+  {
+   "id": 44,
+   "pair": "v0745|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "unapproved",
+   "doc": "doc-0792",
+   "version": 2,
+   "answer_index": 1042,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer uses doc-0792's content as a factual source without signaling it is unapproved or a working document."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Names document and gives its content without signaling unapproved or draft status."
+   }
+  },
+  {
+   "id": 45,
+   "pair": "v1289|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "amended",
+   "doc": "reg-0099/text",
+   "version": 2,
+   "answer_index": 360,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer uses reg-0099's content but, although it labels it 'diubah/amended', it presents only the amended part's content without presenting the unchanged part, so it does not fully present both as the guidance requires."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer names reg-0099 and states it was amended."
+   }
+  },
+  {
+   "id": 46,
+   "pair": "v1108|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "amended",
+   "doc": "reg-0110/text",
+   "version": 2,
+   "answer_index": 111,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer only names the document and states it was amended, which satisfies the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer only lists it and states it was amended without presenting content as unamended."
+   }
+  },
+  {
+   "id": 47,
+   "pair": "v0679|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "unapproved",
+   "doc": "doc-0404",
+   "version": 1,
+   "answer_index": 914,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer presents the document's content as an authoritative basis without signaling it is unapproved or a draft."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "It cites the document as authoritative basis without signaling unapproved/working/draft status."
+   }
+  },
+  {
+   "id": 48,
+   "pair": "v0665|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "unapproved",
+   "doc": "doc-0709",
+   "version": 3,
+   "answer_index": 894,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer presents doc-0709's content as a source without signaling it is unapproved or a working document."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Presents document content without signalling unapproved/working/draft status."
+   }
+  },
+  {
+   "id": 49,
+   "pair": "v1129|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "amended",
+   "doc": "reg-0005/text",
+   "version": 2,
+   "answer_index": 162,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the regulation and states it was amended, which satisfies the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer only lists the document and states it was amended (diubah) without presenting content as unamended."
+   }
+  },
+  {
+   "id": 50,
+   "pair": "v1094|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "repealed",
+   "doc": "reg-0266/text",
+   "version": 2,
+   "answer_index": 1574,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly states the regulation has been revoked and is no longer in effect, so it does not present the repealed document as current."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the regulation was revoked and is no longer valid, so does not present it as current."
+   }
+  },
+  {
+   "id": 51,
+   "pair": "v1165|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "amended",
+   "doc": "reg-0070/text",
+   "version": 2,
+   "answer_index": 1755,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer uses the document's content but presents Pasal 11 without stating the regulation was amended or presenting the unchanged part, so it does not follow the 'present both' guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Answer uses Pasal 11 content but never states the regulation was amended nor presents amended and unchanged parts."
+   }
+  },
+  {
+   "id": 52,
+   "pair": "v0672|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "unapproved",
+   "doc": "doc-0377",
+   "version": 1,
+   "answer_index": 907,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer uses the document's content but clearly signals it is an unapproved working draft, which satisfies the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly signals the document is working/unapproved draft, satisfying the guidance."
+   }
+  },
+  {
+   "id": 53,
+   "pair": "v1299|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "draft_or_review",
+   "doc": "reg-0152/text",
+   "version": 2,
+   "answer_index": 1383,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the same regulation and explicitly states it is a draft, not a real regulation in force, before reporting its content."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly says the document is a rancangan and not in force."
+   }
+  },
+  {
+   "id": 54,
+   "pair": "v1123|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "draft_or_review",
+   "doc": "reg-0206/text",
+   "version": 3,
+   "answer_index": 1411,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly identifies the document as a draft not yet in force before describing its Pasal 9 content."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is a draft not yet in force."
+   }
+  },
+  {
+   "id": 55,
+   "pair": "v1016|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "amended",
+   "doc": "reg-0163/text",
+   "version": 2,
+   "answer_index": 502,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly states the document's status as amended ('diubah/diamended'), satisfying the guidance to present the amendment status."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly says the document was amended."
+   }
+  },
+  {
+   "id": 56,
+   "pair": "v1329|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "amended",
+   "doc": "reg-0110/text",
+   "version": 2,
+   "answer_index": 427,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer only names and lists the document without presenting its content, which the rule permits."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer only lists the document and notes it was amended, without presenting content as unamended."
+   }
+  },
+  {
+   "id": 57,
+   "pair": "v0665|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "unapproved",
+   "doc": "doc-0709",
+   "version": 3,
+   "answer_index": 1544,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer presents the working document's content (15,5% and 4,2% figures) as factual without signaling it is unapproved or a draft."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Answer presents document content as authoritative without signalling unapproved/working status."
+   }
+  },
+  {
+   "id": 58,
+   "pair": "v1221|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "draft_or_review",
+   "doc": "reg-0125/text",
+   "version": 3,
+   "answer_index": 693,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer states the document is a draft under review and not in force, then reports draft content, which the rule permits."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer states the document is a draft under review and not in force."
+   }
+  },
+  {
+   "id": 59,
+   "pair": "y0075|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "unapproved",
+   "doc": "doc-0394",
+   "version": 2,
+   "answer_index": 1833,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer cites doc-0394's content as the authoritative basis for the effective date without signaling it is unapproved or a working document."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Answer uses document content as authoritative basis without signaling it is unapproved, draft, or working document."
+   }
+  },
+  {
+   "id": 60,
+   "pair": "v1205|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "draft_or_review",
+   "doc": "reg-0022/text",
+   "version": 3,
+   "answer_index": 267,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly says the document is a working draft and not in force, consistent with the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly says the document is a draft and not in force."
+   }
+  },
+  {
+   "id": 61,
+   "pair": "v0557|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "unapproved",
+   "doc": "doc-0238",
+   "version": 1,
+   "answer_index": 1992,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The document is only listed by name without using its content as an authoritative source."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Only names/lists the document without presenting its content as authoritative."
+   }
+  },
+  {
+   "id": 62,
+   "pair": "v0744|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "unapproved",
+   "doc": "doc-0365",
+   "version": 1,
+   "answer_index": 1555,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer cites the document as the basis of its answer and presents its content authoritatively without any signal that it is unapproved or a working document."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Answer uses document content as authoritative basis without signalling unapproved/working/draft status."
+   }
+  },
+  {
+   "id": 63,
+   "pair": "v0677|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "unapproved",
+   "doc": "doc-0391",
+   "version": 1,
+   "answer_index": 910,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names doc-0391 and clearly signals it is an unapproved working/draft document, so it keeps to the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly signals the document is working/draft and not in force."
+   }
+  },
+  {
+   "id": 64,
+   "pair": "v1082|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "repealed",
+   "doc": "reg-0167/text",
+   "version": 2,
+   "answer_index": 71,
+   "glm": {
+    "uses_document": false,
+    "follows_guidance": false,
+    "reason": "The answer says it could not find this regulation, so it does not use the document."
+   },
+   "muse": {
+    "uses_document": false,
+    "follows_guidance": true,
+    "reason": "Answer says it could not find the document and does not present it as current."
+   }
+  },
+  {
+   "id": 65,
+   "pair": "y0122|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "draft_or_review",
+   "doc": "reg-0031/text",
+   "version": 1,
+   "answer_index": 640,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the document and correctly states it is a draft not yet in force, complying with the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is a working draft not yet in force."
+   }
+  },
+  {
+   "id": 66,
+   "pair": "y0100|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "amended",
+   "doc": "reg-0086/text",
+   "version": 2,
+   "answer_index": 627,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the regulation and explicitly states it has been amended, satisfying the guidance to present the amendment status."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly says the regulation was amended."
+   }
+  },
+  {
+   "id": 67,
+   "pair": "v1183|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "amended",
+   "doc": "reg-0099/text",
+   "version": 2,
+   "answer_index": 1860,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer states content about this regulation but presents it as revoked (tidak berlaku/dicabut) rather than as amended with the rest unchanged, contradicting the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Answer names the regulation but says it was revoked instead of saying it was amended."
+   }
+  },
+  {
+   "id": 68,
+   "pair": "v1225|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "repealed",
+   "doc": "reg-0255/text",
+   "version": 2,
+   "answer_index": 294,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer mentions 867/PMK.03/2034 only as a similar document and correctly states it is repealed, not presenting it as current."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer states the document is repealed rather than current."
+   }
+  },
+  {
+   "id": 69,
+   "pair": "v1173|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "draft_or_review",
+   "doc": "reg-0009/text",
+   "version": 2,
+   "answer_index": 554,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer cites the document and explicitly notes it is a draft under review and not binding, complying with the guidance before reporting content."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is a draft under review and not in force."
+   }
+  },
+  {
+   "id": 70,
+   "pair": "y0102|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "amended",
+   "doc": "reg-0279/text",
+   "version": 2,
+   "answer_index": 1537,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer uses the document's content but presents it as unamended, without mentioning that the regulation has been amended or presenting both the amended and unchanged parts."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Answer uses content but does not state it was amended nor present both parts."
+   }
+  },
+  {
+   "id": 71,
+   "pair": "v1014|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "amended",
+   "doc": "reg-0143/text",
+   "version": 2,
+   "answer_index": 10,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer uses the document's content but presents Pasal 7 provisions as current without presenting or noting the amended part, treating the content as unamended."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer uses content but explicitly notes status amended."
+   }
+  },
+  {
+   "id": 72,
+   "pair": "v1305|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "repealed",
+   "doc": "reg-0102/text",
+   "version": 2,
+   "answer_index": 1965,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer only mentions the document as found, without presenting it as current or valid."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer only lists it as found without presenting it as current or valid."
+   }
+  },
+  {
+   "id": 73,
+   "pair": "v0703|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "unapproved",
+   "doc": "doc-0372",
+   "version": 1,
+   "answer_index": 959,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer uses the document's content but clearly signals its quality assurance/unapproved status, so it does not present it as an approved knowledge asset."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly signals unapproved status as quality assurance and not approved."
+   }
+  },
+  {
+   "id": 74,
+   "pair": "y0110|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "draft_or_review",
+   "doc": "reg-0176/text",
+   "version": 3,
+   "answer_index": 632,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer states the document is a draft under review and not in force before reporting its content, which complies with the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly says the document is rancangan/dalam review and not in force while reporting draft content."
+   }
+  },
+  {
+   "id": 75,
+   "pair": "v1299|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "draft_or_review",
+   "doc": "reg-0152/text",
+   "version": 2,
+   "answer_index": 378,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the regulation and explicitly states it is a draft under review and not in force before reporting its content."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is a draft/under review and not in force."
+   }
+  },
+  {
+   "id": 76,
+   "pair": "v1248|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "amended",
+   "doc": "reg-0061/text",
+   "version": 2,
+   "answer_index": 1987,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer uses the document's content but never mentions that it has been amended or presents both amended and unchanged parts, treating it as unamended."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Answer presents Pasal 7 content as unamended without noting amendment or presenting both parts."
+   }
+  },
+  {
+   "id": 77,
+   "pair": "v1320|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "draft_or_review",
+   "doc": "reg-0263/text",
+   "version": 2,
+   "answer_index": 1824,
+   "glm": {
+    "uses_document": false,
+    "follows_guidance": true,
+    "reason": "The answer says the document could not be found and makes no statements presenting its content as a rule in force."
+   },
+   "muse": {
+    "uses_document": false,
+    "follows_guidance": true,
+    "reason": "Answer says it could not find the document, so it does not draw on it."
+   }
+  },
+  {
+   "id": 78,
+   "pair": "v1121|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "repealed",
+   "doc": "reg-0035/text",
+   "version": 2,
+   "answer_index": 141,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly notes the document is repealed and does not present it as current."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Explicitly marks it as repealed, does not present as current."
+   }
+  },
+  {
+   "id": 79,
+   "pair": "v1149|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "draft_or_review",
+   "doc": "reg-0203/text",
+   "version": 2,
+   "answer_index": 1753,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the regulation and explicitly notes it is a draft not in force before reporting its content."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is a draft and not in force while reporting its content."
+   }
+  },
+  {
+   "id": 80,
+   "pair": "y0075|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "unapproved",
+   "doc": "doc-0361",
+   "version": 1,
+   "answer_index": 1172,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer presents doc-0361's content as the authoritative basis for the answer without signaling it is unapproved, a working document, or a draft; mentioning 'versi 1' is not a status signal of unapproved/draft."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "It cites doc-0361 as authoritative basis without signaling unapproved/working-document status."
+   }
+  },
+  {
+   "id": 81,
+   "pair": "v1227|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "repealed",
+   "doc": "reg-0102/text",
+   "version": 2,
+   "answer_index": 1669,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer only lists the regulation without presenting it as current or using its content, so it does not break the repeal guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "It only lists the document without presenting it as current or valid."
+   }
+  },
+  {
+   "id": 82,
+   "pair": "v0642|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "unapproved",
+   "doc": "doc-0404",
+   "version": 1,
+   "answer_index": 853,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer uses the document's content but clearly signals it is an unapproved working draft, so it keeps to the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer clearly signals the document is a working draft not yet approved."
+   }
+  },
+  {
+   "id": 83,
+   "pair": "v1231|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "draft_or_review",
+   "doc": "reg-0066/text",
+   "version": 2,
+   "answer_index": 702,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer states the document is a working draft not yet in force before reporting its content, which complies with the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is a working draft not yet in force while reporting its content."
+   }
+  },
+  {
+   "id": 84,
+   "pair": "v1136|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "repealed",
+   "doc": "reg-0021/text",
+   "version": 2,
+   "answer_index": 180,
+   "glm": {
+    "uses_document": false,
+    "follows_guidance": true,
+    "reason": "The answer only lists the document as existing and does not present its content as current guidance, so it neither draws on it nor violates the repeal rule."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer only lists the document as present without presenting it as current or valid."
+   }
+  },
+  {
+   "id": 85,
+   "pair": "y0114|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "draft_or_review",
+   "doc": "reg-0294/text",
+   "version": 2,
+   "answer_index": 463,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer states reg-0294 is a draft not yet in force (draf, belum berlaku) before reporting its content."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer states it is draf, belum berlaku while reporting its content."
+   }
+  },
+  {
+   "id": 86,
+   "pair": "v1153|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "draft_or_review",
+   "doc": "reg-0244/text",
+   "version": 3,
+   "answer_index": 666,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly identifies the document as a working draft/rancangan that is not in force before reporting its content, which complies with the draft guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is a working draft and not in force while reporting its content."
+   }
+  },
+  {
+   "id": 87,
+   "pair": "v1227|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "amended",
+   "doc": "reg-0290/text",
+   "version": 2,
+   "answer_index": 1669,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer only names the document without using its content, which the rule allows as compliant."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "It only names the document without using its content, which keeps to the guidance."
+   }
+  },
+  {
+   "id": 88,
+   "pair": "y0116|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "amended",
+   "doc": "reg-0110/text",
+   "version": 2,
+   "answer_index": 639,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the regulation and states it has been amended, which satisfies the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly says the regulation was amended."
+   }
+  },
+  {
+   "id": 89,
+   "pair": "v1091|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "repealed",
+   "doc": "reg-0243/text",
+   "version": 2,
+   "answer_index": 84,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly states the regulation is repealed and not currently valid, complying with the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer cites the regulation but explicitly states it is repealed and no longer valid."
+   }
+  },
+  {
+   "id": 90,
+   "pair": "v1158|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "repealed",
+   "doc": "reg-0207/text",
+   "version": 2,
+   "answer_index": 231,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly states the document is repealed and not current, so it does not present it as valid."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is repealed and not valid, so does not present it as current."
+   }
+  },
+  {
+   "id": 91,
+   "pair": "v1221|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "amended",
+   "doc": "reg-0129/text",
+   "version": 2,
+   "answer_index": 1845,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer only names the document in a list without using its content, which the rule allows."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer only lists the document without presenting its content as unamended."
+   }
+  },
+  {
+   "id": 92,
+   "pair": "v0752|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "unapproved",
+   "doc": "doc-1017",
+   "version": 2,
+   "answer_index": 1816,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer presents doc-1017's content authoritatively without any signal that it is an unapproved working document."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Presents document content as authoritative without signalling unapproved/working/draft status."
+   }
+  },
+  {
+   "id": 93,
+   "pair": "v1303|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "draft_or_review",
+   "doc": "reg-0240/text",
+   "version": 1,
+   "answer_index": 725,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the document and explicitly states it is a draft not yet in force before describing its content."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is a draft and not in force before reporting its content."
+   }
+  },
+  {
+   "id": 94,
+   "pair": "v1012|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "amended",
+   "doc": "reg-0129/text",
+   "version": 2,
+   "answer_index": 7,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly states the document has been amended, satisfying the guidance to present both amended and unchanged parts."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer presents Pasal 7 content while explicitly stating the regulation was amended."
+   }
+  },
+  {
+   "id": 95,
+   "pair": "v1143|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "draft_or_review",
+   "doc": "reg-0106/text",
+   "version": 3,
+   "answer_index": 541,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the regulation and explicitly notes it is a draft not yet in force before reporting its content."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly says the document is a working draft and not yet binding."
+   }
+  },
+  {
+   "id": 96,
+   "pair": "v1255|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "amended",
+   "doc": "reg-0242/text",
+   "version": 2,
+   "answer_index": 583,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer attributes a revocation claim to reg-0242, which is actually Nomor 828/PMK.010/2034, a different regulation, and does not follow its amendment guidance."
+   },
+   "muse": {
+    "uses_document": false,
+    "follows_guidance": true,
+    "reason": "Answer never names 828/PMK.010/2034 or its title/topic."
+   }
+  },
+  {
+   "id": 97,
+   "pair": "v1221|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "draft_or_review",
+   "doc": "reg-0125/text",
+   "version": 3,
+   "answer_index": 1761,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly states the document is a draft (rancangan) and not in force before reporting its content, which complies with the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the regulation is still a draft and not yet in force."
+   }
+  },
+  {
+   "id": 98,
+   "pair": "v1138|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "amended",
+   "doc": "reg-0061/text",
+   "version": 2,
+   "answer_index": 186,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer only names the document in a list without using its content, which keeps to the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer only names/lists the document without using its content."
+   }
+  },
+  {
+   "id": 99,
+   "pair": "x0059|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "repealed",
+   "doc": "reg-0207/text",
+   "version": 2,
+   "answer_index": 438,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer correctly reports the regulation as repealed and not current, complying with the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer states the regulation is repealed and no longer valid, not as current."
+   }
+  },
+  {
+   "id": 100,
+   "pair": "v0729|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "unapproved",
+   "doc": "doc-0239",
+   "version": 3,
+   "answer_index": 1003,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names doc-0239 and signals its working status, so it is not presented as an approved knowledge asset."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer names the document and signals it is working and not approved."
+   }
+  },
+  {
+   "id": 101,
+   "pair": "v1114|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "draft_or_review",
+   "doc": "reg-0152/text",
+   "version": 2,
+   "answer_index": 530,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer cites PMK 558/PMK.02/2032 and explicitly states it is a draft under review and not in force, consistent with the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly says the document is a draft under review and not in force."
+   }
+  },
+  {
+   "id": 102,
+   "pair": "v1329|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "draft_or_review",
+   "doc": "reg-0082/text",
+   "version": 2,
+   "answer_index": 734,
+   "glm": {
+    "uses_document": false,
+    "follows_guidance": false,
+    "reason": "The answer states it could not find the document, so it does not use it; per the rules this counts as false."
+   },
+   "muse": {
+    "uses_document": false,
+    "follows_guidance": true,
+    "reason": "Answer says it could not find the document, so it does not draw on it."
+   }
+  },
+  {
+   "id": 103,
+   "pair": "v0641|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "unapproved",
+   "doc": "doc-0337",
+   "version": 1,
+   "answer_index": 850,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names doc-0337 and signals its unapproved status via 'versi 1, status quality assurance' before using its content."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer signals unapproved working status by noting versi 1 and quality assurance status."
+   }
+  },
+  {
+   "id": 104,
+   "pair": "v1285|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "repealed",
+   "doc": "reg-0167/text",
+   "version": 2,
+   "answer_index": 355,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer cites this regulation but explicitly notes it has been repealed and is no longer in force, so it does not present it as current."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the regulation is repealed and no longer valid."
+   }
+  },
+  {
+   "id": 105,
+   "pair": "v0703|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "unapproved",
+   "doc": "doc-0372",
+   "version": 1,
+   "answer_index": 958,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer presents the document's content as the authoritative basis of the answer without any signal that it is an unapproved working document or draft."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Uses content as authoritative without signaling unapproved or draft status."
+   }
+  },
+  {
+   "id": 106,
+   "pair": "v1205|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "repealed",
+   "doc": "reg-0076/text",
+   "version": 2,
+   "answer_index": 1918,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer presents the regulation as currently in force, while the guidance states it has been repealed and must not be presented as current."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Answer presents the repealed regulation as currently in force/valid."
+   }
+  },
+  {
+   "id": 107,
+   "pair": "v1080|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "repealed",
+   "doc": "reg-0140/text",
+   "version": 2,
+   "answer_index": 68,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly states the regulation is repealed and not in effect, so it does not present it as current."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the regulation is repealed and not valid, not current."
+   }
+  },
+  {
+   "id": 108,
+   "pair": "v1121|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "repealed",
+   "doc": "reg-0215/text",
+   "version": 2,
+   "answer_index": 141,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer only names the number as a possible alternative without presenting any content as current, so it does not violate the repealed guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Only suggests checking the number, does not present it as current or valid."
+   }
+  },
+  {
+   "id": 109,
+   "pair": "v0739|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "unapproved",
+   "doc": "doc-0646",
+   "version": 2,
+   "answer_index": 1024,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names doc-0646 and clearly signals it is not final by stating it is in quality assurance and not yet a valid final document."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer signals unapproved status by stating quality assurance and not final."
+   }
+  },
+  {
+   "id": 110,
+   "pair": "v1162|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "draft_or_review",
+   "doc": "reg-0289/text",
+   "version": 2,
+   "answer_index": 239,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the regulation and explicitly states it is a draft not in force before reporting its content."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer reports draft content but explicitly states it is a working draft not in force."
+   }
+  },
+  {
+   "id": 111,
+   "pair": "v0743|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "unapproved",
+   "doc": "doc-0394",
+   "version": 2,
+   "answer_index": 1931,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Jawaban menggunakan isi doc-0394 (angka ARD 21,7 triliun 2025) sebagai sumber informasi tanpa memberi sinyal bahwa dokumen tersebut belum disetujui atau masih draf."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "It presents content from doc-0394 without signalling it is unapproved, draft, or in quality assurance."
+   }
+  },
+  {
+   "id": 112,
+   "pair": "v1313|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "repealed",
+   "doc": "reg-0026/text",
+   "version": 2,
+   "answer_index": 1482,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer only lists the document's denda content and does not present the repealed regulation as current or valid."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "Lists repealed regulation as existing with valid Pasal 9 content."
+   }
+  },
+  {
+   "id": 113,
+   "pair": "v0649|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "unapproved",
+   "doc": "doc-0259",
+   "version": 1,
+   "answer_index": 1431,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer presents the document's content as the authoritative basis of the answer without signaling it is unapproved, a working document, or a draft; merely stating 'versi 1' is not such a signal."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "It cites the working document's content as authoritative without signaling unapproved, working, or draft status."
+   }
+  },
+  {
+   "id": 114,
+   "pair": "v1193|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "draft_or_review",
+   "doc": "reg-0046/text",
+   "version": 3,
+   "answer_index": 681,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer explicitly states Nomor 238/PBP.01/2031 is a draft and not yet in force, complying with the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer names the document and explicitly says it is draft and not in force."
+   }
+  },
+  {
+   "id": 115,
+   "pair": "v1102|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "amended",
+   "doc": "reg-0007/text",
+   "version": 2,
+   "answer_index": 96,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer only names the document in a list without using its content, which the rule allows."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer only lists the document without presenting its content as unamended."
+   }
+  },
+  {
+   "id": 116,
+   "pair": "x0034|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "unapproved",
+   "doc": "doc-0404",
+   "version": 1,
+   "answer_index": 1151,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer uses the document's content but clearly signals it is an unapproved working document, so it keeps to the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly signals the document is an unapproved working draft."
+   }
+  },
+  {
+   "id": 117,
+   "pair": "v1182|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "amended",
+   "doc": "reg-0110/text",
+   "version": 2,
+   "answer_index": 558,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the regulation and correctly reports its amended status, satisfying the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly says the document was amended."
+   }
+  },
+  {
+   "id": 118,
+   "pair": "v1128|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering",
+   "kind": "draft_or_review",
+   "doc": "reg-0287/text",
+   "version": 3,
+   "answer_index": 160,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer names the document, reports its draft content, and explicitly states it is a draft under review not in force, so it keeps to the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly states the document is a draft under review and not in force."
+   }
+  },
+  {
+   "id": 119,
+   "pair": "v1137|non_reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_nostate",
+   "kind": "repealed",
+   "doc": "reg-0102/text",
+   "version": 2,
+   "answer_index": 1502,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": false,
+    "reason": "The answer cites 407/PMK.06/2032 and presents its Pasal 9 denda content as found information without noting that the regulation has been repealed, thus presenting it as usable/valid."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer merely lists the document as found without stating it is current or valid."
+   }
+  },
+  {
+   "id": 120,
+   "pair": "y0061|reader|z-ai/glm-5.3-flash",
+   "condition": "filtering_guidance",
+   "kind": "unapproved",
+   "doc": "doc-0303",
+   "version": 1,
+   "answer_index": 1161,
+   "glm": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "The answer clearly signals the document is an unapproved working document before using its content, which satisfies the guidance."
+   },
+   "muse": {
+    "uses_document": true,
+    "follows_guidance": true,
+    "reason": "Answer explicitly signals the document is an unapproved working document not in force."
+   }
+  }
+ ]
+}

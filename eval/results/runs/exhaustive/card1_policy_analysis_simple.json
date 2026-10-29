@@ -1,0 +1,25 @@
+{
+ "situations": 6,
+ "search_cut_at_limit": false,
+ "people": 10,
+ "mutants": {
+  "df739216ce79b23a": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "narrow_who: finalized.access[0]: remove term 0 (\"author\")"
+  },
+  "cd45dcd1dae0e18a": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: finalized.access[0]: serve {\"from\": \"finalized\"} -> \"latest\""
+  },
+  "6426ef9cc3e51eb3": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: finalized.access[0]: find {\"from\": \"finalized\"} -> \"latest\""
+  }
+ },
+ "workflow": "card1_policy_analysis_simple",
+ "claimed_equivalent": 3,
+ "confirmed": 3
+}

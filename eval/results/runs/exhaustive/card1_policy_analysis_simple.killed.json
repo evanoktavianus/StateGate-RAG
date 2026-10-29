@@ -1,0 +1,385 @@
+{
+ "situations": 6,
+ "people": 10,
+ "mutants": {
+  "44d4debd692cca10": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "ext",
+     "other",
+     "staff",
+     "z_other_org",
+     "z_outsider"
+    ]
+   },
+   "desc": "widen_who: working_document.access[0]: add public"
+  },
+  "1284aa51f728c3be": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "z_org_with_role_other_unit",
+     "z_unit_with_role"
+    ]
+   },
+   "desc": "widen_who: working_document.access[0]: add everyone"
+  },
+  "9ac6be56deb957c8": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "staff",
+     "z_unit_no_role",
+     "z_unit_with_role"
+    ]
+   },
+   "desc": "widen_who: working_document.access[0]: add unit"
+  },
+  "4de1a4d54f0944a4": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "other",
+     "staff",
+     "z_same_org_other_unit",
+     "z_unit_no_role"
+    ]
+   },
+   "desc": "widen_who: working_document.access[0]: add organization"
+  },
+  "483dae99da346a4d": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "analyst"
+    ]
+   },
+   "desc": "change_version: working_document.access[0]: serve \"latest\" -> \"nothing\""
+  },
+  "32c1fe84ecae63c7": {
+   "confirmed": false,
+   "difference": {
+    "situation": 1,
+    "steps": [
+     "upload"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "analyst"
+    ]
+   },
+   "desc": "change_version: working_document.access[0]: serve \"latest\" -> {\"from\": \"working_document\"}"
+  },
+  "105e85dd9c916fe8": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "analyst"
+    ]
+   },
+   "desc": "change_version: working_document.access[0]: serve \"latest\" -> {\"from\": \"finalized\"}"
+  },
+  "9746dddb79bbf585": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "analyst"
+    ]
+   },
+   "desc": "change_version: working_document.access[0]: find \"latest\" -> \"nothing\""
+  },
+  "60a1b3de351f4d19": {
+   "confirmed": false,
+   "difference": {
+    "situation": 1,
+    "steps": [
+     "upload"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "analyst"
+    ]
+   },
+   "desc": "change_version: working_document.access[0]: find \"latest\" -> {\"from\": \"working_document\"}"
+  },
+  "007450c08fecaa73": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "analyst"
+    ]
+   },
+   "desc": "change_version: working_document.access[0]: find \"latest\" -> {\"from\": \"finalized\"}"
+  },
+  "85b76ab10672cc74": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "analyst"
+    ]
+   },
+   "desc": "drop_rule: working_document.access[0]: delete"
+  },
+  "efac0a5874765905": {
+   "confirmed": false,
+   "difference": {
+    "situation": 1,
+    "steps": [
+     "upload"
+    ],
+    "mutant_accepts_steps": false,
+    "people_differing": []
+   },
+   "desc": "transition_guard: working_document.on.upload: remove by"
+  },
+  "bfab74d00c59a249": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "transition_guard: working_document.on.upload: widen by to anyone"
+  },
+  "a99e1f25abaf5999": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "mark_finalized"
+    ],
+    "mutant_accepts_steps": false,
+    "people_differing": []
+   },
+   "desc": "transition_guard: working_document.on.mark_finalized: remove by"
+  },
+  "b407590e9d952753": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "transition_guard: working_document.on.mark_finalized: widen by to anyone"
+  },
+  "8e58623f9cf0037a": {
+   "confirmed": false,
+   "difference": {
+    "situation": 1,
+    "steps": [
+     "upload"
+    ],
+    "mutant_accepts_steps": false,
+    "people_differing": []
+   },
+   "desc": "upload: working_document: remove upload"
+  },
+  "a4c964a7299f45be": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "mark_finalized"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "ext",
+     "other",
+     "z_other_org",
+     "z_outsider",
+     "z_same_org_other_unit"
+    ]
+   },
+   "desc": "widen_who: finalized.access[0]: add public"
+  },
+  "11ff510aaf3fae6a": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "mark_finalized"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "z_org_with_role_other_unit"
+    ]
+   },
+   "desc": "widen_who: finalized.access[0]: add everyone"
+  },
+  "e233d5777279a8e8": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "mark_finalized"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "other",
+     "z_same_org_other_unit"
+    ]
+   },
+   "desc": "widen_who: finalized.access[0]: add organization"
+  },
+  "8a77197cf1f61685": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "mark_finalized"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "staff",
+     "z_unit_no_role",
+     "z_unit_with_role"
+    ]
+   },
+   "desc": "narrow_who: finalized.access[0]: remove term 1 (\"unit\")"
+  },
+  "82d2bc00215ca14e": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "mark_finalized"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "other",
+     "z_same_org_other_unit",
+     "z_unit_with_role"
+    ]
+   },
+   "desc": "swap: finalized.access[0]: unit -> organization"
+  },
+  "294d29017f19c850": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "mark_finalized"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "analyst",
+     "staff",
+     "z_unit_no_role",
+     "z_unit_with_role"
+    ]
+   },
+   "desc": "change_version: finalized.access[0]: serve {\"from\": \"finalized\"} -> \"nothing\""
+  },
+  "c073c1cbc188cd0f": {
+   "confirmed": false,
+   "difference": {
+    "situation": 4,
+    "steps": [
+     "upload",
+     "mark_finalized"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "analyst",
+     "staff",
+     "z_unit_no_role",
+     "z_unit_with_role"
+    ]
+   },
+   "desc": "change_version: finalized.access[0]: serve {\"from\": \"finalized\"} -> {\"from\": \"working_document\"}"
+  },
+  "f09a01bb67826b66": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "mark_finalized"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "analyst",
+     "staff",
+     "z_unit_no_role",
+     "z_unit_with_role"
+    ]
+   },
+   "desc": "change_version: finalized.access[0]: find {\"from\": \"finalized\"} -> \"nothing\""
+  },
+  "a146ea0834d97eb4": {
+   "confirmed": false,
+   "difference": {
+    "situation": 4,
+    "steps": [
+     "upload",
+     "mark_finalized"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "analyst",
+     "staff",
+     "z_unit_no_role",
+     "z_unit_with_role"
+    ]
+   },
+   "desc": "change_version: finalized.access[0]: find {\"from\": \"finalized\"} -> {\"from\": \"working_document\"}"
+  },
+  "3499fac4a6b4f255": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "mark_finalized"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "analyst",
+     "staff",
+     "z_unit_no_role",
+     "z_unit_with_role"
+    ]
+   },
+   "desc": "drop_rule: finalized.access[0]: delete"
+  },
+  "b0f0d534621f63fb": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "upload: finalized: add upload"
+  },
+  "e7c83fc573ff9afe": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "z_org_with_role_other_unit",
+     "z_unit_with_role"
+    ]
+   },
+   "desc": "default_flip: default_access"
+  }
+ },
+ "workflow": "card1_policy_analysis_simple",
+ "claimed_equivalent": 28,
+ "confirmed": 3
+}

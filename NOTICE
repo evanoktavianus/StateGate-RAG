@@ -1,0 +1,7 @@
+StateGate
+Copyright 2026 Evan Oktavianus
+
+The software in this repository is licensed under the Apache License, Version 2.0 (file LICENSE).
+The data and results (eval/data/ and eval/results/) are licensed under
+the Creative Commons Attribution 4.0 International licence (file LICENSE-DATA.txt).
+All documents in the data are synthetic.

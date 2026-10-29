@@ -1,0 +1,4 @@
+# Intellectual assets. `readers` is given when the level is `named`.
+workflow: knowledge_asset
+scenario: scenarios/knowledge_asset.yml
+document: { id: d, owner: ann, assign: { readers: [m2] } }

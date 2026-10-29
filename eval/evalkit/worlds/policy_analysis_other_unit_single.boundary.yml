@@ -1,0 +1,3 @@
+# The head of another group (g2): a person who does not match a document of group g1.
+people:
+  gh2: { org: O1, unit: U1, groups: [g2], positions: [group_head] }

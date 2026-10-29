@@ -1,0 +1,49 @@
+# Policy analysis B, team task, as one document: the whole team sees every draft; others see the analysis after review.
+# The single-document version of card3_policy_analysis_team.yml (the one document is the team's analysis).
+# The assignment letter names the chair and the team.
+name: Policy analysis B, team task (single document)
+initial: working_document
+default_access: deny
+
+attributes:
+  group: {}
+
+create:
+  by: { position: leadership }
+  assign:
+    chair: { from: unit, min: 1, max: 1 }
+    team: { from: unit, min: 0 }
+  set: [group]
+
+states:
+  working_document:
+    access:
+      - { who: [{ assigned: chair }, { assigned: team }], serve: latest, find: latest }
+    on:
+      upload: { to: working_document, by: [{ assigned: chair }, { assigned: team }] }
+      submit_for_review: { to: group_head_review, by: { assigned: chair } }          # 1
+
+  group_head_review:
+    access:
+      - { who: [{ assigned: chair }, { assigned: team }], serve: { from: group_head_review }, find: { from: group_head_review } }   # the compiled version
+      - { who: { all: [{ position: group_head }, { same: { group: group } }] }, serve: { from: group_head_review }, find: { from: group_head_review } }
+    on:
+      request_revision: { to: working_document, by: { all: [{ position: group_head }, { same: { group: group } }] } }   # 2
+      pass_to_leadership: { to: submitted, by: { all: [{ position: group_head }, { same: { group: group } }] } }        # 3
+
+  submitted:
+    access:
+      - { who: [{ assigned: chair }, { assigned: team }], serve: { from: submitted }, find: { from: submitted } }
+      - { who: { all: [{ position: group_head }, { same: { group: group } }] }, serve: { from: submitted }, find: { from: submitted } }
+      - { who: { all: [{ position: leadership }, unit] }, serve: { from: submitted }, find: { from: submitted } }
+    on:
+      return: { to: working_document, by: { all: [{ position: leadership }, unit] } }                          # return for rework
+      hand_over: { to: handed_over, by: { assigned: chair } }                         # 4
+
+  handed_over:
+    access:
+      - { who: [{ assigned: chair }, { assigned: team }], serve: { from: handed_over }, find: { from: handed_over } }
+      - { who: { all: [{ position: group_head }, { same: { group: group } }] }, serve: { from: handed_over }, find: { from: handed_over } }
+      - { who: { all: [{ position: leadership }, unit] }, serve: { from: handed_over }, find: { from: handed_over } }
+      - { who: { all: [{ position: filing }, unit] }, serve: { from: handed_over }, find: { from: handed_over } }
+    on: {}

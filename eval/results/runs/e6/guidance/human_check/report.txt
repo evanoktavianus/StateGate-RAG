@@ -1,0 +1,107 @@
+Human check of the guidance judges
+
+Rubric digest b54044078c2e; sample seed 20261029, 10 items per cell, 120 items; binary label BREAKS against not breaking.
+
+Per-cell sample sizes:
+
+| kind | condition | eligible | taken | shortfall |
+|---|---|---|---|---|
+| repealed | filtering_nostate | 123 | 10 | 0 |
+| repealed | filtering | 105 | 10 | 0 |
+| repealed | filtering_guidance | 112 | 10 | 0 |
+| amended | filtering_nostate | 118 | 10 | 0 |
+| amended | filtering | 109 | 10 | 0 |
+| amended | filtering_guidance | 142 | 10 | 0 |
+| draft_or_review | filtering_nostate | 101 | 10 | 0 |
+| draft_or_review | filtering | 106 | 10 | 0 |
+| draft_or_review | filtering_guidance | 107 | 10 | 0 |
+| unapproved | filtering_nostate | 178 | 10 | 0 |
+| unapproved | filtering | 204 | 10 | 0 |
+| unapproved | filtering_guidance | 200 | 10 | 0 |
+
+Labels: BREAKS 25, KEEPS 81, NOT USED 14
+
+Break rate per condition on the same items (10 items per kind and condition, so these are not the rates of the full run):
+
+| condition | items | human break rate | glm break rate | muse break rate |
+|---|---|---|---|---|
+| filtering_nostate | 40 | 20/40 | 18/40 | 18/40 |
+| filtering | 40 | 5/40 | 7/40 | 6/40 |
+| filtering_guidance | 40 | 0/40 | 1/40 | 0/40 |
+
+Judge glm
+
+Overall (120 items): agreement 115/120 (95.8%), kappa 0.876 (95% bootstrap interval 0.760 to 0.974).
+
+| group | items | agreement | kappa | human break rate | judge break rate | note |
+|---|---|---|---|---|---|---|
+| condition filtering_nostate | 40 | 38/40 | 0.900 | 20/40 | 18/40 |  |
+| condition filtering | 40 | 38/40 | 0.805 | 5/40 | 7/40 |  |
+| condition filtering_guidance | 40 | 39/40 | 0.000 | 0/40 | 1/40 |  |
+| kind repealed | 30 | 28/30 | 0.714 | 5/30 | 3/30 |  |
+| kind amended | 30 | 27/30 | 0.737 | 6/30 | 9/30 |  |
+| kind draft_or_review | 30 | 30/30 | n/a | 0/30 | 0/30 |  |
+| kind unapproved | 30 | 30/30 | 1.000 | 14/30 | 14/30 |  |
+
+Confusion matrix (rows: human, columns: judge), binary:
+
+| human \ judge | breaks | not breaking |
+|---|---|---|
+| breaks | 23 | 2 |
+| not breaking | 3 | 92 |
+
+Three-way table (rows: human, columns: judge):
+
+| human \ judge | BREAKS | KEEPS | NOT USED |
+|---|---|---|---|
+| BREAKS | 23 | 2 | 0 |
+| KEEPS | 3 | 77 | 1 |
+| NOT USED | 0 | 11 | 3 |
+
+Disagreements on the binary label (5):
+
+| id | kind | condition | human | judge | judge's reason |
+|---|---|---|---|---|---|
+| 43 | repealed | filtering_nostate | BREAKS | KEEPS | The answer mentions reg-0056 only as an unidentified alternative and does not present it as current or valid. |
+| 45 | amended | filtering | KEEPS | BREAKS | The answer uses reg-0099's content but, although it labels it 'diubah/amended', it presents only the amended part's content without presenting the unchanged part, so it does not fully present both as the guidance requires. |
+| 71 | amended | filtering | KEEPS | BREAKS | The answer uses the document's content but presents Pasal 7 provisions as current without presenting or noting the amended part, treating the content as unamended. |
+| 96 | amended | filtering_guidance | KEEPS | BREAKS | The answer attributes a revocation claim to reg-0242, which is actually Nomor 828/PMK.010/2034, a different regulation, and does not follow its amendment guidance. |
+| 112 | repealed | filtering_nostate | BREAKS | KEEPS | The answer only lists the document's denda content and does not present the repealed regulation as current or valid. |
+
+Judge muse
+
+Overall (120 items): agreement 117/120 (97.5%), kappa 0.923 (95% bootstrap interval 0.827 to 1.000).
+
+| group | items | agreement | kappa | human break rate | judge break rate | note |
+|---|---|---|---|---|---|---|
+| condition filtering_nostate | 40 | 38/40 | 0.900 | 20/40 | 18/40 |  |
+| condition filtering | 40 | 39/40 | 0.895 | 5/40 | 6/40 |  |
+| condition filtering_guidance | 40 | 40/40 | n/a | 0/40 | 0/40 |  |
+| kind repealed | 30 | 28/30 | 0.714 | 5/30 | 3/30 |  |
+| kind amended | 30 | 29/30 | 0.902 | 6/30 | 7/30 |  |
+| kind draft_or_review | 30 | 30/30 | n/a | 0/30 | 0/30 |  |
+| kind unapproved | 30 | 30/30 | 1.000 | 14/30 | 14/30 |  |
+
+Confusion matrix (rows: human, columns: judge), binary:
+
+| human \ judge | breaks | not breaking |
+|---|---|---|
+| breaks | 23 | 2 |
+| not breaking | 1 | 94 |
+
+Three-way table (rows: human, columns: judge):
+
+| human \ judge | BREAKS | KEEPS | NOT USED |
+|---|---|---|---|
+| BREAKS | 23 | 2 | 0 |
+| KEEPS | 1 | 77 | 3 |
+| NOT USED | 0 | 12 | 2 |
+
+Disagreements on the binary label (3):
+
+| id | kind | condition | human | judge | judge's reason |
+|---|---|---|---|---|---|
+| 41 | amended | filtering | KEEPS | BREAKS | Answer uses content from reg-0276 without saying it was amended. |
+| 43 | repealed | filtering_nostate | BREAKS | KEEPS | Answer mentions its content but does not present it as current or valid. |
+| 119 | repealed | filtering_nostate | BREAKS | KEEPS | Answer merely lists the document as found without stating it is current or valid. |
+

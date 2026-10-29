@@ -1,0 +1,70 @@
+# A regulation, from first draft to repeal, as one document: the regulation's text.
+# The single-document version of regulation.yml. The supporting records (minutes, hearing records, comments,
+# background papers) are not part of it.
+#
+# R marks a rule a regulation states; A marks a design assumption where the regulation is silent.
+#
+#   Working draft --submit--> Review --(promulgated)--> In force --(amending reg. in force)--> Amended
+#        ^                      |                          \_(repealing reg. in force)--> Repealed <--/
+#        \--request_revision----/
+#
+# An amendment or a repeal is another regulation. Its coming into force reaches this one as an outside event
+# (`event:`) that no person takes; the host fires it.
+
+name: Regulation (single document)
+initial: working_draft
+default_access: deny                  # a state or role no rule covers: not found, not opened
+
+create:                               # A: leadership of the drafting unit creates the document and names its people
+  by: { all: [{ position: leadership }, unit] }
+  assign:
+    drafting_team: { from: unit, min: 1 }
+    invited: { from: anyone, min: 0 }  # people of other units invited to review
+
+states:
+  working_draft:
+    guidance: "Draft regulation, not in force. Do not state it as a rule."
+    access:
+      - who: [{ assigned: drafting_team }, { all: [{ position: leadership }, unit] }]
+        serve: latest
+        find: latest
+    on:
+      upload: { to: working_draft, by: { assigned: drafting_team } }
+      submit_for_review: { to: review, by: { assigned: drafting_team } }
+
+  review:
+    guidance: "Draft under review, not in force."
+    access:
+      - who: [{ assigned: drafting_team }, { all: [{ position: leadership }, unit] }, { assigned: invited }]
+        serve: latest                  # the current draft only
+        find: latest
+    on:
+      request_revision: { to: working_draft, by: { all: [{ position: leadership }, unit] } }
+      promulgate: { to: in_force, event: promulgated }   # R: effect on promulgation; A: the legal unit records it
+
+  in_force:
+    access:
+      - who: anyone                    # A: everyone, and the public for published regulations
+        serve: { from: in_force }
+        find: { from: in_force }
+    on:
+      amend: { to: amended, event: amendment_in_force }
+      repeal: { to: repealed, event: repeal_in_force }
+
+  amended:
+    guidance: "This regulation has been amended; the rest is unchanged. Present both."
+    access:
+      - who: anyone
+        serve: { from: in_force }      # the base text as enacted; each amendment's text is its own document
+        find: { from: in_force }
+    on:
+      amend: { to: amended, event: amendment_in_force }
+      repeal: { to: repealed, event: repeal_in_force }
+
+  repealed:
+    guidance: "This regulation has been repealed. Do not present as current."
+    access:
+      - who: anyone                    # A: found, flagged, never presented as current
+        serve: { from: in_force }
+        find: { from: in_force }
+    on: {}

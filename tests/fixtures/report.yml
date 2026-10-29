@@ -1,0 +1,54 @@
+# A workflow is a state machine. The whole language is described in
+# the paper. In short, each state lists, under `on`, the
+# actions it accepts and what each one does:
+#
+#   to        the state the document moves to (the same state means "stay")
+#   by        who may do it. Left out, anyone who can otherwise act may.
+#   requires  a requirement that must be satisfied first
+#   assign    people the action must be given, chosen by whoever does it
+#
+# An action a state does not list is refused there.
+
+name: Report
+initial: draft
+
+states:
+  draft:
+    on:
+      upload: { to: draft }
+      submit:
+        to: pending_review
+        by: author
+        assign:
+          reviewers: { from: { role: [editor, admin] }, min: 1, except: author }
+      invalidate: { to: invalid, by: author }
+
+  pending_review:
+    on:
+      upload: { to: pending_review }
+      approve:
+        to: editor_approved
+        by: { assigned: reviewers }
+        requires: { type: approval, pass: all }
+      request_changes: { to: draft, by: { assigned: reviewers } }
+      # Choose the reviewers again without leaving the state.
+      reassign:
+        to: pending_review
+        by: author
+        assign:
+          reviewers: { from: { role: [editor, admin] }, min: 1, except: author }
+      invalidate: { to: invalid, by: author }
+
+  editor_approved:
+    on:
+      # The approval no longer covers a new version: starting a revision goes back
+      # to review, where the version is uploaded. The reviewers chosen before stay the reviewers.
+      start_revision: { to: pending_review }
+      publish: { to: published, by: author }
+
+  published:
+    on:
+      start_revision: { to: pending_review }
+
+  invalid:
+    on: {}

@@ -1,0 +1,133 @@
+# A knowledge asset: written, quality-assured by a committee, disseminated at a level, updated.
+#
+#   working           author and knowledge-management actors write; only they open and find it
+#   quality_assurance a committee (odd, at least 3, all must approve) reads the submitted version
+#                     and sets the access level; a revision restarts the approvals
+#   disseminated      open by level: named individuals / the producing unit / the whole
+#                     organization / the public. The released version is what they get. Only the
+#                     authors always read it; knowledge-management actors (of the unit) and the committee
+#                     read it by level like everyone else (card 6)
+#
+# An update starts with `start_update` from disseminated: the asset goes back to working, where versions are uploaded.
+# The released version stays what readers get (`serve: { from: disseminated }`) until the update is approved.
+#
+# Every state carries guidance for an agent. In working and quality_assurance the readers (served the release) have rules of their own with the approved-asset text.
+
+name: Knowledge asset
+initial: working
+default_access: deny
+
+states:
+  working:
+    guidance: "Unapproved working document; do not present it as a knowledge asset."
+    access:
+      - who: [author, invited, { all: [{ group: knowledge management }, unit] }]
+        serve: latest
+        find: latest
+      - when: { level: named }
+        who: { assigned: readers }
+        role: viewer
+        serve: { from: disseminated }
+        guidance: "Approved asset; mention its level ({level})."
+      - when: { level: unit }
+        who: unit
+        role: viewer
+        serve: { from: disseminated }
+        guidance: "Approved asset; mention its level ({level})."
+      - when: { level: organization }
+        who: [everyone, organization]
+        role: viewer
+        serve: { from: disseminated }
+        guidance: "Approved asset; mention its level ({level})."
+      - when: { level: public }
+        who: [everyone, public]
+        role: viewer
+        serve: { from: disseminated }
+        guidance: "Approved asset; mention its level ({level})."
+      - who: [everyone, public]
+        role: none
+        serve: nothing
+    on:
+      upload: { to: working, by: [author, invited, { all: [{ group: knowledge management }, unit] }] }
+      submit:
+        to: quality_assurance
+        by: [author, { all: [{ group: knowledge management }, unit] }]
+        assign:
+          committee: { from: { group: committee }, min: 3, odd: true, except: [author, invited] }
+
+  quality_assurance:
+    guidance: "Unapproved working document; do not present it as a knowledge asset."
+    access:
+      - who: [author, invited, { assigned: committee }]
+        serve: latest
+        find: latest
+      - when: { level: named }
+        who: { assigned: readers }
+        role: viewer
+        serve: { from: disseminated }
+        guidance: "Approved asset; mention its level ({level})."
+      - when: { level: unit }
+        who: unit
+        role: viewer
+        serve: { from: disseminated }
+        guidance: "Approved asset; mention its level ({level})."
+      - when: { level: organization }
+        who: [everyone, organization]
+        role: viewer
+        serve: { from: disseminated }
+        guidance: "Approved asset; mention its level ({level})."
+      - when: { level: public }
+        who: [everyone, public]
+        role: viewer
+        serve: { from: disseminated }
+        guidance: "Approved asset; mention its level ({level})."
+      - who: [everyone, public]
+        role: none
+        serve: nothing
+    on:
+      set_level:
+        to: quality_assurance
+        by: { assigned: committee }
+        choose: { level: [named, unit, organization, public] }
+        assign:
+          readers: { from: organization, min: 0 }
+      approve:
+        to: disseminated
+        by: { assigned: committee }
+        requires: { type: approval, pass: all, choices: [level] }
+      request_changes: { to: working, by: { assigned: committee } }
+
+  disseminated:
+    guidance: "Approved asset; mention its level ({level})."
+    access:
+      - who: [author, invited]
+        serve: { from: disseminated }
+      - when: { level: named }
+        who: { assigned: readers }
+        role: viewer
+        serve: { from: disseminated }
+      - when: { level: unit }
+        who: unit
+        role: viewer
+        serve: { from: disseminated }
+      - when: { level: organization }
+        who: [everyone, organization]
+        role: viewer
+        serve: { from: disseminated }
+      - when: { level: public }
+        who: [everyone, public]
+        role: viewer
+        serve: { from: disseminated }
+      - who: [everyone, public]
+        role: none
+        serve: nothing
+    on:
+      # A new draft starts here: back to working, where versions are uploaded; the release stays what readers get.
+      start_update: { to: working, by: [author, invited, { all: [{ group: knowledge management }, unit] }] }
+      # Knowledge-management actors can move the asset to another level.
+      set_level:
+        to: disseminated
+        by: { all: [{ group: knowledge management }, unit] }
+        choose: { level: [named, unit, organization, public] }
+        assign:
+          readers: { from: organization, min: 0 }

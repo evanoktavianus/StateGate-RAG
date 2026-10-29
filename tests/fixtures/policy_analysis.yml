@@ -1,0 +1,118 @@
+# A policy analysis is written, reviewed by a reviewer chosen from the QA
+# team, and released to an audience the reviewer chooses. The language is
+# described in the workflow language of `workflows/`.
+#
+# Until it is released it is private: only its author, the people and
+# groups the document was opened to (`invited`, each as viewer or editor),
+# and, while it is reviewed, the chosen reviewer open it. Nobody else sees
+# it, admins included.
+#
+# A release goes to the audience chosen when publishing it:
+#   unit          — people with a role in the document's workspace
+#   organization  — everyone of the workspace's organization
+#   public        — anyone signed in, of any organization
+# The latest release's audience decides: a narrower release takes the
+# document away from the people the earlier one reached. While a new draft
+# is written, the last release stays with its audience.
+#
+# Opening and finding are two answers. The people working on it open the
+# newest draft; a search finds the last release, for them as for everyone,
+# so what search returns is what was released.
+#
+# Every upload is a file version (1, 2, 3 …) and never moves the document.
+# The version served as of `released` is the one the document held when it
+# last arrived there.
+#
+# Needs a group called "QA team" in the organization, and the workspace
+# opened to that group.
+
+name: Policy analysis
+initial: working
+
+states:
+  working:
+    access:
+      - who: [author, invited]
+        serve: latest
+        find: { from: released }
+      - when: { audience: unit }
+        who: everyone
+        role: viewer
+        serve: { from: released }
+      - when: { audience: organization }
+        who: [everyone, organization]
+        role: viewer
+        serve: { from: released }
+      - when: { audience: public }
+        who: [everyone, public]
+        role: viewer
+        serve: { from: released }
+      # Before the first release, and outside the audience: nothing.
+      - who: [everyone, public]
+        role: none
+        serve: nothing
+    on:
+      upload: { to: working }
+      submit:
+        to: under_review
+        by: author
+        assign:
+          reviewer: { from: { group: QA team }, min: 1, except: author }
+
+  under_review:
+    access:
+      - who: [author, invited, { assigned: reviewer }]
+        serve: latest
+        find: { from: released }
+      - when: { audience: unit }
+        who: everyone
+        role: viewer
+        serve: { from: released }
+      - when: { audience: organization }
+        who: [everyone, organization]
+        role: viewer
+        serve: { from: released }
+      - when: { audience: public }
+        who: [everyone, public]
+        role: viewer
+        serve: { from: released }
+      - who: [everyone, public]
+        role: none
+        serve: nothing
+    on:
+      # Still being worked on while it is reviewed.
+      upload: { to: under_review }
+      publish:
+        to: released
+        by: { assigned: reviewer }
+        choose:
+          audience: [unit, organization, public]
+      request_changes: { to: working, by: { assigned: reviewer } }
+      # Choose the reviewer again without leaving the state.
+      reassign:
+        to: under_review
+        by: author
+        assign:
+          reviewer: { from: { group: QA team }, min: 1, except: author }
+
+  released:
+    access:
+      # The people of the workspace, and those it was opened to, keep their
+      # own role; everyone else the chosen audience reaches reads it.
+      - when: { audience: unit }
+        who: public
+        role: none
+        serve: nothing
+      - when: { audience: organization }
+        who: organization
+        role: viewer
+      - when: { audience: organization }
+        who: public
+        role: none
+        serve: nothing
+      - when: { audience: public }
+        who: public
+        role: viewer
+    on:
+      # The release stays; the working line starts again, and the new version is uploaded there.
+      start_update: { to: working }

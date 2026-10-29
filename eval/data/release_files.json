@@ -1,0 +1,76 @@
+{
+ "files": {
+  "eval/data/documents/embeddings.f32": {
+   "size": 452253696,
+   "sha256": "ab3f622101feac9090cd00fec2487fa4d8fd2313f7ea3a66cb6d26697a39fa3a",
+   "parts": [
+    {
+     "name": "embeddings.f32.part-01",
+     "size": 48000000,
+     "sha256": "71949469b923dd27d660c8357c8a50fb24ce553e3201c17e691dee1d7640b74f"
+    },
+    {
+     "name": "embeddings.f32.part-02",
+     "size": 48000000,
+     "sha256": "43939862a57d6c1831c0735f3cc641dfcebc91f5c0a9d437295b522712885539"
+    },
+    {
+     "name": "embeddings.f32.part-03",
+     "size": 48000000,
+     "sha256": "575db6931083dffc448121e90fa0431f0b678e7ea373947271b67c2df0349a7d"
+    },
+    {
+     "name": "embeddings.f32.part-04",
+     "size": 48000000,
+     "sha256": "8e447baa5da530bb0ec48a12c093fc4ee04c21b2ffadc2ff75934888fd9ae44b"
+    },
+    {
+     "name": "embeddings.f32.part-05",
+     "size": 48000000,
+     "sha256": "854312401e7b1ac6a9a0ddc9f9ec70ba77f2ff45122d00b835307a52bf747861"
+    },
+    {
+     "name": "embeddings.f32.part-06",
+     "size": 48000000,
+     "sha256": "0274b7ce037f8125043d01fd5ac0eb756a8295662c989e13e642997c974b5b53"
+    },
+    {
+     "name": "embeddings.f32.part-07",
+     "size": 48000000,
+     "sha256": "406aca1fa9bde941aceba7fe14f34fe119329a068021ad3f0bb82cf9b7e4ca80"
+    },
+    {
+     "name": "embeddings.f32.part-08",
+     "size": 48000000,
+     "sha256": "77393a74456b44c57b0486badcca21539185a0ddab9d1c9953b13f7aa6439a5b"
+    },
+    {
+     "name": "embeddings.f32.part-09",
+     "size": 48000000,
+     "sha256": "973206150176d02b2f3d6a3f0ce4b2bd78bab8e673ec79cb33b8e25b9f374a32"
+    },
+    {
+     "name": "embeddings.f32.part-10",
+     "size": 20253696,
+     "sha256": "52f8606ed0cca3b0dde9e3965d2ea3985c77c2e4ea44f7318232f54485977605"
+    }
+   ]
+  },
+  "eval/data/regulations/embeddings.f32": {
+   "size": 60358656,
+   "sha256": "521bf65ed6be7eac6d94ff48d9e81d488e737e34dadcda188128781fbd445afd",
+   "parts": [
+    {
+     "name": "embeddings.f32.part-01",
+     "size": 48000000,
+     "sha256": "7a3ef579514ab01a1431da8fa20ed4ae622ab48c1722a014a628e165f0ef203f"
+    },
+    {
+     "name": "embeddings.f32.part-02",
+     "size": 12358656,
+     "sha256": "518870face3c8bbeea0af17d999e8649acac0f35c814561673c7d0c9c7434faf"
+    }
+   ]
+  }
+ }
+}

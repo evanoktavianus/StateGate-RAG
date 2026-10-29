@@ -1,0 +1,60 @@
+{
+ "situations": 3003,
+ "search_cut_at_limit": true,
+ "people": 16,
+ "mutants": {
+  "52000ed526727d01": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: stored.access[1]: serve {\"from\": \"signed\"} -> \"latest\""
+  },
+  "203569ff823ea59f": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: stored.access[0]: serve {\"from\": \"signed\"} -> {\"from\": \"under_approval\"}"
+  },
+  "16c6535b76edea62": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: signed.access[1]: find {\"from\": \"signed\"} -> {\"from\": \"under_approval\"}"
+  },
+  "9ded3d8523baee22": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: stored.access[0]: serve {\"from\": \"signed\"} -> \"latest\""
+  },
+  "206f016c64d7426d": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: signed.access[1]: serve {\"from\": \"signed\"} -> \"latest\""
+  },
+  "92516a48927c95ca": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: under_approval.access[0]: serve {\"from\": \"under_approval\"} -> \"latest\""
+  },
+  "8e8747646f2cde98": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: stored.access[1]: serve {\"from\": \"signed\"} -> {\"from\": \"stored\"}"
+  },
+  "15457df61837159d": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: signed.access[0]: serve {\"from\": \"signed\"} -> {\"from\": \"approved\"}"
+  },
+  "2f47efbb595891df": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "change_version: stored.access[1]: find {\"from\": \"signed\"} -> {\"from\": \"approved\"}"
+  },
+  "6db77e93f5a954ae": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "reorder_rules: signed.access: swap 0 and 1"
+  }
+ },
+ "workflow": "card7_official_document",
+ "claimed_equivalent": 10,
+ "confirmed": 10
+}

@@ -1,0 +1,59 @@
+# Policy analysis C, task for another unit, as one document: the requesting unit sees the report once it is shared.
+# The single-document version of card4_policy_analysis_other_unit.yml (the one document is the report).
+# The requesting unit is named when the assignment is made, and asks from another unit.
+name: Policy analysis C, for another unit (single document)
+initial: working_document
+default_access: deny
+
+attributes:
+  group: {}
+  requesting_unit: {}
+
+create:
+  by: { position: leadership }
+  assign:
+    team: { from: unit, min: 1 }
+  set: [group, requesting_unit]
+
+states:
+  working_document:
+    access:
+      - { who: { assigned: team }, serve: latest, find: latest }
+    on:
+      upload: { to: working_document, by: { assigned: team } }
+      submit_for_review: { to: group_head_review, by: { assigned: team } }                                        # 1
+
+  group_head_review:
+    access:
+      - { who: { assigned: team }, serve: { from: group_head_review }, find: { from: group_head_review } }
+      - { who: { all: [{ position: group_head }, { same: { group: group } }] }, serve: { from: group_head_review }, find: { from: group_head_review } }
+    on:
+      request_revision: { to: working_document, by: { all: [{ position: group_head }, { same: { group: group } }] } }   # 2
+      pass_to_leadership: { to: submitted, by: { all: [{ position: group_head }, { same: { group: group } }] } }        # 3
+
+  submitted:
+    access:
+      - { who: { assigned: team }, serve: { from: submitted }, find: { from: submitted } }
+      - { who: { all: [{ position: group_head }, { same: { group: group } }] }, serve: { from: submitted }, find: { from: submitted } }
+      - { who: { all: [{ position: leadership }, unit] }, serve: { from: submitted }, find: { from: submitted } }
+    on:
+      return: { to: working_document, by: { all: [{ position: leadership }, unit] } }                          # return for rework
+      hand_over: { to: handed_over, by: { assigned: team } }                                                       # 4
+
+  handed_over:
+    access:
+      - { who: { assigned: team }, serve: { from: handed_over }, find: { from: handed_over } }
+      - { who: { all: [{ position: group_head }, { same: { group: group } }] }, serve: { from: handed_over }, find: { from: handed_over } }
+      - { who: { all: [{ position: leadership }, unit] }, serve: { from: handed_over }, find: { from: handed_over } }
+      - { who: { all: [{ position: filing }, unit] }, serve: { from: handed_over }, find: { from: handed_over } }
+    on:
+      share: { to: shared_with_requesting_unit, by: { all: [{ position: leadership }, unit] } }                   # 5
+
+  shared_with_requesting_unit:
+    access:
+      - { who: { assigned: team }, serve: { from: handed_over }, find: { from: handed_over } }
+      - { who: { all: [{ position: group_head }, { same: { group: group } }] }, serve: { from: handed_over }, find: { from: handed_over } }
+      - { who: { all: [{ position: leadership }, unit] }, serve: { from: handed_over }, find: { from: handed_over } }
+      - { who: { all: [{ position: filing }, unit] }, serve: { from: handed_over }, find: { from: handed_over } }
+      - { who: { same: { unit: requesting_unit } }, serve: { from: handed_over }, find: { from: handed_over } }
+    on: {}

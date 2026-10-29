@@ -1,0 +1,48 @@
+# Policy analysis C, task for another unit, as one document (the report). The tables follow the report rows (R) of the
+# group version of the workflow; nothing here comes from the engine.
+name: Policy analysis C, for another unit (single document)
+workflows: [policy_analysis_other_unit_single]
+people:
+  lead:  { org: O1, unit: U1, positions: [leadership] }
+  an:    { org: O1, unit: U1, groups: [g1] }
+  gh:    { org: O1, unit: U1, groups: [g1], positions: [group_head] }
+  fil:   { org: O1, unit: U1, positions: [filing] }
+  staff: { org: O1, unit: U1 }
+  req:   { org: O2, unit: REQ }          # the requesting unit: another organization
+  req2:  { org: O2, unit: OTHERREQ }     # another unit of that organization, not the requester
+workspaces: { w: { org: O1 } }
+steps:
+  - add_document: { id: d, workspace: w, owner: an, workflow: policy_analysis_other_unit_single, creator: lead, assign: { team: [an] }, attrs: { group: g1, requesting_unit: REQ } }
+  - expect_access:
+      docs: { R: d }
+      table: { an: R, gh: "", lead: "", fil: "", req: "", req2: "", staff: "" }
+  - act: { doc: d, by: an, action: submit_for_review }
+  - expect_access:
+      docs: { R: d }
+      table: { an: R, gh: R, lead: "", fil: "", req: "", req2: "", staff: "" }
+  - act: { doc: d, by: gh, action: pass_to_leadership }
+  - expect_access:
+      docs: { R: d }
+      table: { an: R, gh: R, lead: R, fil: "", req: "", req2: "", staff: "" }
+  - expect_refused: { step: { act: { doc: d, by: gh, action: return } }, reason: not_permitted }
+  - expect_refused: { step: { act: { doc: d, by: an, action: return } }, reason: not_permitted }
+  - act: { doc: d, by: lead, action: return }
+  - expect_state: { doc: d, state: working_document }
+  - expect_access:
+      docs: { R: d }
+      table: { an: R, gh: "", lead: "", fil: "", req: "", req2: "", staff: "" }
+      versions: { R: 1 }
+  - act: { doc: d, by: an, action: upload }
+  - act: { doc: d, by: an, action: submit_for_review }
+  - act: { doc: d, by: gh, action: pass_to_leadership }
+  - act: { doc: d, by: an, action: hand_over }
+  - expect_access:
+      docs: { R: d }
+      table: { an: R, gh: R, lead: R, fil: R, req: "", req2: "", staff: "" }
+  - expect_refused: { step: { act: { doc: d, by: an, action: share } }, reason: not_permitted }
+  - act: { doc: d, by: lead, action: share }
+  # the requesting unit, from another organization, opens the report
+  - expect_access:
+      docs: { R: d }
+      table: { an: R, gh: R, lead: R, fil: R, req: R, req2: "", staff: "" }
+      versions: { R: 2 }                       # the requesting unit is served the version handed over

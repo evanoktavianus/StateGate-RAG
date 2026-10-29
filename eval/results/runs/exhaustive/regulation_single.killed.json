@@ -1,0 +1,591 @@
+{
+ "situations": 39,
+ "search_cut_at_limit": false,
+ "people": 17,
+ "mutants": {
+  "16e57e3f3600d511": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "lead",
+     "t1",
+     "t2",
+     "z_pos_leadership",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "change_version: working_draft.access[0]: find \"latest\" -> {\"from\": \"review\"}"
+  },
+  "d733170665082ac7": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "lead",
+     "t1",
+     "t2",
+     "z_pos_leadership",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "change_version: working_draft.access[0]: serve \"latest\" -> {\"from\": \"amended\"}"
+  },
+  "9c288c5f170308d0": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "submit_for_review"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "inv",
+     "lead",
+     "t1",
+     "t2",
+     "z_pos_leadership"
+    ]
+   },
+   "desc": "change_version: review.access[0]: serve \"latest\" -> {\"from\": \"amended\"}"
+  },
+  "061aff37b158c073": {
+   "confirmed": false,
+   "difference": {
+    "situation": 1,
+    "steps": [
+     "upload"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "lead",
+     "t1",
+     "t2",
+     "z_pos_leadership",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "change_version: working_draft.access[0]: find \"latest\" -> {\"from\": \"working_draft\"}"
+  },
+  "4e6ace9fb0ea346a": {
+   "confirmed": false,
+   "difference": {
+    "situation": 6,
+    "steps": [
+     "submit_for_review",
+     "promulgate"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "ag",
+     "cit",
+     "emp",
+     "inv",
+     "lead"
+    ]
+   },
+   "desc": "change_version: in_force.access[0]: find {\"from\": \"in_force\"} -> \"nothing\""
+  },
+  "b116039ac1ebf614": {
+   "confirmed": false,
+   "difference": {
+    "situation": 12,
+    "steps": [
+     "submit_for_review",
+     "promulgate",
+     "repeal"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "ag",
+     "cit",
+     "emp",
+     "inv",
+     "lead"
+    ]
+   },
+   "desc": "change_version: repealed.access[0]: find {\"from\": \"in_force\"} -> \"nothing\""
+  },
+  "783498dce880cb6a": {
+   "confirmed": false,
+   "difference": {
+    "situation": 6,
+    "steps": [
+     "submit_for_review",
+     "promulgate"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "ag",
+     "cit",
+     "emp",
+     "inv",
+     "lead"
+    ]
+   },
+   "desc": "change_version: in_force.access[0]: serve {\"from\": \"in_force\"} -> {\"from\": \"amended\"}"
+  },
+  "d027f39251d7de2c": {
+   "confirmed": false,
+   "difference": {
+    "situation": 11,
+    "steps": [
+     "submit_for_review",
+     "promulgate",
+     "amend"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "ag",
+     "cit",
+     "emp",
+     "inv",
+     "lead"
+    ]
+   },
+   "desc": "change_version: amended.access[0]: serve {\"from\": \"in_force\"} -> {\"from\": \"repealed\"}"
+  },
+  "523cc1f382d96680": {
+   "confirmed": false,
+   "difference": {
+    "situation": 4,
+    "steps": [
+     "upload",
+     "submit_for_review"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "inv",
+     "lead",
+     "t1",
+     "t2",
+     "z_pos_leadership"
+    ]
+   },
+   "desc": "change_version: review.access[0]: serve \"latest\" -> {\"from\": \"working_draft\"}"
+  },
+  "3a125aef10ec1d3c": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "lead",
+     "t1",
+     "t2",
+     "z_pos_leadership",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "change_version: working_draft.access[0]: find \"latest\" -> \"nothing\""
+  },
+  "26014ba652486bd5": {
+   "confirmed": false,
+   "difference": {
+    "situation": 18,
+    "steps": [
+     "upload",
+     "submit_for_review",
+     "promulgate",
+     "repeal"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "ag",
+     "cit",
+     "emp",
+     "inv",
+     "lead"
+    ]
+   },
+   "desc": "change_version: repealed.access[0]: find {\"from\": \"in_force\"} -> {\"from\": \"working_draft\"}"
+  },
+  "63e222eaa6f62879": {
+   "confirmed": false,
+   "difference": {
+    "situation": 1,
+    "steps": [
+     "upload"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "lead",
+     "t1",
+     "t2",
+     "z_pos_leadership",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "change_version: working_draft.access[0]: serve \"latest\" -> {\"from\": \"working_draft\"}"
+  },
+  "18f8e5937185ef29": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "lead",
+     "t1",
+     "t2",
+     "z_pos_leadership",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "change_version: working_draft.access[0]: serve \"latest\" -> \"nothing\""
+  },
+  "43c8516843b65ec5": {
+   "confirmed": false,
+   "difference": {
+    "situation": 12,
+    "steps": [
+     "submit_for_review",
+     "promulgate",
+     "repeal"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "ag",
+     "cit",
+     "emp",
+     "inv",
+     "lead"
+    ]
+   },
+   "desc": "change_version: repealed.access[0]: serve {\"from\": \"in_force\"} -> \"nothing\""
+  },
+  "f369814dc4308ea6": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "submit_for_review"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "inv",
+     "lead",
+     "t1",
+     "t2",
+     "z_pos_leadership"
+    ]
+   },
+   "desc": "change_version: review.access[0]: serve \"latest\" -> {\"from\": \"repealed\"}"
+  },
+  "45f3dd4136aaac86": {
+   "confirmed": false,
+   "difference": {
+    "situation": 9,
+    "steps": [
+     "upload",
+     "submit_for_review",
+     "promulgate"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "ag",
+     "cit",
+     "emp",
+     "inv",
+     "lead"
+    ]
+   },
+   "desc": "change_version: in_force.access[0]: find {\"from\": \"in_force\"} -> {\"from\": \"working_draft\"}"
+  },
+  "c4ae05c71571d863": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": false,
+    "people_differing": []
+   },
+   "desc": "default_flip: default_access"
+  },
+  "870d3bb61cf27ed8": {
+   "confirmed": false,
+   "difference": {
+    "situation": 11,
+    "steps": [
+     "submit_for_review",
+     "promulgate",
+     "amend"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "ag",
+     "cit",
+     "emp",
+     "inv",
+     "lead"
+    ]
+   },
+   "desc": "drop_rule: amended.access[0]: delete"
+  },
+  "46d116be2a039bc6": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "submit_for_review"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "inv",
+     "lead",
+     "t1",
+     "t2",
+     "z_pos_leadership"
+    ]
+   },
+   "desc": "drop_rule: review.access[0]: delete"
+  },
+  "c1557f42ee975d01": {
+   "confirmed": false,
+   "difference": {
+    "situation": 12,
+    "steps": [
+     "submit_for_review",
+     "promulgate",
+     "repeal"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "ag",
+     "cit",
+     "emp",
+     "inv",
+     "lead"
+    ]
+   },
+   "desc": "drop_rule: repealed.access[0]: delete"
+  },
+  "26369c0e8dea2e3d": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "t1",
+     "t2"
+    ]
+   },
+   "desc": "narrow_who: working_draft.access[0]: remove term 0 ({\"assigned\": \"drafting_team\"})"
+  },
+  "fe01b51631b60334": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "lead",
+     "z_pos_leadership",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "narrow_who: working_draft.access[0]: remove term 1 ({\"all\": [{\"position\": \"leadership\"}, \"unit\"]})"
+  },
+  "c1f5a1122f8e664d": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "submit_for_review"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "lead",
+     "z_pos_leadership",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "narrow_who: review.access[0]: remove term 1 ({\"all\": [{\"position\": \"leadership\"}, \"unit\"]})"
+  },
+  "b57cbff5939e7f2e": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "submit_for_review"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "z_pos_leadership_other_unit",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "swap: review.access[0]: unit -> organization"
+  },
+  "495fe6f23adabcb5": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "z_pos_leadership_other_unit",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "swap: working_draft.access[0]: unit -> organization"
+  },
+  "2ba952436160bd63": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "submit_for_review"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "inv"
+    ]
+   },
+   "desc": "swap: review.access[0]: assigned invited -> drafting_team"
+  },
+  "ffe31b6168eceda1": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "submit_for_review"
+    ],
+    "mutant_accepts_steps": false,
+    "people_differing": []
+   },
+   "desc": "transition_guard: working_draft.on.submit_for_review: remove by"
+  },
+  "95b64d594ecf0154": {
+   "confirmed": false,
+   "difference": {
+    "situation": 5,
+    "steps": [
+     "submit_for_review",
+     "request_revision"
+    ],
+    "mutant_accepts_steps": false,
+    "people_differing": []
+   },
+   "desc": "transition_guard: review.on.request_revision: narrow by to author"
+  },
+  "4aca3ad9f34611f4": {
+   "confirmed": false,
+   "difference": {
+    "situation": 5,
+    "steps": [
+     "submit_for_review",
+     "request_revision"
+    ],
+    "mutant_accepts_steps": false,
+    "people_differing": []
+   },
+   "desc": "transition_guard: review.on.request_revision: remove by"
+  },
+  "d3678304a770ed4b": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "transition_guard: review.on.request_revision: widen by to anyone"
+  },
+  "9e6d2c56925eb730": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "transition_guard: working_draft.on.upload: narrow by to author"
+  },
+  "c643a65c5820ab8e": {
+   "confirmed": false,
+   "difference": {
+    "situation": 1,
+    "steps": [
+     "upload"
+    ],
+    "mutant_accepts_steps": false,
+    "people_differing": []
+   },
+   "desc": "upload: working_draft: remove upload"
+  },
+  "dd15348a58b26f05": {
+   "confirmed": true,
+   "difference": null,
+   "desc": "upload: amended: add upload"
+  },
+  "952702364d7faf63": {
+   "confirmed": false,
+   "difference": {
+    "situation": 0,
+    "steps": [],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "emp",
+     "inv",
+     "staff",
+     "z_pos_leadership_other_unit",
+     "z_same_org_other_unit"
+    ]
+   },
+   "desc": "widen_who: working_draft.access[0]: add organization"
+  },
+  "28c4a86814b0b5cc": {
+   "confirmed": false,
+   "difference": {
+    "situation": 2,
+    "steps": [
+     "submit_for_review"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "z_org_with_role_other_unit",
+     "z_unit_with_role"
+    ]
+   },
+   "desc": "widen_who: review.access[0]: add everyone"
+  },
+  "23e4e92cc1f970f0": {
+   "confirmed": false,
+   "difference": {
+    "situation": 5,
+    "steps": [
+     "submit_for_review",
+     "request_revision"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "lead",
+     "t1",
+     "t2",
+     "z_pos_leadership",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "wrong_target: review.on.request_revision: to working_draft -> repealed"
+  },
+  "3b1597d9ac4228fa": {
+   "confirmed": false,
+   "difference": {
+    "situation": 5,
+    "steps": [
+     "submit_for_review",
+     "request_revision"
+    ],
+    "mutant_accepts_steps": true,
+    "people_differing": [
+     "lead",
+     "t1",
+     "t2",
+     "z_pos_leadership",
+     "z_position_and_role"
+    ]
+   },
+   "desc": "wrong_target: review.on.request_revision: to working_draft -> amended"
+  }
+ },
+ "workflow": "regulation_single",
+ "claimed_equivalent": 37,
+ "confirmed": 3
+}

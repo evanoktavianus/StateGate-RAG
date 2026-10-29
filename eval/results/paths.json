@@ -1,0 +1,5833 @@
+{
+ "workflows": [
+  {
+   "workflow": "card1_policy_analysis_simple",
+   "states": [
+    2,
+    2
+   ],
+   "edges": [
+    2,
+    2
+   ],
+   "edge_pairs": [
+    2,
+    2
+   ],
+   "options": [
+    0,
+    0
+   ],
+   "paths": 3,
+   "steps": 5,
+   "situations": 8,
+   "uncoverable_edges": [],
+   "limits": [],
+   "uncoverable_pairs": [],
+   "unexplained": {
+    "edges": [],
+    "pairs": [],
+    "options": []
+   },
+   "seconds": 0.01
+  },
+  {
+   "workflow": "card2_policy_analysis_individual",
+   "states": [
+    4,
+    4
+   ],
+   "edges": [
+    6,
+    6
+   ],
+   "edge_pairs": [
+    10,
+    10
+   ],
+   "options": [
+    0,
+    0
+   ],
+   "paths": 8,
+   "steps": 32,
+   "situations": 40,
+   "uncoverable_edges": [],
+   "limits": [],
+   "uncoverable_pairs": [],
+   "unexplained": {
+    "edges": [],
+    "pairs": [],
+    "options": []
+   },
+   "seconds": 0.02
+  },
+  {
+   "workflow": "policy_analysis_team_single",
+   "states": [
+    4,
+    4
+   ],
+   "edges": [
+    6,
+    6
+   ],
+   "edge_pairs": [
+    10,
+    10
+   ],
+   "options": [
+    0,
+    0
+   ],
+   "paths": 8,
+   "steps": 32,
+   "situations": 40,
+   "uncoverable_edges": [],
+   "limits": [],
+   "uncoverable_pairs": [],
+   "unexplained": {
+    "edges": [],
+    "pairs": [],
+    "options": []
+   },
+   "seconds": 0.03
+  },
+  {
+   "workflow": "policy_analysis_other_unit_single",
+   "states": [
+    5,
+    5
+   ],
+   "edges": [
+    7,
+    7
+   ],
+   "edge_pairs": [
+    11,
+    11
+   ],
+   "options": [
+    0,
+    0
+   ],
+   "paths": 9,
+   "steps": 41,
+   "situations": 50,
+   "uncoverable_edges": [],
+   "limits": [],
+   "uncoverable_pairs": [],
+   "unexplained": {
+    "edges": [],
+    "pairs": [],
+    "options": []
+   },
+   "seconds": 0.03
+  },
+  {
+   "workflow": "card5_policy_analysis_sensitive",
+   "states": [
+    5,
+    5
+   ],
+   "edges": [
+    7,
+    7
+   ],
+   "edge_pairs": [
+    11,
+    11
+   ],
+   "options": [
+    0,
+    0
+   ],
+   "paths": 8,
+   "steps": 37,
+   "situations": 45,
+   "uncoverable_edges": [],
+   "limits": [],
+   "uncoverable_pairs": [],
+   "unexplained": {
+    "edges": [],
+    "pairs": [],
+    "options": []
+   },
+   "seconds": 0.02
+  },
+  {
+   "workflow": "knowledge_asset",
+   "states": [
+    3,
+    3
+   ],
+   "edges": [
+    7,
+    7
+   ],
+   "edge_pairs": [
+    16,
+    16
+   ],
+   "options": [
+    8,
+    8
+   ],
+   "paths": 15,
+   "steps": 91,
+   "situations": 106,
+   "uncoverable_edges": [],
+   "limits": [],
+   "uncoverable_pairs": [],
+   "unexplained": {
+    "edges": [],
+    "pairs": [],
+    "options": []
+   },
+   "seconds": 0.06
+  },
+  {
+   "workflow": "card7_official_document",
+   "states": [
+    5,
+    5
+   ],
+   "edges": [
+    7,
+    7
+   ],
+   "edge_pairs": [
+    11,
+    11
+   ],
+   "options": [
+    0,
+    0
+   ],
+   "paths": 10,
+   "steps": 54,
+   "situations": 64,
+   "uncoverable_edges": [],
+   "limits": [],
+   "uncoverable_pairs": [],
+   "unexplained": {
+    "edges": [],
+    "pairs": [],
+    "options": []
+   },
+   "seconds": 0.04
+  },
+  {
+   "workflow": "regulation_single",
+   "states": [
+    5,
+    5
+   ],
+   "edges": [
+    8,
+    8
+   ],
+   "edge_pairs": [
+    12,
+    12
+   ],
+   "options": [
+    0,
+    0
+   ],
+   "paths": 8,
+   "steps": 32,
+   "situations": 40,
+   "uncoverable_edges": [],
+   "limits": [],
+   "uncoverable_pairs": [],
+   "unexplained": {
+    "edges": [],
+    "pairs": [],
+    "options": []
+   },
+   "seconds": 0.02
+  }
+ ],
+ "paths": {
+  "card1_policy_analysis_simple": [
+   {
+    "id": "card1_policy_analysis_simple#002",
+    "attrs": {},
+    "why": "edge working_document --mark_finalized--> finalized",
+    "steps": [
+     {
+      "actor": "analyst",
+      "action": "mark_finalized",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "mark_finalized"
+      ],
+      "before": "working_document",
+      "after": "finalized",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card1_policy_analysis_simple#003",
+    "attrs": {},
+    "why": "pair working_document --upload--> working_document then working_document --upload--> working_document",
+    "steps": [
+     {
+      "actor": "analyst",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "analyst",
+      "action": "upload",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card1_policy_analysis_simple#004",
+    "attrs": {},
+    "why": "pair working_document --upload--> working_document then working_document --mark_finalized--> finalized",
+    "steps": [
+     {
+      "actor": "analyst",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "analyst",
+      "action": "mark_finalized",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "mark_finalized"
+      ],
+      "before": "working_document",
+      "after": "finalized",
+      "option": null
+     }
+    ]
+   }
+  ],
+  "card2_policy_analysis_individual": [
+   {
+    "id": "card2_policy_analysis_individual#006",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "edge submitted --hand_over--> handed_over",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "hand_over",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "hand_over"
+      ],
+      "before": "submitted",
+      "after": "handed_over",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card2_policy_analysis_individual#007",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "pair working_document --upload--> working_document then working_document --upload--> working_document",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "upload",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card2_policy_analysis_individual#010",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "pair group_head_review --request_revision--> working_document then working_document --submit_for_review--> group_head_review",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "request_revision",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "request_revision"
+      ],
+      "before": "group_head_review",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card2_policy_analysis_individual#012",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "pair submitted --return--> working_document then working_document --submit_for_review--> group_head_review",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "return",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "return"
+      ],
+      "before": "submitted",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card2_policy_analysis_individual#013",
+    "attrs": {
+     "group": "g2"
+    },
+    "why": "attributes {'group': 'g2'}",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh2",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "hand_over",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "hand_over"
+      ],
+      "before": "submitted",
+      "after": "handed_over",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card2_policy_analysis_individual#014",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "upload in working_document after creation",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "hand_over",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "hand_over"
+      ],
+      "before": "submitted",
+      "after": "handed_over",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card2_policy_analysis_individual#015",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "upload in working_document after group_head_review --request_revision--> working_document",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "request_revision",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "hand_over",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "request_revision"
+      ],
+      "before": "group_head_review",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "hand_over"
+      ],
+      "before": "submitted",
+      "after": "handed_over",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card2_policy_analysis_individual#016",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "upload in working_document after submitted --return--> working_document",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "return",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "hand_over",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "return"
+      ],
+      "before": "submitted",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "hand_over"
+      ],
+      "before": "submitted",
+      "after": "handed_over",
+      "option": null
+     }
+    ]
+   }
+  ],
+  "policy_analysis_team_single": [
+   {
+    "id": "policy_analysis_team_single#006",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "edge submitted --hand_over--> handed_over",
+    "steps": [
+     {
+      "actor": "chair",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "chair",
+      "action": "hand_over",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "hand_over"
+      ],
+      "before": "submitted",
+      "after": "handed_over",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "policy_analysis_team_single#007",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "pair working_document --upload--> working_document then working_document --upload--> working_document",
+    "steps": [
+     {
+      "actor": "chair",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "chair",
+      "action": "upload",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "policy_analysis_team_single#010",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "pair group_head_review --request_revision--> working_document then working_document --submit_for_review--> group_head_review",
+    "steps": [
+     {
+      "actor": "chair",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "request_revision",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "chair",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "request_revision"
+      ],
+      "before": "group_head_review",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "policy_analysis_team_single#012",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "pair submitted --return--> working_document then working_document --submit_for_review--> group_head_review",
+    "steps": [
+     {
+      "actor": "chair",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "return",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "chair",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "return"
+      ],
+      "before": "submitted",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "policy_analysis_team_single#013",
+    "attrs": {
+     "group": "g2"
+    },
+    "why": "attributes {'group': 'g2'}",
+    "steps": [
+     {
+      "actor": "chair",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh2",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "chair",
+      "action": "hand_over",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "hand_over"
+      ],
+      "before": "submitted",
+      "after": "handed_over",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "policy_analysis_team_single#014",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "upload in working_document after creation",
+    "steps": [
+     {
+      "actor": "chair",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "chair",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "chair",
+      "action": "hand_over",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "hand_over"
+      ],
+      "before": "submitted",
+      "after": "handed_over",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "policy_analysis_team_single#015",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "upload in working_document after group_head_review --request_revision--> working_document",
+    "steps": [
+     {
+      "actor": "chair",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "request_revision",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "chair",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "chair",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "chair",
+      "action": "hand_over",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "request_revision"
+      ],
+      "before": "group_head_review",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "hand_over"
+      ],
+      "before": "submitted",
+      "after": "handed_over",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "policy_analysis_team_single#016",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "upload in working_document after submitted --return--> working_document",
+    "steps": [
+     {
+      "actor": "chair",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "return",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "chair",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "chair",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "chair",
+      "action": "hand_over",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "return"
+      ],
+      "before": "submitted",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "hand_over"
+      ],
+      "before": "submitted",
+      "after": "handed_over",
+      "option": null
+     }
+    ]
+   }
+  ],
+  "policy_analysis_other_unit_single": [
+   {
+    "id": "policy_analysis_other_unit_single#007",
+    "attrs": {
+     "group": "g1",
+     "requesting_unit": "REQ"
+    },
+    "why": "edge handed_over --share--> shared_with_requesting_unit",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "hand_over",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "share",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "hand_over"
+      ],
+      "before": "submitted",
+      "after": "handed_over",
+      "option": null
+     },
+     {
+      "edge": [
+       "handed_over",
+       "share"
+      ],
+      "before": "handed_over",
+      "after": "shared_with_requesting_unit",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "policy_analysis_other_unit_single#008",
+    "attrs": {
+     "group": "g1",
+     "requesting_unit": "REQ"
+    },
+    "why": "pair working_document --upload--> working_document then working_document --upload--> working_document",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "upload",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "policy_analysis_other_unit_single#011",
+    "attrs": {
+     "group": "g1",
+     "requesting_unit": "REQ"
+    },
+    "why": "pair group_head_review --request_revision--> working_document then working_document --submit_for_review--> group_head_review",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "request_revision",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "request_revision"
+      ],
+      "before": "group_head_review",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "policy_analysis_other_unit_single#013",
+    "attrs": {
+     "group": "g1",
+     "requesting_unit": "REQ"
+    },
+    "why": "pair submitted --return--> working_document then working_document --submit_for_review--> group_head_review",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "return",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "return"
+      ],
+      "before": "submitted",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "policy_analysis_other_unit_single#014",
+    "attrs": {
+     "group": "g2",
+     "requesting_unit": "REQ"
+    },
+    "why": "attributes {'group': 'g2', 'requesting_unit': 'REQ'}",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh2",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "hand_over",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "share",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "hand_over"
+      ],
+      "before": "submitted",
+      "after": "handed_over",
+      "option": null
+     },
+     {
+      "edge": [
+       "handed_over",
+       "share"
+      ],
+      "before": "handed_over",
+      "after": "shared_with_requesting_unit",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "policy_analysis_other_unit_single#015",
+    "attrs": {
+     "group": "g1",
+     "requesting_unit": "OTHERREQ"
+    },
+    "why": "attributes {'group': 'g1', 'requesting_unit': 'OTHERREQ'}",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "hand_over",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "share",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "hand_over"
+      ],
+      "before": "submitted",
+      "after": "handed_over",
+      "option": null
+     },
+     {
+      "edge": [
+       "handed_over",
+       "share"
+      ],
+      "before": "handed_over",
+      "after": "shared_with_requesting_unit",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "policy_analysis_other_unit_single#016",
+    "attrs": {
+     "group": "g1",
+     "requesting_unit": "REQ"
+    },
+    "why": "upload in working_document after creation",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "hand_over",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "share",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "hand_over"
+      ],
+      "before": "submitted",
+      "after": "handed_over",
+      "option": null
+     },
+     {
+      "edge": [
+       "handed_over",
+       "share"
+      ],
+      "before": "handed_over",
+      "after": "shared_with_requesting_unit",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "policy_analysis_other_unit_single#017",
+    "attrs": {
+     "group": "g1",
+     "requesting_unit": "REQ"
+    },
+    "why": "upload in working_document after group_head_review --request_revision--> working_document",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "request_revision",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "hand_over",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "share",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "request_revision"
+      ],
+      "before": "group_head_review",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "hand_over"
+      ],
+      "before": "submitted",
+      "after": "handed_over",
+      "option": null
+     },
+     {
+      "edge": [
+       "handed_over",
+       "share"
+      ],
+      "before": "handed_over",
+      "after": "shared_with_requesting_unit",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "policy_analysis_other_unit_single#018",
+    "attrs": {
+     "group": "g1",
+     "requesting_unit": "REQ"
+    },
+    "why": "upload in working_document after submitted --return--> working_document",
+    "steps": [
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "return",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "an",
+      "action": "hand_over",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "share",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "return"
+      ],
+      "before": "submitted",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "hand_over"
+      ],
+      "before": "submitted",
+      "after": "handed_over",
+      "option": null
+     },
+     {
+      "edge": [
+       "handed_over",
+       "share"
+      ],
+      "before": "handed_over",
+      "after": "shared_with_requesting_unit",
+      "option": null
+     }
+    ]
+   }
+  ],
+  "card5_policy_analysis_sensitive": [
+   {
+    "id": "card5_policy_analysis_sensitive#007",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "edge decision_taken --release--> released_to_unit",
+    "steps": [
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "decide",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "release",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "decide"
+      ],
+      "before": "submitted",
+      "after": "decision_taken",
+      "option": null
+     },
+     {
+      "edge": [
+       "decision_taken",
+       "release"
+      ],
+      "before": "decision_taken",
+      "after": "released_to_unit",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card5_policy_analysis_sensitive#008",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "pair working_document --upload--> working_document then working_document --upload--> working_document",
+    "steps": [
+     {
+      "actor": "t1",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "t1",
+      "action": "upload",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card5_policy_analysis_sensitive#011",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "pair group_head_review --request_revision--> working_document then working_document --submit_for_review--> group_head_review",
+    "steps": [
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "request_revision",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "request_revision"
+      ],
+      "before": "group_head_review",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card5_policy_analysis_sensitive#013",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "pair submitted --return--> working_document then working_document --submit_for_review--> group_head_review",
+    "steps": [
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "return",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "return"
+      ],
+      "before": "submitted",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card5_policy_analysis_sensitive#014",
+    "attrs": {
+     "group": "g2"
+    },
+    "why": "attributes {'group': 'g2'}",
+    "steps": [
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh2",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "decide",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "release",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "decide"
+      ],
+      "before": "submitted",
+      "after": "decision_taken",
+      "option": null
+     },
+     {
+      "edge": [
+       "decision_taken",
+       "release"
+      ],
+      "before": "decision_taken",
+      "after": "released_to_unit",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card5_policy_analysis_sensitive#015",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "upload in working_document after creation",
+    "steps": [
+     {
+      "actor": "t1",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "decide",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "release",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "decide"
+      ],
+      "before": "submitted",
+      "after": "decision_taken",
+      "option": null
+     },
+     {
+      "edge": [
+       "decision_taken",
+       "release"
+      ],
+      "before": "decision_taken",
+      "after": "released_to_unit",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card5_policy_analysis_sensitive#016",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "upload in working_document after group_head_review --request_revision--> working_document",
+    "steps": [
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "request_revision",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "t1",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "decide",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "release",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "request_revision"
+      ],
+      "before": "group_head_review",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "decide"
+      ],
+      "before": "submitted",
+      "after": "decision_taken",
+      "option": null
+     },
+     {
+      "edge": [
+       "decision_taken",
+       "release"
+      ],
+      "before": "decision_taken",
+      "after": "released_to_unit",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card5_policy_analysis_sensitive#017",
+    "attrs": {
+     "group": "g1"
+    },
+    "why": "upload in working_document after submitted --return--> working_document",
+    "steps": [
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "return",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "t1",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "gh",
+      "action": "pass_to_leadership",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "decide",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "release",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "return"
+      ],
+      "before": "submitted",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "upload"
+      ],
+      "before": "working_document",
+      "after": "working_document",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_document",
+       "submit_for_review"
+      ],
+      "before": "working_document",
+      "after": "group_head_review",
+      "option": null
+     },
+     {
+      "edge": [
+       "group_head_review",
+       "pass_to_leadership"
+      ],
+      "before": "group_head_review",
+      "after": "submitted",
+      "option": null
+     },
+     {
+      "edge": [
+       "submitted",
+       "decide"
+      ],
+      "before": "submitted",
+      "after": "decision_taken",
+      "option": null
+     },
+     {
+      "edge": [
+       "decision_taken",
+       "release"
+      ],
+      "before": "decision_taken",
+      "after": "released_to_unit",
+      "option": null
+     }
+    ]
+   }
+  ],
+  "knowledge_asset": [
+   {
+    "id": "knowledge_asset#008",
+    "attrs": {},
+    "why": "pair working --upload--> working then working --upload--> working",
+    "steps": [
+     {
+      "actor": "ann",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "upload",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working",
+       "upload"
+      ],
+      "before": "working",
+      "after": "working",
+      "option": null
+     },
+     {
+      "edge": [
+       "working",
+       "upload"
+      ],
+      "before": "working",
+      "after": "working",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "knowledge_asset#010",
+    "attrs": {},
+    "why": "pair working --submit--> quality_assurance then quality_assurance --approve--> disseminated",
+    "steps": [
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "named"
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "request_changes",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c3",
+      "action": "approve",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "set_level"
+      ],
+      "before": "quality_assurance",
+      "after": "quality_assurance",
+      "option": "named"
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "request_changes"
+      ],
+      "before": "quality_assurance",
+      "after": "working",
+      "option": null
+     },
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "approve"
+      ],
+      "before": "quality_assurance",
+      "after": "disseminated",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "knowledge_asset#011",
+    "attrs": {},
+    "why": "pair quality_assurance --set_level--> quality_assurance then quality_assurance --set_level--> quality_assurance",
+    "steps": [
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "named"
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "named"
+      },
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "set_level"
+      ],
+      "before": "quality_assurance",
+      "after": "quality_assurance",
+      "option": "named"
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "set_level"
+      ],
+      "before": "quality_assurance",
+      "after": "quality_assurance",
+      "option": "named"
+     }
+    ]
+   },
+   {
+    "id": "knowledge_asset#014",
+    "attrs": {},
+    "why": "pair disseminated --start_update--> working then working --submit--> quality_assurance",
+    "steps": [
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "named"
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c3",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "start_update",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "set_level"
+      ],
+      "before": "quality_assurance",
+      "after": "quality_assurance",
+      "option": "named"
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "approve"
+      ],
+      "before": "quality_assurance",
+      "after": "disseminated",
+      "option": null
+     },
+     {
+      "edge": [
+       "disseminated",
+       "start_update"
+      ],
+      "before": "disseminated",
+      "after": "working",
+      "option": null
+     },
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "knowledge_asset#015",
+    "attrs": {},
+    "why": "pair disseminated --set_level--> disseminated then disseminated --start_update--> working",
+    "steps": [
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "named"
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c3",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "km",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "named"
+      },
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "start_update",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "set_level"
+      ],
+      "before": "quality_assurance",
+      "after": "quality_assurance",
+      "option": "named"
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "approve"
+      ],
+      "before": "quality_assurance",
+      "after": "disseminated",
+      "option": null
+     },
+     {
+      "edge": [
+       "disseminated",
+       "set_level"
+      ],
+      "before": "disseminated",
+      "after": "disseminated",
+      "option": "named"
+     },
+     {
+      "edge": [
+       "disseminated",
+       "start_update"
+      ],
+      "before": "disseminated",
+      "after": "working",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "knowledge_asset#016",
+    "attrs": {},
+    "why": "pair disseminated --set_level--> disseminated then disseminated --set_level--> disseminated",
+    "steps": [
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "named"
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c3",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "km",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "named"
+      },
+      "event": null
+     },
+     {
+      "actor": "km",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "named"
+      },
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "set_level"
+      ],
+      "before": "quality_assurance",
+      "after": "quality_assurance",
+      "option": "named"
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "approve"
+      ],
+      "before": "quality_assurance",
+      "after": "disseminated",
+      "option": null
+     },
+     {
+      "edge": [
+       "disseminated",
+       "set_level"
+      ],
+      "before": "disseminated",
+      "after": "disseminated",
+      "option": "named"
+     },
+     {
+      "edge": [
+       "disseminated",
+       "set_level"
+      ],
+      "before": "disseminated",
+      "after": "disseminated",
+      "option": "named"
+     }
+    ]
+   },
+   {
+    "id": "knowledge_asset#017",
+    "attrs": {},
+    "why": "option unit of quality_assurance --set_level--> quality_assurance",
+    "steps": [
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "unit"
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "request_changes",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "set_level"
+      ],
+      "before": "quality_assurance",
+      "after": "quality_assurance",
+      "option": "unit"
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "request_changes"
+      ],
+      "before": "quality_assurance",
+      "after": "working",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "knowledge_asset#018",
+    "attrs": {},
+    "why": "option organization of quality_assurance --set_level--> quality_assurance",
+    "steps": [
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "organization"
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "request_changes",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "set_level"
+      ],
+      "before": "quality_assurance",
+      "after": "quality_assurance",
+      "option": "organization"
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "request_changes"
+      ],
+      "before": "quality_assurance",
+      "after": "working",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "knowledge_asset#019",
+    "attrs": {},
+    "why": "option public of quality_assurance --set_level--> quality_assurance",
+    "steps": [
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "public"
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "request_changes",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "set_level"
+      ],
+      "before": "quality_assurance",
+      "after": "quality_assurance",
+      "option": "public"
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "request_changes"
+      ],
+      "before": "quality_assurance",
+      "after": "working",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "knowledge_asset#020",
+    "attrs": {},
+    "why": "option unit of disseminated --set_level--> disseminated",
+    "steps": [
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "named"
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c3",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "km",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "unit"
+      },
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "start_update",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "set_level"
+      ],
+      "before": "quality_assurance",
+      "after": "quality_assurance",
+      "option": "named"
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "approve"
+      ],
+      "before": "quality_assurance",
+      "after": "disseminated",
+      "option": null
+     },
+     {
+      "edge": [
+       "disseminated",
+       "set_level"
+      ],
+      "before": "disseminated",
+      "after": "disseminated",
+      "option": "unit"
+     },
+     {
+      "edge": [
+       "disseminated",
+       "start_update"
+      ],
+      "before": "disseminated",
+      "after": "working",
+      "option": null
+     },
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "knowledge_asset#021",
+    "attrs": {},
+    "why": "option organization of disseminated --set_level--> disseminated",
+    "steps": [
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "named"
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c3",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "km",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "organization"
+      },
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "start_update",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "set_level"
+      ],
+      "before": "quality_assurance",
+      "after": "quality_assurance",
+      "option": "named"
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "approve"
+      ],
+      "before": "quality_assurance",
+      "after": "disseminated",
+      "option": null
+     },
+     {
+      "edge": [
+       "disseminated",
+       "set_level"
+      ],
+      "before": "disseminated",
+      "after": "disseminated",
+      "option": "organization"
+     },
+     {
+      "edge": [
+       "disseminated",
+       "start_update"
+      ],
+      "before": "disseminated",
+      "after": "working",
+      "option": null
+     },
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "knowledge_asset#022",
+    "attrs": {},
+    "why": "option public of disseminated --set_level--> disseminated",
+    "steps": [
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "named"
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c3",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "km",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "public"
+      },
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "start_update",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "set_level"
+      ],
+      "before": "quality_assurance",
+      "after": "quality_assurance",
+      "option": "named"
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "approve"
+      ],
+      "before": "quality_assurance",
+      "after": "disseminated",
+      "option": null
+     },
+     {
+      "edge": [
+       "disseminated",
+       "set_level"
+      ],
+      "before": "disseminated",
+      "after": "disseminated",
+      "option": "public"
+     },
+     {
+      "edge": [
+       "disseminated",
+       "start_update"
+      ],
+      "before": "disseminated",
+      "after": "working",
+      "option": null
+     },
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "knowledge_asset#023",
+    "attrs": {},
+    "why": "upload in working after creation",
+    "steps": [
+     {
+      "actor": "ann",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "named"
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c3",
+      "action": "approve",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working",
+       "upload"
+      ],
+      "before": "working",
+      "after": "working",
+      "option": null
+     },
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "set_level"
+      ],
+      "before": "quality_assurance",
+      "after": "quality_assurance",
+      "option": "named"
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "approve"
+      ],
+      "before": "quality_assurance",
+      "after": "disseminated",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "knowledge_asset#024",
+    "attrs": {},
+    "why": "upload in working after quality_assurance --request_changes--> working",
+    "steps": [
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "request_changes",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "named"
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c3",
+      "action": "approve",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "request_changes"
+      ],
+      "before": "quality_assurance",
+      "after": "working",
+      "option": null
+     },
+     {
+      "edge": [
+       "working",
+       "upload"
+      ],
+      "before": "working",
+      "after": "working",
+      "option": null
+     },
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "set_level"
+      ],
+      "before": "quality_assurance",
+      "after": "quality_assurance",
+      "option": "named"
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "approve"
+      ],
+      "before": "quality_assurance",
+      "after": "disseminated",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "knowledge_asset#025",
+    "attrs": {},
+    "why": "upload in working after disseminated --start_update--> working",
+    "steps": [
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "set_level",
+      "input": {
+       "readers": [
+        "m2"
+       ],
+       "level": "named"
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c3",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "start_update",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ann",
+      "action": "submit",
+      "input": {
+       "committee": [
+        "c1",
+        "c2",
+        "c3"
+       ]
+      },
+      "event": null
+     },
+     {
+      "actor": "c1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "c3",
+      "action": "approve",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "set_level"
+      ],
+      "before": "quality_assurance",
+      "after": "quality_assurance",
+      "option": "named"
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "approve"
+      ],
+      "before": "quality_assurance",
+      "after": "disseminated",
+      "option": null
+     },
+     {
+      "edge": [
+       "disseminated",
+       "start_update"
+      ],
+      "before": "disseminated",
+      "after": "working",
+      "option": null
+     },
+     {
+      "edge": [
+       "working",
+       "upload"
+      ],
+      "before": "working",
+      "after": "working",
+      "option": null
+     },
+     {
+      "edge": [
+       "working",
+       "submit"
+      ],
+      "before": "working",
+      "after": "quality_assurance",
+      "option": null
+     },
+     {
+      "edge": [
+       "quality_assurance",
+       "approve"
+      ],
+      "before": "quality_assurance",
+      "after": "disseminated",
+      "option": null
+     }
+    ]
+   }
+  ],
+  "card7_official_document": [
+   {
+    "id": "card7_official_document#007",
+    "attrs": {
+     "secrecy": "B"
+    },
+    "why": "edge signed --file--> stored",
+    "steps": [
+     {
+      "actor": "drafter",
+      "action": "submit",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "signer",
+      "action": "sign",
+      "input": {
+       "signature": {
+        "ref": "sig-evalkit",
+        "digest": "d@1"
+       }
+      },
+      "event": null
+     },
+     {
+      "actor": "fil",
+      "action": "file",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "draft",
+       "submit"
+      ],
+      "before": "draft",
+      "after": "under_approval",
+      "option": null
+     },
+     {
+      "edge": [
+       "under_approval",
+       "approve"
+      ],
+      "before": "under_approval",
+      "after": "approved",
+      "option": null
+     },
+     {
+      "edge": [
+       "approved",
+       "sign"
+      ],
+      "before": "approved",
+      "after": "signed",
+      "option": null
+     },
+     {
+      "edge": [
+       "signed",
+       "file"
+      ],
+      "before": "signed",
+      "after": "stored",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card7_official_document#008",
+    "attrs": {
+     "secrecy": "B"
+    },
+    "why": "pair draft --upload--> draft then draft --upload--> draft",
+    "steps": [
+     {
+      "actor": "drafter",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "drafter",
+      "action": "upload",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "draft",
+       "upload"
+      ],
+      "before": "draft",
+      "after": "draft",
+      "option": null
+     },
+     {
+      "edge": [
+       "draft",
+       "upload"
+      ],
+      "before": "draft",
+      "after": "draft",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card7_official_document#011",
+    "attrs": {
+     "secrecy": "B"
+    },
+    "why": "pair under_approval --return--> draft then draft --submit--> under_approval",
+    "steps": [
+     {
+      "actor": "drafter",
+      "action": "submit",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap1",
+      "action": "return",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "drafter",
+      "action": "submit",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "draft",
+       "submit"
+      ],
+      "before": "draft",
+      "after": "under_approval",
+      "option": null
+     },
+     {
+      "edge": [
+       "under_approval",
+       "return"
+      ],
+      "before": "under_approval",
+      "after": "draft",
+      "option": null
+     },
+     {
+      "edge": [
+       "draft",
+       "submit"
+      ],
+      "before": "draft",
+      "after": "under_approval",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card7_official_document#013",
+    "attrs": {
+     "secrecy": "B"
+    },
+    "why": "pair approved --return--> draft then draft --submit--> under_approval",
+    "steps": [
+     {
+      "actor": "drafter",
+      "action": "submit",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "signer",
+      "action": "return",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "drafter",
+      "action": "submit",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "draft",
+       "submit"
+      ],
+      "before": "draft",
+      "after": "under_approval",
+      "option": null
+     },
+     {
+      "edge": [
+       "under_approval",
+       "approve"
+      ],
+      "before": "under_approval",
+      "after": "approved",
+      "option": null
+     },
+     {
+      "edge": [
+       "approved",
+       "return"
+      ],
+      "before": "approved",
+      "after": "draft",
+      "option": null
+     },
+     {
+      "edge": [
+       "draft",
+       "submit"
+      ],
+      "before": "draft",
+      "after": "under_approval",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card7_official_document#014",
+    "attrs": {
+     "secrecy": "SR"
+    },
+    "why": "attributes {'secrecy': 'SR'}",
+    "steps": [
+     {
+      "actor": "drafter",
+      "action": "submit",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "signer",
+      "action": "sign",
+      "input": {
+       "signature": {
+        "ref": "sig-evalkit",
+        "digest": "d@1"
+       }
+      },
+      "event": null
+     },
+     {
+      "actor": "fil",
+      "action": "file",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "draft",
+       "submit"
+      ],
+      "before": "draft",
+      "after": "under_approval",
+      "option": null
+     },
+     {
+      "edge": [
+       "under_approval",
+       "approve"
+      ],
+      "before": "under_approval",
+      "after": "approved",
+      "option": null
+     },
+     {
+      "edge": [
+       "approved",
+       "sign"
+      ],
+      "before": "approved",
+      "after": "signed",
+      "option": null
+     },
+     {
+      "edge": [
+       "signed",
+       "file"
+      ],
+      "before": "signed",
+      "after": "stored",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card7_official_document#015",
+    "attrs": {
+     "secrecy": "R"
+    },
+    "why": "attributes {'secrecy': 'R'}",
+    "steps": [
+     {
+      "actor": "drafter",
+      "action": "submit",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "signer",
+      "action": "sign",
+      "input": {
+       "signature": {
+        "ref": "sig-evalkit",
+        "digest": "d@1"
+       }
+      },
+      "event": null
+     },
+     {
+      "actor": "fil",
+      "action": "file",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "draft",
+       "submit"
+      ],
+      "before": "draft",
+      "after": "under_approval",
+      "option": null
+     },
+     {
+      "edge": [
+       "under_approval",
+       "approve"
+      ],
+      "before": "under_approval",
+      "after": "approved",
+      "option": null
+     },
+     {
+      "edge": [
+       "approved",
+       "sign"
+      ],
+      "before": "approved",
+      "after": "signed",
+      "option": null
+     },
+     {
+      "edge": [
+       "signed",
+       "file"
+      ],
+      "before": "signed",
+      "after": "stored",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card7_official_document#016",
+    "attrs": {
+     "secrecy": "T"
+    },
+    "why": "attributes {'secrecy': 'T'}",
+    "steps": [
+     {
+      "actor": "drafter",
+      "action": "submit",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "signer",
+      "action": "sign",
+      "input": {
+       "signature": {
+        "ref": "sig-evalkit",
+        "digest": "d@1"
+       }
+      },
+      "event": null
+     },
+     {
+      "actor": "fil",
+      "action": "file",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "draft",
+       "submit"
+      ],
+      "before": "draft",
+      "after": "under_approval",
+      "option": null
+     },
+     {
+      "edge": [
+       "under_approval",
+       "approve"
+      ],
+      "before": "under_approval",
+      "after": "approved",
+      "option": null
+     },
+     {
+      "edge": [
+       "approved",
+       "sign"
+      ],
+      "before": "approved",
+      "after": "signed",
+      "option": null
+     },
+     {
+      "edge": [
+       "signed",
+       "file"
+      ],
+      "before": "signed",
+      "after": "stored",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card7_official_document#017",
+    "attrs": {
+     "secrecy": "B"
+    },
+    "why": "upload in draft after creation",
+    "steps": [
+     {
+      "actor": "drafter",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "drafter",
+      "action": "submit",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "signer",
+      "action": "sign",
+      "input": {
+       "signature": {
+        "ref": "sig-evalkit",
+        "digest": "d@2"
+       }
+      },
+      "event": null
+     },
+     {
+      "actor": "fil",
+      "action": "file",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "draft",
+       "upload"
+      ],
+      "before": "draft",
+      "after": "draft",
+      "option": null
+     },
+     {
+      "edge": [
+       "draft",
+       "submit"
+      ],
+      "before": "draft",
+      "after": "under_approval",
+      "option": null
+     },
+     {
+      "edge": [
+       "under_approval",
+       "approve"
+      ],
+      "before": "under_approval",
+      "after": "approved",
+      "option": null
+     },
+     {
+      "edge": [
+       "approved",
+       "sign"
+      ],
+      "before": "approved",
+      "after": "signed",
+      "option": null
+     },
+     {
+      "edge": [
+       "signed",
+       "file"
+      ],
+      "before": "signed",
+      "after": "stored",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card7_official_document#018",
+    "attrs": {
+     "secrecy": "B"
+    },
+    "why": "upload in draft after under_approval --return--> draft",
+    "steps": [
+     {
+      "actor": "drafter",
+      "action": "submit",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap1",
+      "action": "return",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "drafter",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "drafter",
+      "action": "submit",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "signer",
+      "action": "sign",
+      "input": {
+       "signature": {
+        "ref": "sig-evalkit",
+        "digest": "d@2"
+       }
+      },
+      "event": null
+     },
+     {
+      "actor": "fil",
+      "action": "file",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "draft",
+       "submit"
+      ],
+      "before": "draft",
+      "after": "under_approval",
+      "option": null
+     },
+     {
+      "edge": [
+       "under_approval",
+       "return"
+      ],
+      "before": "under_approval",
+      "after": "draft",
+      "option": null
+     },
+     {
+      "edge": [
+       "draft",
+       "upload"
+      ],
+      "before": "draft",
+      "after": "draft",
+      "option": null
+     },
+     {
+      "edge": [
+       "draft",
+       "submit"
+      ],
+      "before": "draft",
+      "after": "under_approval",
+      "option": null
+     },
+     {
+      "edge": [
+       "under_approval",
+       "approve"
+      ],
+      "before": "under_approval",
+      "after": "approved",
+      "option": null
+     },
+     {
+      "edge": [
+       "approved",
+       "sign"
+      ],
+      "before": "approved",
+      "after": "signed",
+      "option": null
+     },
+     {
+      "edge": [
+       "signed",
+       "file"
+      ],
+      "before": "signed",
+      "after": "stored",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "card7_official_document#019",
+    "attrs": {
+     "secrecy": "B"
+    },
+    "why": "upload in draft after approved --return--> draft",
+    "steps": [
+     {
+      "actor": "drafter",
+      "action": "submit",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "signer",
+      "action": "return",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "drafter",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "drafter",
+      "action": "submit",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap1",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "ap2",
+      "action": "approve",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "signer",
+      "action": "sign",
+      "input": {
+       "signature": {
+        "ref": "sig-evalkit",
+        "digest": "d@2"
+       }
+      },
+      "event": null
+     },
+     {
+      "actor": "fil",
+      "action": "file",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "draft",
+       "submit"
+      ],
+      "before": "draft",
+      "after": "under_approval",
+      "option": null
+     },
+     {
+      "edge": [
+       "under_approval",
+       "approve"
+      ],
+      "before": "under_approval",
+      "after": "approved",
+      "option": null
+     },
+     {
+      "edge": [
+       "approved",
+       "return"
+      ],
+      "before": "approved",
+      "after": "draft",
+      "option": null
+     },
+     {
+      "edge": [
+       "draft",
+       "upload"
+      ],
+      "before": "draft",
+      "after": "draft",
+      "option": null
+     },
+     {
+      "edge": [
+       "draft",
+       "submit"
+      ],
+      "before": "draft",
+      "after": "under_approval",
+      "option": null
+     },
+     {
+      "edge": [
+       "under_approval",
+       "approve"
+      ],
+      "before": "under_approval",
+      "after": "approved",
+      "option": null
+     },
+     {
+      "edge": [
+       "approved",
+       "sign"
+      ],
+      "before": "approved",
+      "after": "signed",
+      "option": null
+     },
+     {
+      "edge": [
+       "signed",
+       "file"
+      ],
+      "before": "signed",
+      "after": "stored",
+      "option": null
+     }
+    ]
+   }
+  ],
+  "regulation_single": [
+   {
+    "id": "regulation_single#006",
+    "attrs": {},
+    "why": "edge in_force --repeal--> repealed",
+    "steps": [
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": null,
+      "action": "promulgate",
+      "input": {},
+      "event": "promulgated"
+     },
+     {
+      "actor": null,
+      "action": "repeal",
+      "input": {},
+      "event": "repeal_in_force"
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_draft",
+       "submit_for_review"
+      ],
+      "before": "working_draft",
+      "after": "review",
+      "option": null
+     },
+     {
+      "edge": [
+       "review",
+       "promulgate"
+      ],
+      "before": "review",
+      "after": "in_force",
+      "option": null
+     },
+     {
+      "edge": [
+       "in_force",
+       "repeal"
+      ],
+      "before": "in_force",
+      "after": "repealed",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "regulation_single#008",
+    "attrs": {},
+    "why": "edge amended --repeal--> repealed",
+    "steps": [
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": null,
+      "action": "promulgate",
+      "input": {},
+      "event": "promulgated"
+     },
+     {
+      "actor": null,
+      "action": "amend",
+      "input": {},
+      "event": "amendment_in_force"
+     },
+     {
+      "actor": null,
+      "action": "repeal",
+      "input": {},
+      "event": "repeal_in_force"
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_draft",
+       "submit_for_review"
+      ],
+      "before": "working_draft",
+      "after": "review",
+      "option": null
+     },
+     {
+      "edge": [
+       "review",
+       "promulgate"
+      ],
+      "before": "review",
+      "after": "in_force",
+      "option": null
+     },
+     {
+      "edge": [
+       "in_force",
+       "amend"
+      ],
+      "before": "in_force",
+      "after": "amended",
+      "option": null
+     },
+     {
+      "edge": [
+       "amended",
+       "repeal"
+      ],
+      "before": "amended",
+      "after": "repealed",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "regulation_single#009",
+    "attrs": {},
+    "why": "pair working_draft --upload--> working_draft then working_draft --upload--> working_draft",
+    "steps": [
+     {
+      "actor": "t1",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "t1",
+      "action": "upload",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_draft",
+       "upload"
+      ],
+      "before": "working_draft",
+      "after": "working_draft",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_draft",
+       "upload"
+      ],
+      "before": "working_draft",
+      "after": "working_draft",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "regulation_single#012",
+    "attrs": {},
+    "why": "pair review --request_revision--> working_draft then working_draft --submit_for_review--> review",
+    "steps": [
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "request_revision",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_draft",
+       "submit_for_review"
+      ],
+      "before": "working_draft",
+      "after": "review",
+      "option": null
+     },
+     {
+      "edge": [
+       "review",
+       "request_revision"
+      ],
+      "before": "review",
+      "after": "working_draft",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_draft",
+       "submit_for_review"
+      ],
+      "before": "working_draft",
+      "after": "review",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "regulation_single#013",
+    "attrs": {},
+    "why": "pair amended --amend--> amended then amended --amend--> amended",
+    "steps": [
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": null,
+      "action": "promulgate",
+      "input": {},
+      "event": "promulgated"
+     },
+     {
+      "actor": null,
+      "action": "amend",
+      "input": {},
+      "event": "amendment_in_force"
+     },
+     {
+      "actor": null,
+      "action": "amend",
+      "input": {},
+      "event": "amendment_in_force"
+     },
+     {
+      "actor": null,
+      "action": "amend",
+      "input": {},
+      "event": "amendment_in_force"
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_draft",
+       "submit_for_review"
+      ],
+      "before": "working_draft",
+      "after": "review",
+      "option": null
+     },
+     {
+      "edge": [
+       "review",
+       "promulgate"
+      ],
+      "before": "review",
+      "after": "in_force",
+      "option": null
+     },
+     {
+      "edge": [
+       "in_force",
+       "amend"
+      ],
+      "before": "in_force",
+      "after": "amended",
+      "option": null
+     },
+     {
+      "edge": [
+       "amended",
+       "amend"
+      ],
+      "before": "amended",
+      "after": "amended",
+      "option": null
+     },
+     {
+      "edge": [
+       "amended",
+       "amend"
+      ],
+      "before": "amended",
+      "after": "amended",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "regulation_single#014",
+    "attrs": {},
+    "why": "pair amended --amend--> amended then amended --repeal--> repealed",
+    "steps": [
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": null,
+      "action": "promulgate",
+      "input": {},
+      "event": "promulgated"
+     },
+     {
+      "actor": null,
+      "action": "amend",
+      "input": {},
+      "event": "amendment_in_force"
+     },
+     {
+      "actor": null,
+      "action": "amend",
+      "input": {},
+      "event": "amendment_in_force"
+     },
+     {
+      "actor": null,
+      "action": "repeal",
+      "input": {},
+      "event": "repeal_in_force"
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_draft",
+       "submit_for_review"
+      ],
+      "before": "working_draft",
+      "after": "review",
+      "option": null
+     },
+     {
+      "edge": [
+       "review",
+       "promulgate"
+      ],
+      "before": "review",
+      "after": "in_force",
+      "option": null
+     },
+     {
+      "edge": [
+       "in_force",
+       "amend"
+      ],
+      "before": "in_force",
+      "after": "amended",
+      "option": null
+     },
+     {
+      "edge": [
+       "amended",
+       "amend"
+      ],
+      "before": "amended",
+      "after": "amended",
+      "option": null
+     },
+     {
+      "edge": [
+       "amended",
+       "repeal"
+      ],
+      "before": "amended",
+      "after": "repealed",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "regulation_single#015",
+    "attrs": {},
+    "why": "upload in working_draft after creation",
+    "steps": [
+     {
+      "actor": "t1",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": null,
+      "action": "promulgate",
+      "input": {},
+      "event": "promulgated"
+     },
+     {
+      "actor": null,
+      "action": "repeal",
+      "input": {},
+      "event": "repeal_in_force"
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_draft",
+       "upload"
+      ],
+      "before": "working_draft",
+      "after": "working_draft",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_draft",
+       "submit_for_review"
+      ],
+      "before": "working_draft",
+      "after": "review",
+      "option": null
+     },
+     {
+      "edge": [
+       "review",
+       "promulgate"
+      ],
+      "before": "review",
+      "after": "in_force",
+      "option": null
+     },
+     {
+      "edge": [
+       "in_force",
+       "repeal"
+      ],
+      "before": "in_force",
+      "after": "repealed",
+      "option": null
+     }
+    ]
+   },
+   {
+    "id": "regulation_single#016",
+    "attrs": {},
+    "why": "upload in working_draft after review --request_revision--> working_draft",
+    "steps": [
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "lead",
+      "action": "request_revision",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "t1",
+      "action": "upload",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": "t1",
+      "action": "submit_for_review",
+      "input": {},
+      "event": null
+     },
+     {
+      "actor": null,
+      "action": "promulgate",
+      "input": {},
+      "event": "promulgated"
+     },
+     {
+      "actor": null,
+      "action": "repeal",
+      "input": {},
+      "event": "repeal_in_force"
+     }
+    ],
+    "firings": [
+     {
+      "edge": [
+       "working_draft",
+       "submit_for_review"
+      ],
+      "before": "working_draft",
+      "after": "review",
+      "option": null
+     },
+     {
+      "edge": [
+       "review",
+       "request_revision"
+      ],
+      "before": "review",
+      "after": "working_draft",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_draft",
+       "upload"
+      ],
+      "before": "working_draft",
+      "after": "working_draft",
+      "option": null
+     },
+     {
+      "edge": [
+       "working_draft",
+       "submit_for_review"
+      ],
+      "before": "working_draft",
+      "after": "review",
+      "option": null
+     },
+     {
+      "edge": [
+       "review",
+       "promulgate"
+      ],
+      "before": "review",
+      "after": "in_force",
+      "option": null
+     },
+     {
+      "edge": [
+       "in_force",
+       "repeal"
+      ],
+      "before": "in_force",
+      "after": "repealed",
+      "option": null
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,593 @@
+{
+ "card1_policy_analysis_simple": {
+  "df739216ce79b23a": {
+   "desc": "narrow_who: finalized.access[0]: remove term 0 (\"author\")",
+   "verdict": "equivalent",
+   "reason": "the other term, `unit`, covers the author (the author belongs to the owning unit), so nobody's access changes"
+  },
+  "cd45dcd1dae0e18a": {
+   "desc": "change_version: finalized.access[0]: serve {\"from\": \"finalized\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from finalized on the way to finalized without entering finalized again, so the version when finalized was last entered is the latest version in finalized"
+  },
+  "6426ef9cc3e51eb3": {
+   "desc": "change_version: finalized.access[0]: find {\"from\": \"finalized\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from finalized on the way to finalized without entering finalized again, so the version when finalized was last entered is the latest version in finalized"
+  }
+ },
+ "card2_policy_analysis_individual": {
+  "eede39001bc58b41": {
+   "desc": "change_version: group_head_review.access[0]: find \"latest\" -> {\"from\": \"group_head_review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from group_head_review on the way to group_head_review without entering group_head_review again, so the version when group_head_review was last entered is the latest version in group_head_review"
+  },
+  "c3c4ff112fea2aa8": {
+   "desc": "change_version: handed_over.access[0]: serve {\"from\": \"handed_over\"} -> {\"from\": \"group_head_review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into handed_over and the last entry into group_head_review on any route to handed_over, so `from handed_over` and `from group_head_review` name the same version there"
+  },
+  "995e452deb8cfbb1": {
+   "desc": "change_version: handed_over.access[0]: serve {\"from\": \"handed_over\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from handed_over on the way to handed_over without entering handed_over again, so the version when handed_over was last entered is the latest version in handed_over"
+  },
+  "b243c19932b0608d": {
+   "desc": "change_version: handed_over.access[2]: serve {\"from\": \"handed_over\"} -> {\"from\": \"group_head_review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into handed_over and the last entry into group_head_review on any route to handed_over, so `from handed_over` and `from group_head_review` name the same version there"
+  },
+  "d4dc0144fcf291c2": {
+   "desc": "change_version: submitted.access[1]: find {\"from\": \"submitted\"} -> {\"from\": \"group_head_review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into submitted and the last entry into group_head_review on any route to submitted, so `from submitted` and `from group_head_review` name the same version there"
+  },
+  "ac71ff58ff8e3e7e": {
+   "desc": "change_version: group_head_review.access[0]: serve \"latest\" -> {\"from\": \"group_head_review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from group_head_review on the way to group_head_review without entering group_head_review again, so the version when group_head_review was last entered is the latest version in group_head_review"
+  },
+  "c63c6ba84b81dca5": {
+   "desc": "change_version: submitted.access[2]: find {\"from\": \"submitted\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from submitted on the way to submitted without entering submitted again, so the version when submitted was last entered is the latest version in submitted"
+  },
+  "585e116afd9f6899": {
+   "desc": "change_version: handed_over.access[1]: find {\"from\": \"handed_over\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from handed_over on the way to handed_over without entering handed_over again, so the version when handed_over was last entered is the latest version in handed_over"
+  },
+  "b6ebe377b95daa1f": {
+   "desc": "change_version: submitted.access[1]: serve {\"from\": \"submitted\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from submitted on the way to submitted without entering submitted again, so the version when submitted was last entered is the latest version in submitted"
+  },
+  "87a5204f7500e356": {
+   "desc": "change_version: handed_over.access[2]: find {\"from\": \"handed_over\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from handed_over on the way to handed_over without entering handed_over again, so the version when handed_over was last entered is the latest version in handed_over"
+  },
+  "31cb5e08c36a3014": {
+   "desc": "change_version: handed_over.access[1]: serve {\"from\": \"handed_over\"} -> {\"from\": \"submitted\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into handed_over and the last entry into submitted on any route to handed_over, so `from handed_over` and `from submitted` name the same version there"
+  },
+  "5419b2d908ac9109": {
+   "desc": "change_version: handed_over.access[0]: find {\"from\": \"handed_over\"} -> {\"from\": \"submitted\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into handed_over and the last entry into submitted on any route to handed_over, so `from handed_over` and `from submitted` name the same version there"
+  },
+  "6210ada11b6c817b": {
+   "desc": "reorder_rules: handed_over.access: swap 1 and 2",
+   "verdict": "equivalent",
+   "reason": "the two rules name the same version for serve and for find and carry no guidance of their own, so for a person both cover, either order gives the same answer (group head and leadership, both from handed_over)"
+  },
+  "a62b98ded7ca1e1a": {
+   "desc": "reorder_rules: submitted.access: swap 0 and 1",
+   "verdict": "equivalent",
+   "reason": "the two rules name the same version for serve and for find and carry no guidance of their own, so for a person both cover, either order gives the same answer (analyst and group head, both from submitted)"
+  },
+  "284ad62871bfef04": {
+   "desc": "transition_guard: submitted.on.hand_over: narrow by to author",
+   "verdict": "cast_limit",
+   "reason": "in the fixture the author of the document is also the person assigned to it, so `author` and the assigned person are the same person; the case of an assigned person who is not the author is not in the cast"
+  }
+ },
+ "policy_analysis_team_single": {
+  "b969d49d78fa4be6": {
+   "desc": "change_version: group_head_review.access[0]: find {\"from\": \"group_head_review\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from group_head_review on the way to group_head_review without entering group_head_review again, so the version when group_head_review was last entered is the latest version in group_head_review"
+  },
+  "26862892aa066000": {
+   "desc": "change_version: handed_over.access[0]: serve {\"from\": \"handed_over\"} -> {\"from\": \"group_head_review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into handed_over and the last entry into group_head_review on any route to handed_over, so `from handed_over` and `from group_head_review` name the same version there"
+  },
+  "ef6fba79404ecc09": {
+   "desc": "change_version: handed_over.access[0]: serve {\"from\": \"handed_over\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from handed_over on the way to handed_over without entering handed_over again, so the version when handed_over was last entered is the latest version in handed_over"
+  },
+  "f2e2b1eb2b47cb96": {
+   "desc": "change_version: handed_over.access[2]: serve {\"from\": \"handed_over\"} -> {\"from\": \"group_head_review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into handed_over and the last entry into group_head_review on any route to handed_over, so `from handed_over` and `from group_head_review` name the same version there"
+  },
+  "8a48703c5284d264": {
+   "desc": "change_version: submitted.access[1]: find {\"from\": \"submitted\"} -> {\"from\": \"group_head_review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into submitted and the last entry into group_head_review on any route to submitted, so `from submitted` and `from group_head_review` name the same version there"
+  },
+  "4113bed829118969": {
+   "desc": "change_version: submitted.access[2]: find {\"from\": \"submitted\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from submitted on the way to submitted without entering submitted again, so the version when submitted was last entered is the latest version in submitted"
+  },
+  "1f59c615c98f46f7": {
+   "desc": "change_version: handed_over.access[1]: find {\"from\": \"handed_over\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from handed_over on the way to handed_over without entering handed_over again, so the version when handed_over was last entered is the latest version in handed_over"
+  },
+  "715208fa89198dd5": {
+   "desc": "change_version: submitted.access[1]: serve {\"from\": \"submitted\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from submitted on the way to submitted without entering submitted again, so the version when submitted was last entered is the latest version in submitted"
+  },
+  "c1b24bb5473e6672": {
+   "desc": "change_version: handed_over.access[2]: find {\"from\": \"handed_over\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from handed_over on the way to handed_over without entering handed_over again, so the version when handed_over was last entered is the latest version in handed_over"
+  },
+  "c01b112eadb72699": {
+   "desc": "reorder_rules: handed_over.access: swap 2 and 3",
+   "verdict": "equivalent",
+   "reason": "the two rules name the same version for serve and for find and carry no guidance of their own, so for a person both cover, either order gives the same answer (leadership and filing, both from handed_over)"
+  },
+  "9fbb60106b258f77": {
+   "desc": "reorder_rules: group_head_review.access: swap 0 and 1",
+   "verdict": "equivalent",
+   "reason": "the two rules name the same version for serve and for find and carry no guidance of their own, so for a person both cover, either order gives the same answer (team and group head, both from group_head_review)"
+  }
+ },
+ "policy_analysis_other_unit_single": {
+  "2d5e0ffbdd27d98b": {
+   "desc": "change_version: group_head_review.access[1]: find {\"from\": \"group_head_review\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from group_head_review on the way to group_head_review without entering group_head_review again, so the version when group_head_review was last entered is the latest version in group_head_review"
+  },
+  "df5ac7a8dad16e55": {
+   "desc": "change_version: shared_with_requesting_unit.access[0]: find {\"from\": \"handed_over\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from handed_over on the way to shared_with_requesting_unit without entering handed_over again, so the version when handed_over was last entered is the latest version in shared_with_requesting_unit"
+  },
+  "ac5e25e1b2c68bf7": {
+   "desc": "change_version: shared_with_requesting_unit.access[0]: serve {\"from\": \"handed_over\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from handed_over on the way to shared_with_requesting_unit without entering handed_over again, so the version when handed_over was last entered is the latest version in shared_with_requesting_unit"
+  },
+  "23db8220158541cb": {
+   "desc": "change_version: shared_with_requesting_unit.access[3]: find {\"from\": \"handed_over\"} -> {\"from\": \"submitted\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into handed_over and the last entry into submitted on any route to shared_with_requesting_unit, so `from handed_over` and `from submitted` name the same version there"
+  },
+  "a2ec7fa99b17b874": {
+   "desc": "change_version: group_head_review.access[1]: serve {\"from\": \"group_head_review\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from group_head_review on the way to group_head_review without entering group_head_review again, so the version when group_head_review was last entered is the latest version in group_head_review"
+  },
+  "281d66248cdc9650": {
+   "desc": "change_version: shared_with_requesting_unit.access[0]: serve {\"from\": \"handed_over\"} -> {\"from\": \"submitted\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into handed_over and the last entry into submitted on any route to shared_with_requesting_unit, so `from handed_over` and `from submitted` name the same version there"
+  },
+  "c9fb8e617ae32557": {
+   "desc": "change_version: handed_over.access[2]: serve {\"from\": \"handed_over\"} -> {\"from\": \"group_head_review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into handed_over and the last entry into group_head_review on any route to handed_over, so `from handed_over` and `from group_head_review` name the same version there"
+  },
+  "8d1ea2ba9136816e": {
+   "desc": "change_version: shared_with_requesting_unit.access[2]: find {\"from\": \"handed_over\"} -> {\"from\": \"shared_with_requesting_unit\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into handed_over and the last entry into shared_with_requesting_unit on any route to shared_with_requesting_unit, so `from handed_over` and `from shared_with_requesting_unit` name the same version there"
+  },
+  "3516e088b7d6d934": {
+   "desc": "change_version: handed_over.access[3]: find {\"from\": \"handed_over\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from handed_over on the way to handed_over without entering handed_over again, so the version when handed_over was last entered is the latest version in handed_over"
+  },
+  "ea4488e1924c67e1": {
+   "desc": "change_version: handed_over.access[0]: find {\"from\": \"handed_over\"} -> {\"from\": \"group_head_review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into handed_over and the last entry into group_head_review on any route to handed_over, so `from handed_over` and `from group_head_review` name the same version there"
+  },
+  "3809d453b2355ca4": {
+   "desc": "change_version: shared_with_requesting_unit.access[4]: serve {\"from\": \"handed_over\"} -> {\"from\": \"group_head_review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into handed_over and the last entry into group_head_review on any route to shared_with_requesting_unit, so `from handed_over` and `from group_head_review` name the same version there"
+  },
+  "d10fdfa34f7a7f79": {
+   "desc": "change_version: shared_with_requesting_unit.access[1]: find {\"from\": \"handed_over\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from handed_over on the way to shared_with_requesting_unit without entering handed_over again, so the version when handed_over was last entered is the latest version in shared_with_requesting_unit"
+  },
+  "285d4671406e8c19": {
+   "desc": "change_version: handed_over.access[3]: serve {\"from\": \"handed_over\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from handed_over on the way to handed_over without entering handed_over again, so the version when handed_over was last entered is the latest version in handed_over"
+  },
+  "6f35afbde69e4e83": {
+   "desc": "reorder_rules: shared_with_requesting_unit.access: swap 2 and 3",
+   "verdict": "equivalent",
+   "reason": "the two rules name the same version for serve and for find and carry no guidance of their own, so for a person both cover, either order gives the same answer (leadership and filing, both from handed_over)"
+  },
+  "fbf615bfe70dca44": {
+   "desc": "reorder_rules: handed_over.access: swap 0 and 1",
+   "verdict": "equivalent",
+   "reason": "the two rules name the same version for serve and for find and carry no guidance of their own, so for a person both cover, either order gives the same answer (team and group head, both from handed_over)"
+  },
+  "ec770769dc3d309c": {
+   "desc": "transition_guard: submitted.on.hand_over: narrow by to author",
+   "verdict": "cast_limit",
+   "reason": "in the fixture the author of the document is also the person assigned to it, so `author` and the assigned person are the same person; the case of an assigned person who is not the author is not in the cast"
+  }
+ },
+ "card5_policy_analysis_sensitive": {
+  "9e3e1290bfce2a56": {
+   "desc": "change_version: group_head_review.access[1]: find {\"from\": \"group_head_review\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from group_head_review on the way to group_head_review without entering group_head_review again, so the version when group_head_review was last entered is the latest version in group_head_review"
+  },
+  "3a25e209b9f907d2": {
+   "desc": "change_version: released_to_unit.access[1]: find {\"from\": \"released_to_unit\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from released_to_unit on the way to released_to_unit without entering released_to_unit again, so the version when released_to_unit was last entered is the latest version in released_to_unit"
+  },
+  "1efdb239746a2f9a": {
+   "desc": "change_version: submitted.access[1]: find {\"from\": \"submitted\"} -> {\"from\": \"group_head_review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into submitted and the last entry into group_head_review on any route to submitted, so `from submitted` and `from group_head_review` name the same version there"
+  },
+  "396704669c5d5cc8": {
+   "desc": "change_version: submitted.access[2]: serve {\"from\": \"submitted\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from submitted on the way to submitted without entering submitted again, so the version when submitted was last entered is the latest version in submitted"
+  },
+  "a7a6dff360b82c15": {
+   "desc": "change_version: submitted.access[1]: serve {\"from\": \"submitted\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from submitted on the way to submitted without entering submitted again, so the version when submitted was last entered is the latest version in submitted"
+  },
+  "cd65248a32017ef6": {
+   "desc": "change_version: decision_taken.access[2]: serve {\"from\": \"decision_taken\"} -> {\"from\": \"submitted\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into decision_taken and the last entry into submitted on any route to decision_taken, so `from decision_taken` and `from submitted` name the same version there"
+  },
+  "b1f5789da9cabd9e": {
+   "desc": "change_version: group_head_review.access[0]: serve {\"from\": \"group_head_review\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from group_head_review on the way to group_head_review without entering group_head_review again, so the version when group_head_review was last entered is the latest version in group_head_review"
+  },
+  "088723bb0f4caf3b": {
+   "desc": "change_version: released_to_unit.access[0]: find {\"from\": \"released_to_unit\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from released_to_unit on the way to released_to_unit without entering released_to_unit again, so the version when released_to_unit was last entered is the latest version in released_to_unit"
+  },
+  "69aa23724fd6f70a": {
+   "desc": "change_version: decision_taken.access[2]: find {\"from\": \"decision_taken\"} -> {\"from\": \"submitted\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into decision_taken and the last entry into submitted on any route to decision_taken, so `from decision_taken` and `from submitted` name the same version there"
+  },
+  "67e5d924d309e10e": {
+   "desc": "change_version: released_to_unit.access[1]: serve {\"from\": \"released_to_unit\"} -> {\"from\": \"decision_taken\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into released_to_unit and the last entry into decision_taken on any route to released_to_unit, so `from released_to_unit` and `from decision_taken` name the same version there"
+  },
+  "f6fd1598e4d83821": {
+   "desc": "change_version: released_to_unit.access[1]: find {\"from\": \"released_to_unit\"} -> {\"from\": \"decision_taken\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into released_to_unit and the last entry into decision_taken on any route to released_to_unit, so `from released_to_unit` and `from decision_taken` name the same version there"
+  },
+  "7263132e73b06d1a": {
+   "desc": "change_version: decision_taken.access[2]: find {\"from\": \"decision_taken\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none can be reached from decision_taken on the way to decision_taken without entering decision_taken again, so the version when decision_taken was last entered is the latest version in decision_taken"
+  },
+  "21a9f92464839348": {
+   "desc": "change_version: decision_taken.access[0]: serve {\"from\": \"decision_taken\"} -> {\"from\": \"group_head_review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into decision_taken and the last entry into group_head_review on any route to decision_taken, so `from decision_taken` and `from group_head_review` name the same version there"
+  },
+  "32a18f9632f03764": {
+   "desc": "change_version: released_to_unit.access[0]: find {\"from\": \"released_to_unit\"} -> {\"from\": \"group_head_review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_document; none falls between the last entry into released_to_unit and the last entry into group_head_review on any route to released_to_unit, so `from released_to_unit` and `from group_head_review` name the same version there"
+  },
+  "f7e843b300cfd12b": {
+   "desc": "reorder_rules: decision_taken.access: swap 0 and 1",
+   "verdict": "equivalent",
+   "reason": "the two rules name the same version for serve and for find and carry no guidance of their own, so for a person both cover, either order gives the same answer (team and leadership, both from decision_taken)"
+  }
+ },
+ "knowledge_asset": {
+  "622f391d48422bc7": {
+   "desc": "change_version: disseminated.access[3]: find (absent, = serve) -> {\"from\": \"working\"}",
+   "verdict": "gap",
+   "reason": "a version can be uploaded in working between the last entry into working and the last entry into disseminated; the suite's paths do not show it"
+  },
+  "7f8d4883f0a2553d": {
+   "desc": "change_version: disseminated.access[2]: serve {\"from\": \"disseminated\"} -> {\"from\": \"quality_assurance\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working; none falls between the last entry into disseminated and the last entry into quality_assurance on any route to disseminated, so `from disseminated` and `from quality_assurance` name the same version there"
+  },
+  "39aa483a91da0f3f": {
+   "desc": "change_version: disseminated.access[3]: serve {\"from\": \"disseminated\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working; none can be reached from disseminated on the way to disseminated without entering disseminated again, so the version when disseminated was last entered is the latest version in disseminated"
+  },
+  "fdf06c7905121edf": {
+   "desc": "change_version: disseminated.access[3]: find (absent, = serve) -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working; none can be reached from disseminated on the way to disseminated without entering disseminated again, so the version when disseminated was last entered is the latest version in disseminated"
+  },
+  "365f00d78cd9d8de": {
+   "desc": "change_version: disseminated.access[0]: serve {\"from\": \"disseminated\"} -> {\"from\": \"quality_assurance\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working; none falls between the last entry into disseminated and the last entry into quality_assurance on any route to disseminated, so `from disseminated` and `from quality_assurance` name the same version there"
+  },
+  "c0cc6a08ac56c3d3": {
+   "desc": "change_version: disseminated.access[2]: serve {\"from\": \"disseminated\"} -> {\"from\": \"working\"}",
+   "verdict": "gap",
+   "reason": "a version can be uploaded in working between the last entry into working and the last entry into disseminated; the suite's paths do not show it"
+  },
+  "45930aa16173637c": {
+   "desc": "flip_role: disseminated.access[1]: role viewer -> editor",
+   "verdict": "equivalent",
+   "reason": "the engine reads a rule's `role` only to test for `none` (access.py: `if access.role == \"none\"`); between viewer, editor and contributor nothing is read, and a `none` rule here has `serve: nothing`, so the label changes no answer"
+  },
+  "6289338966560c76": {
+   "desc": "flip_role: disseminated.access[2]: role viewer -> contributor",
+   "verdict": "equivalent",
+   "reason": "the engine reads a rule's `role` only to test for `none` (access.py: `if access.role == \"none\"`); between viewer, editor and contributor nothing is read, and a `none` rule here has `serve: nothing`, so the label changes no answer"
+  },
+  "ecf94643a2fbb8ee": {
+   "desc": "flip_role: working.access[5]: role none -> contributor",
+   "verdict": "equivalent",
+   "reason": "the engine reads a rule's `role` only to test for `none` (access.py: `if access.role == \"none\"`); between viewer, editor and contributor nothing is read, and a `none` rule here has `serve: nothing`, so the label changes no answer"
+  },
+  "0ca6c51204946366": {
+   "desc": "flip_role: quality_assurance.access[3]: role viewer -> editor",
+   "verdict": "equivalent",
+   "reason": "the engine reads a rule's `role` only to test for `none` (access.py: `if access.role == \"none\"`); between viewer, editor and contributor nothing is read, and a `none` rule here has `serve: nothing`, so the label changes no answer"
+  },
+  "c49387d18f376635": {
+   "desc": "flip_role: disseminated.access[5]: role none -> viewer",
+   "verdict": "equivalent",
+   "reason": "the engine reads a rule's `role` only to test for `none` (access.py: `if access.role == \"none\"`); between viewer, editor and contributor nothing is read, and a `none` rule here has `serve: nothing`, so the label changes no answer"
+  },
+  "36be8ed071b6dd41": {
+   "desc": "flip_role: disseminated.access[4]: role viewer -> editor",
+   "verdict": "equivalent",
+   "reason": "the engine reads a rule's `role` only to test for `none` (access.py: `if access.role == \"none\"`); between viewer, editor and contributor nothing is read, and a `none` rule here has `serve: nothing`, so the label changes no answer"
+  },
+  "b64cf23eaca406fd": {
+   "desc": "flip_role: quality_assurance.access[5]: role none -> contributor",
+   "verdict": "equivalent",
+   "reason": "the engine reads a rule's `role` only to test for `none` (access.py: `if access.role == \"none\"`); between viewer, editor and contributor nothing is read, and a `none` rule here has `serve: nothing`, so the label changes no answer"
+  },
+  "46b2f26779cb1cc5": {
+   "desc": "narrow_who: quality_assurance.access[5]: remove term 1 (\"public\")",
+   "verdict": "equivalent",
+   "reason": "the closing rule is `[everyone, public]` with role `none` and `serve: nothing`; without `public` it no longer covers a person with no role, and `default_access: deny` gives that person nothing as well"
+  },
+  "007839944970b637": {
+   "desc": "reorder_rules: disseminated.access: swap 0 and 1",
+   "verdict": "equivalent",
+   "reason": "the two rules name the same version for serve and for find and carry no guidance of their own, so for a person both cover, either order gives the same answer (author/invited and the named readers, both from disseminated)"
+  },
+  "a07b8653f63b7c51": {
+   "desc": "widen_who: disseminated.access[4]: add unit",
+   "verdict": "equivalent",
+   "reason": "the rule's `who` is `[everyone, public]`, which together cover every person in access mode; a unit member is covered already"
+  },
+  "1975830a644231dc": {
+   "desc": "widen_who: disseminated.access[3]: add unit",
+   "verdict": "equivalent",
+   "reason": "the rule's `who` is `[everyone, organization]`; a member of the document's unit belongs to its organization, and `everyone` or `organization` already covers a member with or without a role"
+  },
+  "32d9ef1aa107677d": {
+   "desc": "widen_who: quality_assurance.access[5]: add unit",
+   "verdict": "equivalent",
+   "reason": "the closing rule is `[everyone, public]`, which covers every person in access mode, so the added term changes nobody's access"
+  },
+  "a888e65330b7487b": {
+   "desc": "widen_who: disseminated.access[4]: add organization",
+   "verdict": "equivalent",
+   "reason": "the rule's `who` is `[everyone, public]`, which together cover every person in access mode, so the added term changes nobody's access"
+  }
+ },
+ "card7_official_document": {
+  "52000ed526727d01": {
+   "desc": "change_version: stored.access[1]: serve {\"from\": \"signed\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in draft; none can be reached from signed on the way to stored without entering signed again, so the version when signed was last entered is the latest version in stored"
+  },
+  "203569ff823ea59f": {
+   "desc": "change_version: stored.access[0]: serve {\"from\": \"signed\"} -> {\"from\": \"under_approval\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in draft; none falls between the last entry into signed and the last entry into under_approval on any route to stored, so `from signed` and `from under_approval` name the same version there"
+  },
+  "16c6535b76edea62": {
+   "desc": "change_version: signed.access[1]: find {\"from\": \"signed\"} -> {\"from\": \"under_approval\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in draft; none falls between the last entry into signed and the last entry into under_approval on any route to signed, so `from signed` and `from under_approval` name the same version there"
+  },
+  "9ded3d8523baee22": {
+   "desc": "change_version: stored.access[0]: serve {\"from\": \"signed\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in draft; none can be reached from signed on the way to stored without entering signed again, so the version when signed was last entered is the latest version in stored"
+  },
+  "206f016c64d7426d": {
+   "desc": "change_version: signed.access[1]: serve {\"from\": \"signed\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in draft; none can be reached from signed on the way to signed without entering signed again, so the version when signed was last entered is the latest version in signed"
+  },
+  "92516a48927c95ca": {
+   "desc": "change_version: under_approval.access[0]: serve {\"from\": \"under_approval\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in draft; none can be reached from under_approval on the way to under_approval without entering under_approval again, so the version when under_approval was last entered is the latest version in under_approval"
+  },
+  "8e8747646f2cde98": {
+   "desc": "change_version: stored.access[1]: serve {\"from\": \"signed\"} -> {\"from\": \"stored\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in draft; none falls between the last entry into signed and the last entry into stored on any route to stored, so `from signed` and `from stored` name the same version there"
+  },
+  "15457df61837159d": {
+   "desc": "change_version: signed.access[0]: serve {\"from\": \"signed\"} -> {\"from\": \"approved\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in draft; none falls between the last entry into signed and the last entry into approved on any route to signed, so `from signed` and `from approved` name the same version there"
+  },
+  "2f47efbb595891df": {
+   "desc": "change_version: stored.access[1]: find {\"from\": \"signed\"} -> {\"from\": \"approved\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in draft; none falls between the last entry into signed and the last entry into approved on any route to stored, so `from signed` and `from approved` name the same version there"
+  },
+  "9dbabe18aa7625d1": {
+   "desc": "narrow_who: stored.access[1]: remove term 0 ({\"assigned\": \"approvers\"})",
+   "verdict": "cast_limit",
+   "reason": "in the fixture the approvers belong to the owning unit, so the term `unit` covers them without it; the case of an approver from another unit is not in the cast"
+  },
+  "6db77e93f5a954ae": {
+   "desc": "reorder_rules: signed.access: swap 0 and 1",
+   "verdict": "equivalent",
+   "reason": "the two rules name the same version for serve and for find and carry no guidance of their own, so for a person both cover, either order gives the same answer (author/signer/recipient and, for secrecy B, approvers/unit: both from signed)"
+  },
+  "6cece20a00fb1f77": {
+   "desc": "swap: stored.access[1]: assigned approvers -> signer",
+   "verdict": "cast_limit",
+   "reason": "in the fixture the approvers belong to the owning unit, so the term `unit` covers them without it; the case of an approver from another unit is not in the cast; the signer is covered by the first rule already"
+  },
+  "d8fb79488b1bfc10": {
+   "desc": "swap: signed.access[1]: assigned approvers -> signer",
+   "verdict": "cast_limit",
+   "reason": "in the fixture the approvers belong to the owning unit, so the term `unit` covers them without it; the case of an approver from another unit is not in the cast; the signer is covered by the first rule already"
+  }
+ },
+ "regulation_single": {
+  "6d1a2624d99c0555": {
+   "desc": "change_version: amended.access[0]: serve {\"from\": \"in_force\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_draft; none can be reached from in_force on the way to amended without entering in_force again, so the version when in_force was last entered is the latest version in amended"
+  },
+  "9b38e73aeef51e59": {
+   "desc": "change_version: repealed.access[0]: find {\"from\": \"in_force\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_draft; none can be reached from in_force on the way to repealed without entering in_force again, so the version when in_force was last entered is the latest version in repealed"
+  },
+  "95726d851e73ecbb": {
+   "desc": "change_version: repealed.access[0]: serve {\"from\": \"in_force\"} -> {\"from\": \"review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_draft; none falls between the last entry into in_force and the last entry into review on any route to repealed, so `from in_force` and `from review` name the same version there"
+  },
+  "1d260f1f5752f72c": {
+   "desc": "change_version: repealed.access[0]: serve {\"from\": \"in_force\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_draft; none can be reached from in_force on the way to repealed without entering in_force again, so the version when in_force was last entered is the latest version in repealed"
+  },
+  "6f7716e9ddba96d5": {
+   "desc": "change_version: in_force.access[0]: find {\"from\": \"in_force\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_draft; none can be reached from in_force on the way to in_force without entering in_force again, so the version when in_force was last entered is the latest version in in_force"
+  },
+  "6b5f7fadf78f92ef": {
+   "desc": "change_version: in_force.access[0]: serve {\"from\": \"in_force\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_draft; none can be reached from in_force on the way to in_force without entering in_force again, so the version when in_force was last entered is the latest version in in_force"
+  },
+  "2109f9ed12083ff4": {
+   "desc": "change_version: amended.access[0]: find {\"from\": \"in_force\"} -> {\"from\": \"amended\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_draft; none falls between the last entry into in_force and the last entry into amended on any route to amended, so `from in_force` and `from amended` name the same version there"
+  },
+  "132c12370f451a54": {
+   "desc": "change_version: in_force.access[0]: serve {\"from\": \"in_force\"} -> {\"from\": \"review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_draft; none falls between the last entry into in_force and the last entry into review on any route to in_force, so `from in_force` and `from review` name the same version there"
+  },
+  "0f9f70f2a10f4068": {
+   "desc": "change_version: amended.access[0]: serve {\"from\": \"in_force\"} -> {\"from\": \"working_draft\"}",
+   "verdict": "gap",
+   "reason": "a version can be uploaded in working_draft between the last entry into working_draft and the last entry into in_force; the suite's paths do not show it"
+  },
+  "eb2ac4aa9acde4c3": {
+   "desc": "change_version: review.access[0]: serve \"latest\" -> {\"from\": \"review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_draft; none can be reached from review on the way to review without entering review again, so the version when review was last entered is the latest version in review"
+  },
+  "c2882b1f63c329b4": {
+   "desc": "change_version: amended.access[0]: find {\"from\": \"in_force\"} -> {\"from\": \"working_draft\"}",
+   "verdict": "gap",
+   "reason": "a version can be uploaded in working_draft between the last entry into working_draft and the last entry into in_force; the suite's paths do not show it"
+  },
+  "9644991793fdf877": {
+   "desc": "change_version: review.access[0]: find \"latest\" -> {\"from\": \"review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_draft; none can be reached from review on the way to review without entering review again, so the version when review was last entered is the latest version in review"
+  },
+  "19204f485e3c58c6": {
+   "desc": "change_version: amended.access[0]: find {\"from\": \"in_force\"} -> \"latest\"",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_draft; none can be reached from in_force on the way to amended without entering in_force again, so the version when in_force was last entered is the latest version in amended"
+  },
+  "26dbeb2a9ef6728f": {
+   "desc": "change_version: amended.access[0]: serve {\"from\": \"in_force\"} -> {\"from\": \"review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_draft; none falls between the last entry into in_force and the last entry into review on any route to amended, so `from in_force` and `from review` name the same version there"
+  },
+  "01250efc7f1b7ca9": {
+   "desc": "change_version: in_force.access[0]: find {\"from\": \"in_force\"} -> {\"from\": \"review\"}",
+   "verdict": "equivalent",
+   "reason": "uploads are made only in working_draft; none falls between the last entry into in_force and the last entry into review on any route to in_force, so `from in_force` and `from review` name the same version there"
+  },
+  "b66a2ac42dd5e7f5": {
+   "desc": "widen_who: repealed.access[0]: add everyone",
+   "verdict": "equivalent",
+   "reason": "the rule's `who` is `anyone`, which covers every person, so the added term changes nobody's access"
+  },
+  "3d041283a3117cc5": {
+   "desc": "widen_who: in_force.access[0]: add everyone",
+   "verdict": "equivalent",
+   "reason": "the rule's `who` is `anyone`, which covers every person, so the added term changes nobody's access"
+  },
+  "2eec096f3a4ab490": {
+   "desc": "widen_who: repealed.access[0]: add unit",
+   "verdict": "equivalent",
+   "reason": "the rule's `who` is `anyone`, which covers every person, so the added term changes nobody's access"
+  },
+  "6b40770a7a237ecb": {
+   "desc": "widen_who: in_force.access[0]: add organization",
+   "verdict": "equivalent",
+   "reason": "the rule's `who` is `anyone`, which covers every person, so the added term changes nobody's access"
+  },
+  "c938d34aa34b0bad": {
+   "desc": "widen_who: repealed.access[0]: add organization",
+   "verdict": "equivalent",
+   "reason": "the rule's `who` is `anyone`, which covers every person, so the added term changes nobody's access"
+  },
+  "9533722ee74df1bc": {
+   "desc": "widen_who: amended.access[0]: add unit",
+   "verdict": "equivalent",
+   "reason": "the rule's `who` is `anyone`, which covers every person, so the added term changes nobody's access"
+  },
+  "385955138d880d5d": {
+   "desc": "widen_who: amended.access[0]: add public",
+   "verdict": "equivalent",
+   "reason": "the rule's `who` is `anyone`, which covers every person, so the added term changes nobody's access"
+  },
+  "75d1223fc3206cba": {
+   "desc": "widen_who: in_force.access[0]: add public",
+   "verdict": "equivalent",
+   "reason": "the rule's `who` is `anyone`, which covers every person, so the added term changes nobody's access"
+  }
+ }
+}

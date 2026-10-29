@@ -1,0 +1,3 @@
+workflow: card7_official_document
+scenario: scenarios/card7_official_document.yml
+document: { id: d, owner: drafter, assign: { approvers: [ap1, ap2], signer: [signer], recipient: [recip] }, attrs: { secrecy: [B, SR, R, T] } }

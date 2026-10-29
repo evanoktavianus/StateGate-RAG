@@ -1,0 +1,53 @@
+# Card 7. Official document: from signing on, classified documents reach only the sender and the recipient.
+# One attribute, the secrecy level (SR, R, T, B: highest to lowest), is set when the draft is created.
+# Approval and signing are requirements; routing and disposition stay in the Ministry's own system.
+# The approvers or the signer can return the draft to its author; a new version then restarts the approvals.
+name: Official document
+initial: draft
+default_access: deny
+
+attributes:
+  secrecy: { values: [SR, R, T, B] }
+
+create:
+  by: anyone
+  assign:
+    approvers: { from: anyone, min: 1 }
+    signer: { from: anyone, min: 1, max: 1 }
+    recipient: { from: anyone, min: 1, max: 1 }
+  set: [secrecy]
+
+states:
+  draft:
+    access:
+      - { who: [author, { assigned: approvers }], serve: latest, find: latest }          # all levels
+    on:
+      upload: { to: draft, by: author }
+      submit: { to: under_approval, by: author }                                           # 1 the author sends the draft to the approvers
+
+  under_approval:
+    access:
+      - { who: [author, { assigned: approvers }], serve: { from: under_approval }, find: { from: under_approval } }
+    on:
+      approve: { to: approved, by: { assigned: approvers }, requires: { type: approval, pass: all } }     # 2
+      return: { to: draft, by: { assigned: approvers } }                                   # back to the author; the approvals so far no longer count
+
+  approved:
+    access:
+      - { who: [author, { assigned: approvers }, { assigned: signer }], serve: { from: approved }, find: { from: approved } }
+    on:
+      sign: { to: signed, by: { assigned: signer }, requires: { type: signature, pass: any } }            # 3 certified electronic signature
+      return: { to: draft, by: { assigned: signer } }                                      # the signer sends it back before signing
+
+  signed:
+    access:
+      - { who: [author, { assigned: signer }, { assigned: recipient }], serve: { from: signed }, find: { from: signed } }
+      - { when: { secrecy: B }, who: [{ assigned: approvers }, unit], serve: { from: signed }, find: { from: signed } }   # Biasa: wider
+    on:
+      file: { to: stored, by: { all: [{ position: filing }, unit] } }                                    # 4 filed in the unit's store
+
+  stored:
+    access:
+      - { who: [author, { assigned: signer }, { assigned: recipient }], serve: { from: signed }, find: { from: signed } }
+      - { when: { secrecy: B }, who: [{ assigned: approvers }, unit], serve: { from: signed }, find: { from: signed } }
+    on: {}

@@ -1,0 +1,4 @@
+# Regulations: the world of the 300-regulation replay is separate (support/regulations.py); this is the small one.
+workflow: regulation_single
+scenario: scenarios/regulation_single.yml
+document: { id: A-text, owner: t1, creator: lead, assign: { drafting_team: [t1, t2], invited: [inv] } }

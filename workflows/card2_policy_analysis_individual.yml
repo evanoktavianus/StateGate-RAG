@@ -1,0 +1,47 @@
+# Card 2. Policy analysis A, individual task: the analysis reaches leadership only after review by the group head.
+# An assignment letter (created by unit leadership) names the analyst and the analyst's group. A single document.
+name: Policy analysis A, individual task
+initial: working_document
+default_access: deny
+
+attributes:
+  group: {}                                  # the analyst's group: the group head is the one of this group
+
+create:
+  by: { position: leadership }
+  assign:
+    analyst: { from: unit, min: 1, max: 1 }
+  set: [group]
+
+states:
+  working_document:
+    access:
+      - { who: { assigned: analyst }, serve: latest, find: latest }
+    on:
+      upload: { to: working_document, by: { assigned: analyst } }
+      submit_for_review: { to: group_head_review, by: { assigned: analyst } }       # 1
+
+  group_head_review:
+    access:
+      - { who: { assigned: analyst }, serve: latest, find: latest }
+      - { who: { all: [{ position: group_head }, { same: { group: group } }] }, serve: latest, find: latest }
+    on:
+      request_revision: { to: working_document, by: { all: [{ position: group_head }, { same: { group: group } }] } }   # 2
+      pass_to_leadership: { to: submitted, by: { all: [{ position: group_head }, { same: { group: group } }] } }        # 3
+
+  submitted:
+    access:
+      - { who: { assigned: analyst }, serve: { from: submitted }, find: { from: submitted } }
+      - { who: { all: [{ position: group_head }, { same: { group: group } }] }, serve: { from: submitted }, find: { from: submitted } }
+      - { who: { all: [{ position: leadership }, unit] }, serve: { from: submitted }, find: { from: submitted } }
+    on:
+      return: { to: working_document, by: { all: [{ position: leadership }, unit] } }                          # return for rework
+      hand_over: { to: handed_over, by: { assigned: analyst } }                      # 4
+
+  handed_over:
+    access:
+      - { who: { assigned: analyst }, serve: { from: handed_over }, find: { from: handed_over } }
+      - { who: { all: [{ position: group_head }, { same: { group: group } }] }, serve: { from: handed_over }, find: { from: handed_over } }
+      - { who: { all: [{ position: leadership }, unit] }, serve: { from: handed_over }, find: { from: handed_over } }
+      - { who: { all: [{ position: filing }, unit] }, serve: { from: handed_over }, find: { from: handed_over } }
+    on: {}

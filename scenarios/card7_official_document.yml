@@ -1,0 +1,882 @@
+# Card 7 (JSON is YAML).
+{
+ "name": "Card 7, official document (secrecy level, approval, certified signature)",
+ "workflows": [
+  "card7_official_document"
+ ],
+ "people": {
+  "drafter": {
+   "org": "O1",
+   "unit": "U1"
+  },
+  "ap1": {
+   "org": "O1",
+   "unit": "U1"
+  },
+  "ap2": {
+   "org": "O1",
+   "unit": "U1"
+  },
+  "signer": {
+   "org": "O1",
+   "unit": "U2"
+  },
+  "recip": {
+   "org": "O2",
+   "unit": "R1"
+  },
+  "staff": {
+   "org": "O1",
+   "unit": "U1"
+  },
+  "fil": {
+   "org": "O1",
+   "unit": "U1",
+   "positions": [
+    "filing"
+   ]
+  }
+ },
+ "workspaces": {
+  "w": {
+   "org": "O1"
+  }
+ },
+ "steps": [
+  {
+   "add_document": {
+    "id": "d-sr",
+    "workspace": "w",
+    "owner": "drafter",
+    "workflow": "card7_official_document",
+    "creator": "drafter",
+    "assign": {
+     "approvers": [
+      "ap1",
+      "ap2"
+     ],
+     "signer": [
+      "signer"
+     ],
+     "recipient": [
+      "recip"
+     ]
+    },
+    "attrs": {
+     "secrecy": "SR"
+    }
+   }
+  },
+  {
+   "add_document": {
+    "id": "d-r",
+    "workspace": "w",
+    "owner": "drafter",
+    "workflow": "card7_official_document",
+    "creator": "drafter",
+    "assign": {
+     "approvers": [
+      "ap1",
+      "ap2"
+     ],
+     "signer": [
+      "signer"
+     ],
+     "recipient": [
+      "recip"
+     ]
+    },
+    "attrs": {
+     "secrecy": "R"
+    }
+   }
+  },
+  {
+   "add_document": {
+    "id": "d-t",
+    "workspace": "w",
+    "owner": "drafter",
+    "workflow": "card7_official_document",
+    "creator": "drafter",
+    "assign": {
+     "approvers": [
+      "ap1",
+      "ap2"
+     ],
+     "signer": [
+      "signer"
+     ],
+     "recipient": [
+      "recip"
+     ]
+    },
+    "attrs": {
+     "secrecy": "T"
+    }
+   }
+  },
+  {
+   "add_document": {
+    "id": "d-b",
+    "workspace": "w",
+    "owner": "drafter",
+    "workflow": "card7_official_document",
+    "creator": "drafter",
+    "assign": {
+     "approvers": [
+      "ap1",
+      "ap2"
+     ],
+     "signer": [
+      "signer"
+     ],
+     "recipient": [
+      "recip"
+     ]
+    },
+    "attrs": {
+     "secrecy": "B"
+    }
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "SR": "d-sr",
+     "R": "d-r",
+     "T": "d-t",
+     "B": "d-b"
+    },
+    "table": {
+     "drafter": [
+      "SR",
+      "R",
+      "T",
+      "B"
+     ],
+     "ap1": [
+      "SR",
+      "R",
+      "T",
+      "B"
+     ],
+     "ap2": [
+      "SR",
+      "R",
+      "T",
+      "B"
+     ],
+     "signer": [],
+     "recip": [],
+     "staff": [],
+     "fil": []
+    }
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "add_document": {
+      "id": "bad",
+      "workspace": "w",
+      "owner": "drafter",
+      "workflow": "card7_official_document",
+      "creator": "drafter",
+      "assign": {
+       "approvers": [
+        "ap1"
+       ],
+       "signer": [
+        "signer"
+       ],
+       "recipient": [
+        "recip"
+       ]
+      },
+      "attrs": {
+       "secrecy": "TOP"
+      }
+     }
+    },
+    "reason": "attribute_needed"
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "act": {
+      "doc": "d-r",
+      "by": "signer",
+      "action": "sign",
+      "input": {
+       "signature": {
+        "ref": "c",
+        "digest": "d-r@1"
+       }
+      }
+     }
+    },
+    "reason": "not_accepted"
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "act": {
+      "doc": "d-sr",
+      "by": "ap1",
+      "action": "approve"
+     }
+    },
+    "reason": "not_accepted"
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "act": {
+      "doc": "d-sr",
+      "by": "ap1",
+      "action": "submit"
+     }
+    },
+    "reason": "not_permitted"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-sr",
+    "by": "drafter",
+    "action": "submit"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-r",
+    "by": "drafter",
+    "action": "submit"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-t",
+    "by": "drafter",
+    "action": "submit"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-b",
+    "by": "drafter",
+    "action": "submit"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-sr",
+    "state": "under_approval"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-r",
+    "state": "under_approval"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-t",
+    "state": "under_approval"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-b",
+    "state": "under_approval"
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "act": {
+      "doc": "d-sr",
+      "by": "drafter",
+      "action": "upload"
+     }
+    },
+    "reason": "not_accepted"
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "SR": "d-sr",
+     "R": "d-r",
+     "T": "d-t",
+     "B": "d-b"
+    },
+    "table": {
+     "drafter": [
+      "SR",
+      "R",
+      "T",
+      "B"
+     ],
+     "ap1": [
+      "SR",
+      "R",
+      "T",
+      "B"
+     ],
+     "ap2": [
+      "SR",
+      "R",
+      "T",
+      "B"
+     ],
+     "signer": [],
+     "recip": [],
+     "staff": [],
+     "fil": []
+    },
+    "versions": {
+     "SR": 1,
+     "R": 1,
+     "T": 1,
+     "B": 1
+    }
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "act": {
+      "doc": "d-sr",
+      "by": "staff",
+      "action": "approve"
+     }
+    },
+    "reason": "not_permitted"
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "act": {
+      "doc": "d-sr",
+      "by": "signer",
+      "action": "return"
+     }
+    },
+    "reason": "not_permitted"
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "act": {
+      "doc": "d-sr",
+      "by": "drafter",
+      "action": "return"
+     }
+    },
+    "reason": "not_permitted"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-r",
+    "by": "ap1",
+    "action": "approve"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-r",
+    "state": "under_approval"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-r",
+    "by": "ap2",
+    "action": "return"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-r",
+    "state": "draft"
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "R": "d-r"
+    },
+    "table": {
+     "drafter": [
+      "R"
+     ],
+     "ap1": [
+      "R"
+     ],
+     "ap2": [
+      "R"
+     ],
+     "signer": [],
+     "recip": [],
+     "staff": []
+    },
+    "versions": {
+     "R": 1
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-r",
+    "by": "drafter",
+    "action": "upload"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-r",
+    "by": "drafter",
+    "action": "submit"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-r",
+    "state": "under_approval"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-r",
+    "by": "ap2",
+    "action": "approve"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-r",
+    "state": "under_approval"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-r",
+    "by": "ap1",
+    "action": "approve"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-r",
+    "state": "approved"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-sr",
+    "by": "ap1",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-sr",
+    "by": "ap2",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-t",
+    "by": "ap1",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-t",
+    "by": "ap2",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-b",
+    "by": "ap1",
+    "action": "approve"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-b",
+    "by": "ap2",
+    "action": "approve"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-sr",
+    "state": "approved"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-r",
+    "state": "approved"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-t",
+    "state": "approved"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-b",
+    "state": "approved"
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "SR": "d-sr",
+     "R": "d-r",
+     "T": "d-t",
+     "B": "d-b"
+    },
+    "table": {
+     "drafter": [
+      "SR",
+      "R",
+      "T",
+      "B"
+     ],
+     "ap1": [
+      "SR",
+      "R",
+      "T",
+      "B"
+     ],
+     "ap2": [
+      "SR",
+      "R",
+      "T",
+      "B"
+     ],
+     "signer": [
+      "SR",
+      "R",
+      "T",
+      "B"
+     ],
+     "recip": [],
+     "staff": [],
+     "fil": []
+    },
+    "versions": {
+     "SR": 1,
+     "R": 2,
+     "T": 1,
+     "B": 1
+    }
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "act": {
+      "doc": "d-t",
+      "by": "ap1",
+      "action": "return"
+     }
+    },
+    "reason": "not_permitted"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-t",
+    "by": "signer",
+    "action": "return"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-t",
+    "state": "draft"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-t",
+    "by": "drafter",
+    "action": "submit"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-t",
+    "by": "ap1",
+    "action": "approve"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-t",
+    "state": "under_approval"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-t",
+    "by": "ap2",
+    "action": "approve"
+   }
+  },
+  {
+   "expect_state": {
+    "doc": "d-t",
+    "state": "approved"
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "act": {
+      "doc": "d-sr",
+      "by": "signer",
+      "action": "sign"
+     }
+    },
+    "reason": "signature_needed"
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "act": {
+      "doc": "d-sr",
+      "by": "signer",
+      "action": "sign",
+      "input": {
+       "signature": {
+        "ref": "c",
+        "digest": "d-sr@9"
+       }
+      }
+     }
+    },
+    "reason": "signature_invalid"
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "act": {
+      "doc": "d-sr",
+      "by": "ap1",
+      "action": "sign",
+      "input": {
+       "signature": {
+        "ref": "c",
+        "digest": "d-sr@1"
+       }
+      }
+     }
+    },
+    "reason": "not_permitted"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-sr",
+    "by": "signer",
+    "action": "sign",
+    "input": {
+     "signature": {
+      "ref": "cert-SR",
+      "digest": "d-sr@1"
+     }
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-r",
+    "by": "signer",
+    "action": "sign",
+    "input": {
+     "signature": {
+      "ref": "cert-R",
+      "digest": "d-r@2"
+     }
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-t",
+    "by": "signer",
+    "action": "sign",
+    "input": {
+     "signature": {
+      "ref": "cert-T",
+      "digest": "d-t@1"
+     }
+    }
+   }
+  },
+  {
+   "act": {
+    "doc": "d-b",
+    "by": "signer",
+    "action": "sign",
+    "input": {
+     "signature": {
+      "ref": "cert-B",
+      "digest": "d-b@1"
+     }
+    }
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "SR": "d-sr",
+     "R": "d-r",
+     "T": "d-t",
+     "B": "d-b"
+    },
+    "table": {
+     "drafter": [
+      "SR",
+      "R",
+      "T",
+      "B"
+     ],
+     "ap1": [
+      "B"
+     ],
+     "ap2": [
+      "B"
+     ],
+     "signer": [
+      "SR",
+      "R",
+      "T",
+      "B"
+     ],
+     "recip": [
+      "SR",
+      "R",
+      "T",
+      "B"
+     ],
+     "staff": [
+      "B"
+     ],
+     "fil": [
+      "B"
+     ]
+    }
+   }
+  },
+  {
+   "expect_refused": {
+    "step": {
+     "act": {
+      "doc": "d-b",
+      "by": "staff",
+      "action": "file"
+     }
+    },
+    "reason": "not_permitted"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-sr",
+    "by": "fil",
+    "action": "file"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-r",
+    "by": "fil",
+    "action": "file"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-t",
+    "by": "fil",
+    "action": "file"
+   }
+  },
+  {
+   "act": {
+    "doc": "d-b",
+    "by": "fil",
+    "action": "file"
+   }
+  },
+  {
+   "expect_access": {
+    "docs": {
+     "SR": "d-sr",
+     "R": "d-r",
+     "T": "d-t",
+     "B": "d-b"
+    },
+    "table": {
+     "drafter": [
+      "SR",
+      "R",
+      "T",
+      "B"
+     ],
+     "ap1": [
+      "B"
+     ],
+     "ap2": [
+      "B"
+     ],
+     "signer": [
+      "SR",
+      "R",
+      "T",
+      "B"
+     ],
+     "recip": [
+      "SR",
+      "R",
+      "T",
+      "B"
+     ],
+     "staff": [
+      "B"
+     ],
+     "fil": [
+      "B"
+     ]
+    },
+    "versions": {
+     "SR": 1,
+     "R": 2,
+     "T": 1,
+     "B": 1
+    }
+   }
+  }
+ ]
+}

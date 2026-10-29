@@ -1,0 +1,97 @@
+# The workflow language
+
+Generated from `docflow.access_control.access_policy_engine.dsl`. A word not listed here is refused.
+
+## workflow
+
+| word | means |
+|---|---|
+| `name` | what people see and pick |
+| `initial` | the state a document starts in |
+| `default_access` | `own` (a person no rule covers keeps their own role and the latest version) or `deny` (gets nothing) |
+| `states` | the states, by name |
+| `create` | who may create a document and which people they must name |
+| `attributes` | the attributes a document carries, with their allowed values (left empty: any value); rules test them with `when` and `same` |
+
+## state
+
+| word | means |
+|---|---|
+| `guidance` | what an agent is told about a document here |
+| `on` | the actions this state accepts; any other action is refused |
+| `access` | who reaches the document while it is here, and which version |
+
+## transition
+
+| word | means |
+|---|---|
+| `to` | the state it leads to (the same state means stay) |
+| `by` | who may do it (left out: anyone who can act) |
+| `requires` | something that must be satisfied first |
+| `assign` | people the actor must name |
+| `choose` | options the actor must pick, which access rules can depend on |
+| `event` | fired only by this outside event, never by a person |
+
+## assign
+
+| word | means |
+|---|---|
+| `from` | who can be chosen |
+| `min` | at least this many (default 1) |
+| `max` | at most this many |
+| `except` | who can not be chosen |
+| `odd` | an odd number of people |
+
+## access
+
+| word | means |
+|---|---|
+| `who` | who the rule is for; the first rule that covers a person is theirs |
+| `role` | the role they have here: editor, contributor, viewer or none |
+| `serve` | the version they open: latest, nothing, or { from: <state> } |
+| `find` | the version a search finds for them (left out: the same as serve) |
+| `when` | only while the choice or attribute under that name has this value (or one of a list) |
+| `guidance` | what an agent is told about the document for a person this rule covers (left out: the state's guidance) |
+
+## create
+
+| word | means |
+|---|---|
+| `by` | who may create it |
+| `assign` | the roles the creator must fill, as for `assign` |
+| `set` | the attributes the creator must give |
+
+## attribute
+
+| word | means |
+|---|---|
+| `values` | the allowed values (left out: any) |
+
+## who
+
+| term | covers |
+|---|---|
+| `anyone` | any member (when acting); everyone (in access rules) |
+| `author` | whoever created the document |
+| `everyone` | anyone with a role on the document |
+| `public` | anyone signed in with no role (access rules) |
+| `invited` | anyone the document itself was opened to |
+| `organization` | anyone of the organization (acting); those with no role here (access rules) |
+| `unit` | people of the document's unit |
+| `org_admin` | an admin of the organization |
+| `role: <name>` | members with that role (admin, editor, contributor, viewer); a list works |
+| `user: <email>` | that person; a list works |
+| `group: <name>` | people in that group; a list works |
+| `position: <name>` | people holding that position (leadership, staff …); a list works |
+| `attr: { <name>: <value> }` | people whose attribute has that value (or one of a list); every pair must hold |
+| `same: { <person attr>: <document attr> }` | people whose attribute equals the document's (their unit is its requesting unit, their group its group) |
+| `assigned: <name>` | the people chosen under that name |
+| `all: [ … ]` | people every one of the listed terms covers |
+
+## requirement types
+
+| type | settings | means |
+|---|---|---|
+| `approval` | pass, choices | enough people have approved the current version; pass: any | all | <number> |
+| `signature` | pass, choices | enough people have signed the current version, with evidence bound to it; pass: any | all | <number> |
+

@@ -1,0 +1,23 @@
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.vendor/
+.vendor_wheels/
+.DS_Store
+.env
+/work/
+synthetic_pdfs/
+
+# raw grid logs of E2 are large: only the gzipped copies and the summaries are in git
+eval/results/runs/e2/*.json
+!eval/results/runs/e2/mut-*.json
+!eval/results/runs/e2/report-e2.json
+
+
+# the joined vector files (scripts/join_vectors.py); the parts they are joined from are in git
+eval/data/documents/embeddings.f32
+eval/data/documents/chunks.jsonl
+eval/data/regulations/embeddings.f32
+# raw judge caches: only the gzipped copies are in git
+notes/guidance_judge_data/*.sqlite
