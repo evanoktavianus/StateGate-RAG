@@ -4,6 +4,8 @@ Workflow-state-based access control for agentic retrieval-augmented generation. 
 
 Article: *StateGate: Workflow-State-Based Access Control for Agentic Retrieval-Augmented Generation in Public Organizations*, IEEE Access. Authors: Evan Oktavianus, Dana Indra Sensuse, Imairi Eitiveni (Universitas Indonesia).
 
+DOI: 10.5281/zenodo.23774021
+
 ## Where things are
 
 | Folder | What it holds |
